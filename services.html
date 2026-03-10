@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - LumiArchi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/services.css">
+    <style>
+        .service-icon-svg {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 20px;
+        }
+        .service-icon-svg svg {
+            width: 100%;
+            height: 100%;
+            stroke: #ffa500;
+        }
+
+        /* ===== VIDÉO YOUTUBE ===== */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ===== IMAGE SERVICE SYNTHESE ===== */
+        .service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            display: block;
+        }
+
+        /* ===== MINI CARROUSEL MAQUETTES ===== */
+        .mini-carousel {
+            position: relative;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            background: #111;
+        }
+        .mini-carousel-track {
+            display: flex;
+            transition: transform 0.6s ease;
+        }
+        .mini-carousel-track img {
+            min-width: 100%;
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        /* Dézoom 60% pour maquette-1 et maquette-2 uniquement */
+        .mini-carousel-track img.dezoom {
+            object-fit: contain;
+            transform: scale(0.85);
+            background: #111;
+        }
+        .mini-carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        .mini-carousel-btn:hover {
+            background: rgba(255, 165, 0, 0.8);
+        }
+        .mini-carousel-btn.prev { left: 10px; }
+        .mini-carousel-btn.next { right: 10px; }
+        .mini-carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+        .mini-carousel-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .mini-carousel-dots span.active {
+            background: #ffa500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">LumiArchi</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                <li><a href="services.html" class="active">SERVICES</a></li>
+                <li><a href="about.html">À PROPOS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" class="lang">FR</a>
+                <a href="#" class="lang">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <section class="services-hero">
+        <div class="container">
+            <h1 class="page-title">Nos Services</h1>
+            <p class="page-subtitle">Des solutions complètes de visualisation 3D pour vos projets architecturaux</p>
+        </div>
+    </section>
+
+    <!-- Services Détaillés -->
+    <section class="services-detail-section">
+        <div class="container">
+            
+            <!-- Service 1: Images de synthèse -->
+            <div class="service-detail">
+                <div class="service-content">
+                    <div class="service-icon-svg">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                    </div>
+                    <h2>Images de synthèse</h2>
+                    <p class="service-intro">Des rendus photoréalistes qui donnent vie aux projets avant même leur construction.</p>
+                    
+                    <div class="service-description">
+                        <h3>Notre approche</h3>
+                        <p>Chaque image est composée avec un œil d'architecte et une sensibilité de photographe : lumière naturelle maîtrisée, ambiances soignées, matériaux fidèles au projet. Que ce soit pour un concours d'architecture, une commercialisation immobilière ou une présentation client, les visuels produits sont en haute résolution, prêts pour l'impression grand format et optimisés pour le web.</p>
+                        
+                        <h3>Ce que nous livrons</h3>
+                        <ul>
+                            <li>Rendus extérieurs et intérieurs</li>
+                            <li>Vues aériennes et perspectives urbaines</li>
+                            <li>Images haute définition jusqu'à 8K</li>
+                            <li>Délais maîtrisés grâce à un workflow optimisé</li>
+                        </ul>
+                        
+                        <h3>Idéal pour</h3>
+                        <p>Concours d'architecture, commercialisation immobilière, présentations clients, dossiers de permis de construire</p>
+                    </div>
+                    
+                    <a href="contact.html" class="btn-service">Demander un devis</a>
+                </div>
+                <div class="service-visual">
+                    <!-- ✅ VRAIE IMAGE - Image de synthèse -->
+                    <img src="images/service-image-synthese.jpg" alt="Image de synthèse architecturale - LumiArchi" class="service-img">
+                </div>
+            </div>
+
+            <!-- Service 2: Films d'animation -->
+            <div class="service-detail reverse">
+                <div class="service-visual">
+                    <!-- 🎬 VIDÉO YOUTUBE - Film d'animation -->
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/f5tdY_WUPqM?rel=0&modestbranding=1" 
+                            title="LumiArchi - Film d'animation 3D"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-icon-svg">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                            <line x1="7" y1="2" x2="7" y2="22"></line>
+                            <line x1="17" y1="2" x2="17" y2="22"></line>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <line x1="2" y1="7" x2="7" y2="7"></line>
+                            <line x1="2" y1="17" x2="7" y2="17"></line>
+                            <line x1="17" y1="17" x2="22" y2="17"></line>
+                            <line x1="17" y1="7" x2="22" y2="7"></line>
+                        </svg>
+                    </div>
+                    <h2>Films d'animation</h2>
+                    <p class="service-intro">Faire vivre les projets en mouvement.</p>
+                    
+                    <div class="service-description">
+                        <h3>Notre approche</h3>
+                        <p>Les films d'animation permettent de découvrir l'espace de manière immersive : parcours fluide, transitions maîtrisées, ambiances temporelles (jour, nuit, saisons). Idéal pour les présentations investisseurs, les dossiers de commercialisation ou les concours nécessitant une compréhension globale du projet.</p>
+                        
+                        <h3>Ce que nous livrons</h3>
+                        <ul>
+                            <li>Parcours immersifs intérieurs et extérieurs</li>
+                            <li>Animations de lumière naturelle et temporalité</li>
+                            <li>Rendu temps réel pour itérations rapides</li>
+                            <li>Formats adaptés (web, présentation, réseaux sociaux)</li>
+                        </ul>
+                        
+                        <h3>Idéal pour</h3>
+                        <p>Présentations investisseurs, campagnes marketing, concours d'architecture, sites web</p>
+                    </div>
+                    
+                    <a href="contact.html" class="btn-service">Demander un devis</a>
+                </div>
+            </div>
+
+            <!-- Service 3: Visites VR -->
+            <div class="service-detail">
+                <div class="service-content">
+                    <div class="service-icon-svg">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M2 16s3-1 4-1 5 2 8 2 4-1 4-1V4s-3 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                            <polyline points="12 2 12 22"></polyline>
+                        </svg>
+                    </div>
+                    <h2>Visites VR</h2>
+                    <p class="service-intro">Plonger les clients dans une expérience immersive.</p>
+                    
+                    <div class="service-description">
+                        <h3>Notre approche</h3>
+                        <p>Les visites en réalité virtuelle permettent d'explorer librement les espaces, de tester différentes ambiances, de valider des choix avant construction. Un outil puissant pour convaincre investisseurs et clients finaux, particulièrement efficace sur les projets de promotion immobilière.</p>
+                        
+                        <h3>Ce que nous livrons</h3>
+                        <ul>
+                            <li>Navigation libre en temps réel</li>
+                            <li>Compatible casques VR et navigation écran</li>
+                            <li>Variations d'ambiances à la demande</li>
+                            <li>Expérience client différenciante</li>
+                        </ul>
+                        
+                        <h3>Idéal pour</h3>
+                        <p>Appartements témoins virtuels, showrooms, présentations clients premium, promotion immobilière</p>
+                    </div>
+                    
+                    <a href="contact.html" class="btn-service">Demander un devis</a>
+                </div>
+                <div class="service-visual">
+                    <!-- 🥽 VIDÉO YOUTUBE - Visite VR -->
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/IwPqOGBFFkI?rel=0&modestbranding=1" 
+                            title="LumiArchi - Visite VR"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4: Maquettes physiques -->
+            <div class="service-detail reverse">
+                <div class="service-visual">
+                    <!-- 🎠 MINI CARROUSEL - Maquettes physiques -->
+                    <div class="mini-carousel" id="carouselMaquette">
+                        <div class="mini-carousel-track" id="carouselTrack">
+                            <!-- classe "dezoom" sur maquette-1 et maquette-2 uniquement -->
+                            <img src="images/maquette-1.jpg" alt="Maquette physique LumiArchi 1" class="dezoom">
+                            <img src="images/maquette-2.jpg" alt="Maquette physique LumiArchi 2" class="dezoom">
+                            <img src="images/maquette-3.jpg" alt="Maquette physique LumiArchi 3">
+                        </div>
+                        <button class="mini-carousel-btn prev" onclick="moveCarousel(-1)">&#8249;</button>
+                        <button class="mini-carousel-btn next" onclick="moveCarousel(1)">&#8250;</button>
+                        <div class="mini-carousel-dots" id="carouselDots">
+                            <span class="active" onclick="goToSlide(0)"></span>
+                            <span onclick="goToSlide(1)"></span>
+                            <span onclick="goToSlide(2)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-icon-svg">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h2>Maquettes physiques</h2>
+                    <p class="service-intro">Du numérique au tangible.</p>
+                    
+                    <div class="service-description">
+                        <h3>Notre approche</h3>
+                        <p>Les maquettes physiques imprimées en 3D offrent une présentation concrète et mémorable des projets. Idéales pour les concours, les présentations en mairie, ou les rendez-vous clients où la dimension physique fait la différence. Impression PLA haute précision, finitions soignées, échelles adaptées aux besoins.</p>
+                        
+                        <h3>Ce que nous livrons</h3>
+                        <ul>
+                            <li>Impression 3D haute précision</li>
+                            <li>Maquettes de volume et d'insertion urbaine</li>
+                            <li>Finitions et mise en couleur sur demande</li>
+                            <li>Livraison rapide Île-de-France</li>
+                        </ul>
+                        
+                        <h3>Idéal pour</h3>
+                        <p>Concours d'architecture, présentations en mairie, réunions clients, expositions</p>
+                    </div>
+                    
+                    <a href="contact.html" class="btn-service">Demander un devis</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>LumiArchi</h3>
+                    <p>Studio de visualisation 3D</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Email : contact@lumiarchi.com</p>
+                    <p>Tél : 06 51 82 45 49</p>
+                    <p>Paris 75009</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LumiArchi. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPT MINI CARROUSEL ===== -->
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const track = document.getElementById('carouselTrack');
+        const dots = document.querySelectorAll('#carouselDots span');
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        function moveCarousel(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        // Auto-défilement toutes les 2.5 secondes
+        setInterval(() => moveCarousel(1), 2500);
+    </script>
+
+</body>
+</html>

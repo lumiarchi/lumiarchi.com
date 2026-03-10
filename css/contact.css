@@ -1,0 +1,311 @@
+/* ===========================
+   Contact Page Styles
+   =========================== */
+
+/* Contact Hero */
+.contact-hero {
+    padding: 180px 0 100px;
+    background: var(--bg-dark);
+    text-align: center;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 0 120px;
+    background: var(--bg-dark);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+}
+
+/* Contact Form */
+.contact-form-container h2 {
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.form-intro {
+    font-size: 15px;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.contact-form {
+    background: var(--bg-gray);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background: var(--bg-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 15px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.checkbox-group {
+    margin: 30px 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-right: 12px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 18px 40px;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 30px;
+    color: var(--bg-dark);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-submit:hover {
+    background: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+.form-note {
+    font-size: 12px;
+    color: var(--text-gray);
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Contact Info */
+.contact-info h2 {
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.info-block {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-block:last-of-type {
+    border-bottom: none;
+}
+
+.info-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.info-block h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.info-block p {
+    font-size: 15px;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+.info-block a {
+    color: var(--text-gray);
+    transition: var(--transition);
+}
+
+.info-block a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    margin-top: 50px;
+}
+
+.social-links h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--bg-gray);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    color: var(--text-gray);
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: var(--bg-dark);
+    border-color: var(--primary-color);
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 100px 0;
+    background: var(--bg-gray);
+}
+
+.section-title-faq {
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    padding: 30px;
+    background: var(--bg-dark);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.faq-item h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.faq-item p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-gray);
+}
+
+/* Success Message */
+.success-message {
+    display: none;
+    padding: 20px;
+    background: rgba(67, 233, 123, 0.1);
+    border: 2px solid #43e97b;
+    border-radius: 8px;
+    color: #43e97b;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.success-message.show {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 140px 0 60px;
+    }
+    
+    .contact-form {
+        padding: 30px 20px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .section-title-faq {
+        font-size: 28px;
+    }
+}

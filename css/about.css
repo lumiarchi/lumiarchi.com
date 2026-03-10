@@ -1,0 +1,266 @@
+/* ===========================
+   About Page Styles
+   =========================== */
+
+/* About Hero */
+.about-hero {
+    padding: 180px 0 100px;
+    background: var(--bg-dark);
+    text-align: center;
+}
+
+/* Section Title */
+.section-title-about {
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
+/* Story Section */
+.story-section {
+    padding: 100px 0;
+    background: var(--bg-dark);
+}
+
+.story-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.story-text p {
+    font-size: 17px;
+    line-height: 2;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+/* Values Section */
+.values-section {
+    padding: 100px 0;
+    background: var(--bg-gray);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.value-card {
+    text-align: center;
+    padding: 40px 30px;
+    background: var(--bg-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+}
+
+.value-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-gray);
+}
+
+/* Expertise Section */
+.expertise-section {
+    padding: 100px 0;
+    background: var(--bg-dark);
+}
+
+.expertise-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.expertise-item {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.expertise-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.expertise-item h3 {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.expertise-item p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--text-gray);
+}
+
+/* Clients Section */
+.clients-section {
+    padding: 100px 0;
+    background: var(--bg-gray);
+}
+
+.clients-intro {
+    text-align: center;
+    font-size: 17px;
+    color: var(--text-gray);
+    margin-bottom: 60px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clients-types {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.client-type {
+    padding: 30px;
+    background: var(--bg-dark);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.client-type h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.client-type p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-gray);
+}
+
+/* Process Section */
+.process-section {
+    padding: 100px 0;
+    background: var(--bg-dark);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+.process-step {
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.step-number {
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.process-step h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.process-step p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-gray);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 100px 0;
+    background: var(--bg-gray);
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 18px;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .clients-types {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 140px 0 60px;
+    }
+    
+    .section-title-about {
+        font-size: 28px;
+    }
+    
+    .story-text p {
+        font-size: 15px;
+    }
+    
+    .values-grid {
+        gap: 30px;
+    }
+    
+    .cta-section h2 {
+        font-size: 32px;
+    }
+    
+    .cta-section p {
+        font-size: 16px;
+    }
+}
