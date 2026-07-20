@@ -1,475 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - LumiArchi</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/portfolio.css">
-    <style>
-        .page-title { padding: 120px 0 60px; text-align: center; }
-        .page-title h1 { font-size: 28px; color: #ffa500; font-weight: 300; letter-spacing: 3px; margin: 0; }
-    </style>
-    <meta name="description" content="Découvrez nos réalisations en visualisation 3D architecturale : rendus photoréalistes, animations 3D et visites VR. Projets résidentiels, tertiaires et hôteliers.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lumiarchi.com/portfolio.html">
-    <meta property="og:title" content="Portfolio LumiArchi | Visualisation 3D Architecturale">
-    <meta property="og:description" content="Rendus photoréalistes, animations 3D et visites VR pour architectes et promoteurs immobiliers.">
-    <meta property="og:url" content="https://lumiarchi.com/portfolio.html">
-    <meta property="og:type" content="website">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — LumiArchi | Visualisation 3D Architecturale</title>
+<meta name="description" content="Portfolio LumiArchi : rendus photoréalistes, animations 3D et visites VR. Projets résidentiels, tertiaires, commerciaux et espaces publics.">
+<link rel="canonical" href="https://lumiarchi.com/portfolio.html">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo"><a href="index.html">LumiArchi</a></div>
-            <ul class="nav-menu">
-                <li><a href="index.html">ACCUEIL</a></li>
-                <li><a href="portfolio.html" class="active">PORTFOLIO</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="about.html">À PROPOS</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-            <div class="nav-icons">
-                <a href="#" class="lang">FR</a>
-                <a href="#" class="lang">EN</a>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">Lumi<span>Archi</span></a>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-menu">
+      <li><a href="index.html" data-en="Home">Accueil</a></li>
+      <li><a href="portfolio.html" class="active" data-en="Portfolio">Portfolio</a></li>
+      <li><a href="services.html" data-en="Services">Services</a></li>
+      <li><a href="about.html" data-en="About">À propos</a></li>
+      <li><a href="contact.html" data-en="Contact">Contact</a></li>
+    </ul>
+    <div class="nav-lang"><button data-lang="fr" class="active">FR</button><button data-lang="en">EN</button></div>
+  </div>
+</nav>
 
-    <section class="page-title">
-        <div class="container"><h1>VISUALISATIONS</h1></div>
-    </section>
+<main class="container">
+  <div class="pf-head"><h1 class="pf-title" data-en="VISUALIZATIONS">VISUALISATIONS</h1></div>
+  <div class="pf-filters">
+    <button class="active" data-filter="all" data-en="All">Tous</button>
+    <button data-filter="pub" data-en="Commercial">Commercial & activités</button>
+    <button data-filter="bur" data-en="Offices">Bureaux</button>
+    <button data-filter="ext" data-en="Residential">Résidentiel</button>
+    <button data-filter="int" data-en="Interiors">Intérieurs</button>
+  </div>
+  <div class="pf-grid">
+      <a class="pf-item" data-cat="pub" href="projet.html?id=venette"><img loading="lazy" src="images/venette-34-carrefour.jpg" alt="Extension Carrefour — Venette"><div class="cap">Extension Carrefour — Venette</div></a>
+      <a class="pf-item" data-cat="int" href="projet.html?id=nomo"><img loading="lazy" src="https://lumiarchi.com/images/int--1.jpg" alt="NOMO Saint-Ouen-sur-Seine"><div class="cap">NOMO Saint-Ouen-sur-Seine</div></a>
+      <a class="pf-item" data-cat="bur" href="projet.html?id=patrimoni-boulogne"><img loading="lazy" src="https://lumiarchi.com/images/ext--2.jpg" alt="PATRIMONI Boulogne"><div class="cap">PATRIMONI Boulogne</div></a>
+      <a class="pf-item" data-cat="pub" href="projet.html?id=nexity-cachan"><img loading="lazy" src="https://lumiarchi.com/images/ext--16.jpg" alt="NEXITY SEERI — Cachan"><div class="cap">NEXITY SEERI — Cachan</div></a>
+      <a class="pf-item" data-cat="pub" href="projet.html?id=meaux"><img loading="lazy" src="https://lumiarchi.com/images/pub--7.jpg" alt="CC La Verrière — Meaux"><div class="cap">CC La Verrière — Meaux</div></a>
+      <a class="pf-item" data-cat="bur" href="projet.html?id=bnp-vaulx"><img loading="lazy" src="https://lumiarchi.com/images/bur--1.jpg" alt="BNP — Vaulx-en-Velin"><div class="cap">BNP — Vaulx-en-Velin</div></a>
+      <a class="pf-item" data-cat="ext" href="projet.html?id=manoir-plouescat"><img loading="lazy" src="https://lumiarchi.com/images/ext--11.jpg" alt="Manoir de Plouescat"><div class="cap">Manoir de Plouescat</div></a>
+      <a class="pf-item" data-cat="ext" href="projet.html?id=dissay"><img loading="lazy" src="https://lumiarchi.com/images/ext--6.jpg" alt="Dissay-sous-Courcillon"><div class="cap">Dissay-sous-Courcillon</div></a>
+      <a class="pf-item" data-cat="bur" href="projet.html?id=patrimoni-fer-a-moulin"><img loading="lazy" src="https://lumiarchi.com/images/ext--3.jpg" alt="PATRIMONI Fer à Moulin — Paris"><div class="cap">PATRIMONI Fer à Moulin — Paris</div></a>
+      <a class="pf-item" data-cat="ext" href="projet.html?id=coreal-villejuif"><img loading="lazy" src="https://lumiarchi.com/images/ext--14.jpg" alt="COREAL — Villejuif"><div class="cap">COREAL — Villejuif</div></a>
+      <a class="pf-item" data-cat="bur" href="projet.html?id=abenex"><img loading="lazy" src="https://lumiarchi.com/images/ext--12.jpg" alt="ABENEX — rue de Salneuve, Paris"><div class="cap">ABENEX — rue de Salneuve, Paris</div></a>
+      <a class="pf-item" data-cat="pub" href="projet.html?id=terra-nobilis"><img loading="lazy" src="https://lumiarchi.com/images/pub--8.jpg" alt="TERRA NOBILIS — Mont-Saint-Martin"><div class="cap">TERRA NOBILIS — Mont-Saint-Martin</div></a>
+      <a class="pf-item" data-cat="pub" href="projet.html?id=bruver-saint-mard"><img loading="lazy" src="https://lumiarchi.com/images/pub--11.jpg" alt="BRUVER IMMO — Saint Mard"><div class="cap">BRUVER IMMO — Saint Mard</div></a>
+      <a class="pf-item" data-cat="bur" href="projet.html?id=lancry"><img loading="lazy" src="https://lumiarchi.com/images/bur--4.jpg" alt="Lancry — Fort-de-France"><div class="cap">Lancry — Fort-de-France</div></a>
+      <a class="pf-item" data-cat="pub" href="projet.html?id=spacia-mours"><img loading="lazy" src="https://lumiarchi.com/images/pub--13.jpg" alt="SPACIA CIE — Mours"><div class="cap">SPACIA CIE — Mours</div></a>
+      <a class="pf-item" data-cat="pub" href="projet.html?id=freneuse"><img loading="lazy" src="https://lumiarchi.com/images/pub--9.jpg" alt="Freneuse"><div class="cap">Freneuse</div></a>
+      <a class="pf-item" data-cat="int" href="projet.html?id=under-the-spot"><img loading="lazy" src="https://lumiarchi.com/images/int--8.jpg" alt="UNDER THE SPOT"><div class="cap">UNDER THE SPOT</div></a>
+      <a class="pf-item" data-cat="ext" href="projet.html?id=antony"><img loading="lazy" src="https://lumiarchi.com/images/ext--17.jpg" alt="Antony"><div class="cap">Antony</div></a>
+      <a class="pf-item" data-cat="ext" href="projet.html?id=montgaroult"><img loading="lazy" src="https://lumiarchi.com/images/ext--18.jpg" alt="Particulier — Montgaroult"><div class="cap">Particulier — Montgaroult</div></a>
+      <a class="pf-item" data-cat="ext" href="projet.html?id=maisons-laffitte"><img loading="lazy" src="https://lumiarchi.com/images/ext--19.jpg" alt="Particulier — Maisons-Laffitte"><div class="cap">Particulier — Maisons-Laffitte</div></a>
+  </div>
+</main>
 
-    <section class="portfolio-section">
-        <div class="container">
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="tous">TOUS</button>
-                <button class="filter-btn" data-filter="espaces-publics">ESPACES PUBLICS</button>
-                <button class="filter-btn" data-filter="exterieurs">EXTÉRIEURS</button>
-                <button class="filter-btn" data-filter="interieurs">INTÉRIEURS</button>
-                <button class="filter-btn" data-filter="bureaux">BUREAUX</button>
-            </div>
-
-            <div class="portfolio-grid">
-
-                <!-- ESPACES PUBLICS -->
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=pub--1&img=images/pub--1.jpg'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--1.jpg" alt="Espace Public 1">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=pub--4&img=images/pub--4.jpg'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--4.jpg" alt="Espace Public 4">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=pub--5&img=images/pub--5.jpg'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--5.jpg" alt="Espace Public 5">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=pub--6&img=images/pub--6.jpg'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--6.jpg" alt="Espace Public 6">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=meaux'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--7.jpg" alt="CC LA VERRIERE-MEAUX">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>CC LA VERRIERE-MEAUX</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=terra-nobilis'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--8.jpg" alt="TERRA NOBILIS-Mont-Saint-Martin">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>TERRA NOBILIS-Mont-Saint-Martin</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=freneuse'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--9.jpg" alt="Freneuse">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>Freneuse</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=freneuse'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--10.jpg" alt="Freneuse">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>Freneuse</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=bruver-saint-mard'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--11.jpg" alt="BRUVER IMMO-Saint Mard">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>BRUVER IMMO-Saint Mard</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=bruver-saint-mard'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--12.jpg" alt="BRUVER IMMO-Saint Mard">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>BRUVER IMMO-Saint Mard</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=spacia-mours'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--13.jpg" alt="SPACIA CIE-Mours">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>SPACIA CIE-Mours</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=pub--14&img=images/pub--14.jpg'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--14.jpg" alt="Espace Public 14">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=pub--15&img=images/pub--15.jpg'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--15.jpg" alt="Espace Public 15">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=pub--16&img=images/pub--16.jpg'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--16.jpg" alt="Espace Public 16">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=pub--17&img=images/pub--17.jpg'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--17.jpg" alt="Espace Public 17">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=nexity-cachan'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--18.jpg" alt="NEXITY SEERI-Cachan">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>NEXITY SEERI-Cachan</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="espaces-publics" style="cursor:pointer" onclick="window.location.href='projet.html?id=meaux'">
-                    <div class="portfolio-image">
-                        <img src="images/pub--19.jpg" alt="CC LA VERRIERE-Meaux">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>CC LA VERRIERE-Meaux</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <!-- EXTÉRIEURS -->
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=ext--1&img=images/ext--1.jpg'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--1.jpg" alt="Extérieur 1">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=patrimoni-boulogne'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--2.jpg" alt="PATRIMONI Boulogne">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PATRIMONI Boulogne</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=patrimoni-fer-a-moulin'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--3.jpg" alt="PATRIMONI rue du Fer à Moulin-Paris">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PATRIMONI rue du Fer à Moulin-Paris</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=patrimoni-boulogne'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--4.jpg" alt="PATRIMONI Boulogne">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PATRIMONI Boulogne</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=dissay'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--6.jpg" alt="PARTICULIER Dissay sous Courcillon">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PARTICULIER Dissay sous Courcillon</h3><p class="project-client">© LumiArchi</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=dissay'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--8.jpg" alt="PARTICULIER Dissay sous Courcillon">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PARTICULIER Dissay sous Courcillon</h3><p class="project-client">© LumiArchi</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=dissay'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--9.jpg" alt="PARTICULIER Dissay sous Courcillon">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PARTICULIER Dissay sous Courcillon</h3><p class="project-client">© LumiArchi</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=patrimoni-fer-a-moulin'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--10.jpg" alt="PATRIMONI rue du Fer à Moulin-Paris">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PATRIMONI rue du Fer à Moulin-Paris</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=manoir-plouescat'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--11.jpg" alt="PARTICULIER Manoir de Plouescat">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PARTICULIER Manoir de Plouescat</h3><p class="project-client">© LumiArchi</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=abenex'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--12.jpg" alt="ABENEX rue Salneuve-Paris">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>ABENEX rue Salneuve-Paris</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=abenex'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--13.jpg" alt="ABENEX rue Salneuve-Paris">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>ABENEX rue Salneuve-Paris</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=coreal-villejuif'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--14.jpg" alt="COREAL-Villejuif">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>COREAL-Villejuif</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=coreal-villejuif'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--15.jpg" alt="COREAL-Villejuif">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>COREAL-Villejuif</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=nexity-cachan'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--16.jpg" alt="NEXITY-Cachan">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>NEXITY-Cachan</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=antony'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--17.jpg" alt="CAP SYNTHESE-ANTONY">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>CAP SYNTHESE-ANTONY</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=montgaroult'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--18.jpg" alt="Particulier - Montgaroult">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>Particulier - Montgaroult</h3><p class="project-client">© LumiArchi</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=maisons-laffitte'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--19.jpg" alt="Particulier - Maisons-Laffitte">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>Particulier - Maisons-Laffitte</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <!-- ✅ ext--20 PATRIMONI Fer à Moulin -->
-                <div class="portfolio-item" data-category="exterieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=patrimoni-fer-a-moulin'">
-                    <div class="portfolio-image">
-                        <img src="images/ext--20.jpg" alt="PATRIMONI rue du Fer à Moulin-Paris">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PATRIMONI rue du Fer à Moulin-Paris</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <!-- INTÉRIEURS -->
-                <div class="portfolio-item" data-category="interieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=nomo'">
-                    <div class="portfolio-image">
-                        <img src="images/int--1.jpg" alt="NOMO Saint-Ouen-sur-Seine">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>NOMO Saint-Ouen-sur-Seine</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="interieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=nomo'">
-                    <div class="portfolio-image">
-                        <img src="images/int--2.jpg" alt="NOMO Saint-Ouen-sur-Seine">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>NOMO Saint-Ouen-sur-Seine</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="interieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=nomo'">
-                    <div class="portfolio-image">
-                        <img src="images/int--3.jpg" alt="NOMO Saint-Ouen-sur-Seine">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>NOMO Saint-Ouen-sur-Seine</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="interieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=nomo'">
-                    <div class="portfolio-image">
-                        <img src="images/int--4.jpg" alt="NOMO Saint-Ouen-sur-Seine">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>NOMO Saint-Ouen-sur-Seine</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="interieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=manoir-plouescat'">
-                    <div class="portfolio-image">
-                        <img src="images/int--5.jpg" alt="PARTICULIER Manoir de Plouescat">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PARTICULIER Manoir de Plouescat</h3><p class="project-client">© LumiArchi</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="interieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=manoir-plouescat'">
-                    <div class="portfolio-image">
-                        <img src="images/int--6.jpg" alt="PARTICULIER Manoir de Plouescat">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PARTICULIER Manoir de Plouescat</h3><p class="project-client">© LumiArchi</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="interieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=manoir-plouescat'">
-                    <div class="portfolio-image">
-                        <img src="images/int--7.jpg" alt="PARTICULIER Manoir de Plouescat">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PARTICULIER Manoir de Plouescat</h3><p class="project-client">© LumiArchi</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="interieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=under-the-spot'">
-                    <div class="portfolio-image">
-                        <img src="images/int--8.jpg" alt="UNDER-THE-SPOT">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>UNDER-THE-SPOT</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="interieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=under-the-spot'">
-                    <div class="portfolio-image">
-                        <img src="images/int--9.jpg" alt="UNDER-THE-SPOT">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>UNDER-THE-SPOT</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="interieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=int--10&img=images/int--10.jpg'">
-                    <div class="portfolio-image">
-                        <img src="images/int--10.jpg" alt="Intérieur 10">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="interieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=int--11&img=images/int--11.jpg'">
-                    <div class="portfolio-image">
-                        <img src="images/int--11.jpg" alt="Intérieur 11">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="interieurs" style="cursor:pointer" onclick="window.location.href='projet.html?id=lancry'">
-                    <div class="portfolio-image">
-                        <img src="images/int--12.jpg" alt="Lancry - Fort-de-France">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>Lancry - Fort-de-France</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <!-- BUREAUX -->
-                <div class="portfolio-item" data-category="bureaux" style="cursor:pointer" onclick="window.location.href='projet.html?id=bnp-vaulx'">
-                    <div class="portfolio-image">
-                        <img src="images/bur--1.jpg" alt="BNP Vaulx-en-Velin">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>BNP Vaulx-en-Velin</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="bureaux" style="cursor:pointer" onclick="window.location.href='projet.html?id=patrimoni-boulogne'">
-                    <div class="portfolio-image">
-                        <img src="images/bur--2.jpg" alt="PATRIMONI Boulogne">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PATRIMONI Boulogne</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="bureaux" style="cursor:pointer" onclick="window.location.href='projet.html?id=patrimoni-boulogne'">
-                    <div class="portfolio-image">
-                        <img src="images/bur--3.jpg" alt="PATRIMONI Boulogne">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>PATRIMONI Boulogne</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="bureaux" style="cursor:pointer" onclick="window.location.href='projet.html?id=lancry'">
-                    <div class="portfolio-image">
-                        <img src="images/bur--4.jpg" alt="Lancry - Fort-de-France">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>Lancry - Fort-de-France</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="bureaux" style="cursor:pointer" onclick="window.location.href='projet.html?id=nomo'">
-                    <div class="portfolio-image">
-                        <img src="images/bur--5.jpg" alt="NOMO Saint-Ouen-sur-Seine">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>NOMO Saint-Ouen-sur-Seine</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="bureaux" style="cursor:pointer" onclick="window.location.href='projet.html?id=nexity-cachan'">
-                    <div class="portfolio-image">
-                        <img src="images/bur--6.jpg" alt="NEXITY SEERI-Cachan">
-                        <div class="portfolio-overlay"><div class="portfolio-info"><h3>NEXITY SEERI-Cachan</h3><p class="project-client">© Outsign Architecture</p><span class="view-project">Voir le projet →</span></div></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>LumiArchi</h3>
-                    <p>Studio de visualisation 3D</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">À propos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p>Email : contact@lumiarchi.com</p>
-                    <p>Tél : 06 51 82 45 49</p>
-                    <p>Paris 75009</p>
-                </div>
-            </div>
-                    <div class="footer-social">
-            <a href="https://www.linkedin.com/in/jeanbaptistedubach" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a href="https://www.malt.fr/profile/jeanbaptistedubach" target="_blank" rel="noopener" aria-label="Malt">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.007 2.993a3.564 3.564 0 0 0-5.04 0l-2.918 2.917-1.338-1.338a1.782 1.782 0 0 0-2.52 2.52l1.338 1.338L2.993 16A3.564 3.564 0 0 0 8.034 21.04l2.917-2.918 1.338 1.338a1.782 1.782 0 1 0 2.52-2.52l-1.338-1.338 7.536-7.57a3.564 3.564 0 0 0 0-5.04zM9.371 16.607l-1.34 1.34a1.782 1.782 0 0 1-2.52-2.52l1.34-1.34 2.52 2.52zm6.498-6.534l-2.52-2.52 1.34-1.34a1.782 1.782 0 0 1 2.52 2.52l-1.34 1.34z"/></svg>
-            </a>
-        </div>
-        <div class="footer-bottom">
-                <p>&copy; 2025 LumiArchi. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/portfolio.js"></script>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><h3>Lumi<span>Archi</span></h3><p data-en="3D visualization studio">Studio de visualisation 3D</p></div>
+      <div class="footer-links"><h4>Navigation</h4><ul>
+        <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
+        <li><a href="services.html" data-en="Services">Services</a></li>
+        <li><a href="about.html" data-en="About">À propos</a></li>
+        <li><a href="contact.html" data-en="Contact">Contact</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4>
+        <p>Email : <a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></p>
+        <p>Tél : <a href="tel:+33651824549">06 51 82 45 49</a></p><p>Paris 75009</p></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; <span class="year">2026</span> LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
 </body>
 </html>

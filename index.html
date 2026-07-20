@@ -1,356 +1,167 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LumiArchi - Visualisation 3D Architecturale | Paris 75009</title>
-    
-    <meta name="description" content="LumiArchi : visualisation architecturale 3D à Paris. 10 ans d'expérience en agence et formation Beaux-Arts. Rendus photoréalistes, workflow IA maîtrisé, animations 3D, visites VR. Paris 75009. Architectes, promoteurs, bureaux d'études.">
-    <meta name="keywords" content="visualisation 3D, rendu architectural, architecture 3D, Paris, BNP, PATRIMONI, NEXITY, Outsign Architecture, images de synthèse, animation 3D, visite virtuelle VR, maquette 3D">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "LumiArchi",
-      "description": "Studio de visualisation 3D architecturale spécialisé dans les rendus photoréalistes, animations et visites virtuelles",
-      "url": "https://www.lumiarchi.com",
-      "logo": "https://www.lumiarchi.com/images/logo.png",
-      "image": "https://www.lumiarchi.com/images/hero1.jpg",
-      "telephone": "+33651824549",
-      "email": "contact@lumiarchi.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Paris",
-        "postalCode": "75009",
-        "addressCountry": "FR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "48.8566",
-        "longitude": "2.3522"
-      },
-      "sameAs": [],
-      "priceRange": "€€€",
-      "serviceType": [
-        "Visualisation 3D architecturale",
-        "Images de synthèse",
-        "Films d'animation 3D",
-        "Visites VR",
-        "Maquettes physiques"
-      ],
-      "areaServed": {
-        "@type": "Country",
-        "name": "France"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Services de visualisation 3D",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Images de synthèse",
-              "description": "Rendus photoréalistes haute qualité pour vos projets architecturaux"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Films d'animation",
-              "description": "Animations 3D immersives pour présenter vos espaces en mouvement"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Visites VR",
-              "description": "Expériences de réalité virtuelle pour explorer vos projets"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Maquettes physiques",
-              "description": "Impression 3D PLA pour des présentations tangibles"
-            }
-          }
-        ]
-      }
-    }
-    </script>
-    
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .hero-carousel { padding: 40px; box-sizing: border-box; }
-        .carousel-container { height: calc(100vh - 180px); max-height: 600px; }
-        .service-card { position: relative; overflow: hidden; }
-        .service-card img { width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s ease; }
-        .service-card:hover img { transform: scale(1.05); }
-        .service-card:nth-child(3) img { object-position: left center; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LumiArchi — Visualisation 3D Architecturale | Paris 75009</title>
+<meta name="description" content="LumiArchi : studio de visualisation 3D architecturale à Paris. Formation Beaux-Arts, 10 ans d'agence, workflow IA maîtrisé. Rendus photoréalistes, films d'animation, visites VR. Architectes, promoteurs, bureaux d'études.">
+<meta name="keywords" content="visualisation 3D, rendu architectural, archviz, Paris, images de synthèse, animation 3D, visite VR, BNP, NEXITY, PATRIMONI, Outsign">
+<link rel="canonical" href="https://lumiarchi.com/index.html">
+<meta property="og:title" content="LumiArchi — Visualisation 3D Architecturale | Paris">
+<meta property="og:description" content="Rendus photoréalistes, animations 3D et visites VR pour architectes et promoteurs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lumiarchi.com/">
+<meta property="og:image" content="https://lumiarchi.com/images/pub--7.jpg">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"LumiArchi","image":"https://lumiarchi.com/images/pub--7.jpg","@id":"https://lumiarchi.com","url":"https://lumiarchi.com","telephone":"+33651824549","email":"contact@lumiarchi.com","address":{"@type":"PostalAddress","addressLocality":"Paris","postalCode":"75009","addressCountry":"FR"},"areaServed":"FR","serviceType":["Visualisation 3D architecturale","Images de synthèse","Films d'animation 3D","Visites VR","Maquettes physiques"]}
+</script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo"><a href="index.html">LumiArchi</a></div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">ACCUEIL</a></li>
-                <li><a href="portfolio.html">PORTFOLIO</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="about.html">À PROPOS</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-            <div class="nav-icons">
-                <a href="#" class="lang">FR</a>
-                <a href="#" class="lang">EN</a>
-            </div>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">Lumi<span>Archi</span></a>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active" data-en="Home">Accueil</a></li>
+      <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
+      <li><a href="services.html" data-en="Services">Services</a></li>
+      <li><a href="about.html" data-en="About">À propos</a></li>
+      <li><a href="contact.html" data-en="Contact">Contact</a></li>
+    </ul>
+    <div class="nav-lang">
+      <button data-lang="fr" class="active">FR</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="images/venette-entree.jpg">
+    <source src="video/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 data-en="Architectural <b>3D visualization</b>">Visualisation <b>3D architecturale</b></h1>
+    <p data-en="Photorealistic renders, animation films and VR tours for architects and property developers. Paris-based studio — available across France and worldwide.">Rendus photoréalistes, films d'animation et visites VR pour architectes et promoteurs. Studio basé à Paris, disponible en France et partout dans le monde.</p>
+    <div class="hero-cta">
+      <a href="portfolio.html" class="btn btn-primary" data-en="View portfolio">Voir le portfolio</a>
+      <a href="contact.html" class="btn btn-ghost" data-en="Request a quote">Demander un devis</a>
+    </div>
+  </div>
+  <div class="hero-credit">© LumiArchi</div>
+</header>
+
+<!-- CLIENTS -->
+<section class="clients">
+  <div class="container">
+    <p class="label" data-en="They trusted this work">Ils ont fait confiance à ce travail</p>
+    <div class="clients-row">
+      <span>BNP</span><span>NEXITY</span><span>PATRIMONI</span><span>CARREFOUR</span><span>COREAL</span><span>ABENEX</span>
+    </div>
+    <p class="note" data-en="Projects produced within the Outsign Architecture studio.">Projets réalisés au sein de l'agence Outsign Architecture.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container">
+    <p class="intro-text" data-en="LumiArchi combines 10 years of experience in a Paris architecture studio with a Beaux-Arts education to produce outstanding architectural 3D visualizations.">LumiArchi allie 10 ans d'expérience en agence d'architecture parisienne et une formation aux Beaux-Arts de Paris pour produire des visualisations 3D architecturales d'exception.</p>
+    <h2 class="section-title" data-en="High artistic value architectural renders, delivered with the <b>speed of an AI-augmented workflow.</b>">Des rendus architecturaux à haute valeur artistique, livrés avec la <b>réactivité d'un workflow augmenté par l'IA.</b></h2>
+    <div class="about-grid">
+      <div>
+        <p data-en="A Beaux-Arts education and 10 years within a Paris architecture studio bring a deep understanding of the profession. Each render is conceived as a true architectural image: a deliberate viewpoint, controlled staging, where light and mood tell the space.">Une formation aux Beaux-Arts de Paris et 10 ans d'expérience au sein d'une agence d'architecture parisienne apportent une compréhension approfondie des enjeux du métier. Chaque rendu est conçu comme une véritable image d'architecture : un regard assumé, une mise en scène maîtrisée, où la lumière et l'ambiance racontent l'espace.</p>
+      </div>
+      <div>
+        <p data-en="Generative AI is integrated into the process — not superficially, but as a controlled extension of the creative workflow. This makes it possible to explore mood variations, refine textures and deliver high-resolution renders ready for large-format printing, while keeping full control over artistic quality.">L'intégration de l'intelligence artificielle dans le processus créatif permet d'accélérer les variations d'ambiance, d'affiner les textures et de produire des rendus haute résolution prêts pour l'impression grand format, tout en conservant un contrôle total sur la qualité artistique.</p>
+      </div>
+    </div>
+    <div class="center-cta"><a href="about.html" class="btn btn-ghost" data-en="Learn more">En savoir plus</a></div>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-subtitle" data-en="Services">Nos services</h2>
+    <p class="section-lead" data-en="Complete 3D visualization solutions for your architectural projects.">Des solutions complètes de visualisation 3D pour vos projets architecturaux.</p>
+    <div class="services-grid">
+      <a href="services.html#synthese" class="service-card">
+        <div class="thumb"><img src="images/venette-entree.jpg" alt="Images de synthèse"></div>
+        <div class="body">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+          <h3 data-en="Still renders">Images de synthèse</h3>
+          <p data-en="High-quality photorealistic renders for your architectural projects.">Rendus photoréalistes haute qualité pour vos projets architecturaux.</p>
         </div>
-    </nav>
-
-    <!-- Hero Carousel - 9 IMAGES -->
-    <section class="hero-carousel">
-        <div class="carousel-container">
-            <div class="carousel-slide active">
-                <div class="slide-image" style="background-image: url('images/hero1.jpg')"></div>
-                <div class="slide-caption">
-                    <p class="project-info">BNP Vaulx-en-Velin - © Outsign Architecture</p>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <div class="slide-image" style="background-image: url('images/hero2.jpg')"></div>
-                <div class="slide-caption">
-                    <p class="project-info">Freneuse - © Outsign Architecture</p>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <div class="slide-image" style="background-image: url('images/hero3.jpg')"></div>
-                <div class="slide-caption">
-                    <p class="project-info">Freneuse - © Outsign Architecture</p>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <div class="slide-image" style="background-image: url('images/hero4.jpg')"></div>
-                <div class="slide-caption">
-                    <p class="project-info">PATRIMONI Boulogne - © Outsign Architecture</p>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <div class="slide-image" style="background-image: url('images/hero5.jpg')"></div>
-                <div class="slide-caption">
-                    <p class="project-info">NOMO St Ouen - © Outsign Architecture</p>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <div class="slide-image" style="background-image: url('images/hero6.jpg')"></div>
-                <div class="slide-caption">
-                    <p class="project-info">Antony - © Outsign Architecture</p>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <div class="slide-image" style="background-image: url('images/hero7.jpg')"></div>
-                <div class="slide-caption">
-                    <p class="project-info">CC La Verrière Meaux - © Outsign Architecture</p>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <div class="slide-image" style="background-image: url('images/hero8.jpg')"></div>
-                <div class="slide-caption">
-                    <p class="project-info">© lumiarchi</p>
-                </div>
-            </div>
-            <!-- ✅ NOUVEAU - hero9 -->
-            <div class="carousel-slide">
-                <div class="slide-image" style="background-image: url('images/hero9.jpg'); background-position: center top;"></div>
-                <div class="slide-caption">
-                    <p class="project-info">Particulier - Maisons-Laffitte - © Outsign Architecture</p>
-                </div>
-            </div>
+      </a>
+      <a href="services.html#animation" class="service-card">
+        <div class="thumb"><img src="https://lumiarchi.com/images/pub--10.jpg" alt="Films d'animation"></div>
+        <div class="body">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg></div>
+          <h3 data-en="Animation films">Films d'animation</h3>
+          <p data-en="Immersive 3D animations to present your spaces in motion.">Animations 3D immersives pour présenter vos espaces en mouvement.</p>
         </div>
-        
-        <button class="carousel-prev">‹</button>
-        <button class="carousel-next">›</button>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="container">
-            <p class="intro-text">LumiArchi allie 10 ans d'expérience en agence d'architecture parisienne et une formation aux Beaux-Arts de Paris pour produire des visualisations 3D architecturales d'exception.</p>
-            
-            <h2 class="section-title">Des rendus architecturaux à haute valeur artistique, 
-            livrés avec la réactivité d'un workflow augmenté par l'intelligence artificielle.</h2>
-            
-            <div class="about-content">
-                <div class="about-column">
-                    <p>Une formation aux Beaux-Arts de Paris et 10 ans d'expérience au sein d'une agence d'architecture parisienne permettent une compréhension approfondie des enjeux du métier. Chaque rendu est conçu comme une véritable image d'architecture : un regard assumé, une mise en scène maîtrisée, où la lumière et l'ambiance racontent l'espace.</p>
-                    <p>Cette approche marie la sensibilité artistique d'un œil formé et la précision technique d'un workflow professionnel intégrant l'intelligence artificielle de manière maîtrisée.</p>
-                </div>
-                <div class="about-column">
-                    <p>L'intégration de l'intelligence artificielle dans le processus créatif permet d'accélérer les variations d'ambiance, d'affiner les textures et de produire des rendus haute résolution prêts pour l'impression grand format, tout en conservant un contrôle total sur la qualité artistique.</p>
-                    <p>Le résultat : des livrables à haute valeur ajoutée, avec la réactivité qu'exigent les délais de projet et la qualité qu'attendent les clients. Agences d'architecture, promoteurs immobiliers et bureaux d'études bénéficient d'un interlocuteur qui maîtrise les codes visuels de la profession et comprend les enjeux techniques.</p>
-                </div>
-            </div>
-            
-            <div class="cta-button">
-                <a href="about.html" class="btn-primary">EN SAVOIR +</a>
-            </div>
+      </a>
+      <a href="services.html#vr" class="service-card">
+        <div class="thumb"><img src="https://lumiarchi.com/images/int--1.jpg" alt="Visites VR"></div>
+        <div class="body">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="3"/><path d="M8 17l2-3h4l2 3"/></svg></div>
+          <h3 data-en="VR tours">Visites VR</h3>
+          <p data-en="Virtual reality experiences to explore your projects.">Expériences de réalité virtuelle pour explorer vos projets.</p>
         </div>
-    </section>
-
-    <!-- Services Preview -->
-    <section class="services-preview">
-        <div class="container">
-            <h2 class="section-subtitle">Nos Services</h2>
-            <div class="services-grid">
-                <a href="services.html#images-synthese" class="service-card">
-                    <img src="images/service-image-synthese.jpg" alt="Images de synthèse - Visualisation 3D photoréaliste" loading="lazy">
-                    <div class="service-icon-svg">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                            <polyline points="21 15 16 10 5 21"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Images de synthèse</h3>
-                    <p>Rendus photoréalistes haute qualité pour vos projets architecturaux</p>
-                </a>
-                <a href="services.html#films-animation" class="service-card">
-                    <img src="images/service-film-animation.jpg" alt="Films d'animation 3D - Animations architecturales" loading="lazy">
-                    <div class="service-icon-svg">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-                            <line x1="7" y1="2" x2="7" y2="22"></line>
-                            <line x1="17" y1="2" x2="17" y2="22"></line>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <line x1="2" y1="7" x2="7" y2="7"></line>
-                            <line x1="2" y1="17" x2="7" y2="17"></line>
-                            <line x1="17" y1="17" x2="22" y2="17"></line>
-                            <line x1="17" y1="7" x2="22" y2="7"></line>
-                        </svg>
-                    </div>
-                    <h3>Films d'animation</h3>
-                    <p>Animations 3D immersives pour présenter vos espaces en mouvement</p>
-                </a>
-                <a href="services.html#visites-vr" class="service-card">
-                    <img src="images/service-visite-vr.jpg" alt="Visites VR - Réalité virtuelle architecturale" loading="lazy">
-                    <div class="service-icon-svg">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M2 16s3-1 4-1 5 2 8 2 4-1 4-1V4s-3 1-4 1-5-2-8-2-4 1-4 1z"></path>
-                            <polyline points="12 2 12 22"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Visites VR</h3>
-                    <p>Expériences de réalité virtuelle pour explorer vos projets</p>
-                </a>
-                <a href="services.html#maquettes-physiques" class="service-card">
-                    <img src="images/service-maquette-physique.jpg" alt="Maquettes physiques - Impression 3D architecture" loading="lazy">
-                    <div class="service-icon-svg">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                        </svg>
-                    </div>
-                    <h3>Maquettes physiques</h3>
-                    <p>Impression 3D PLA pour des présentations tangibles</p>
-                </a>
-            </div>
+      </a>
+      <a href="services.html#maquettes" class="service-card">
+        <div class="thumb"><img src="https://lumiarchi.com/images/service-maquette-physique.jpg" alt="Maquettes physiques"></div>
+        <div class="body">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 12l9-5M12 12v10M12 12L3 7"/></svg></div>
+          <h3 data-en="Physical models">Maquettes physiques</h3>
+          <p data-en="PLA 3D printing for tangible presentations.">Impression 3D PLA pour des présentations tangibles.</p>
         </div>
-    </section>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>LumiArchi</h3>
-                    <p>Studio de visualisation 3D</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">À propos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p>Email : contact@lumiarchi.com</p>
-                    <p>Tél : 06 51 82 45 49</p>
-                    <p>Paris 75009</p>
-                </div>
-            </div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/jeanbaptistedubach" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <a href="https://www.malt.fr/profile/jeanbaptistedubach" target="_blank" rel="noopener" aria-label="Malt">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.007 2.993a3.564 3.564 0 0 0-5.04 0l-2.918 2.917-1.338-1.338a1.782 1.782 0 0 0-2.52 2.52l1.338 1.338L2.993 16A3.564 3.564 0 0 0 8.034 21.04l2.917-2.918 1.338 1.338a1.782 1.782 0 1 0 2.52-2.52l-1.338-1.338 7.536-7.57a3.564 3.564 0 0 0 0-5.04zM9.371 16.607l-1.34 1.34a1.782 1.782 0 0 1-2.52-2.52l1.34-1.34 2.52 2.52zm6.498-6.534l-2.52-2.52 1.34-1.34a1.782 1.782 0 0 1 2.52 2.52l-1.34 1.34z"/></svg>
-                </a>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 LumiArchi. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <h2 data-en="An architectural visualization project? <b>Let's talk.</b>">Un projet de visualisation architecturale ? <b>Parlons-en.</b></h2>
+    <p data-en="Reply within 24 business hours.">Réponse sous 24 heures ouvrées.</p>
+    <a href="contact.html" class="btn btn-primary" data-en="Request a quote">Demander un devis</a>
+  </div>
+</section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.carousel-slide');
-            const prevBtn = document.querySelector('.carousel-prev');
-            const nextBtn = document.querySelector('.carousel-next');
-            let currentSlide = 0;
-            const totalSlides = slides.length;
-            let autoPlayInterval;
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>Lumi<span>Archi</span></h3>
+        <p data-en="3D visualization studio">Studio de visualisation 3D</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
+          <li><a href="services.html" data-en="Services">Services</a></li>
+          <li><a href="about.html" data-en="About">À propos</a></li>
+          <li><a href="contact.html" data-en="Contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email : <a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></p>
+        <p>Tél : <a href="tel:+33651824549">06 51 82 45 49</a></p>
+        <p>Paris 75009</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; <span class="year">2026</span> LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p></div>
+  </div>
+</footer>
 
-            function showSlide(index) {
-                slides.forEach(slide => slide.classList.remove('active'));
-                slides[index].classList.add('active');
-                currentSlide = index;
-            }
-            function nextSlide() {
-                showSlide((currentSlide + 1) % totalSlides);
-            }
-            function prevSlide() {
-                showSlide((currentSlide - 1 + totalSlides) % totalSlides);
-            }
-            function startAutoPlay() { autoPlayInterval = setInterval(nextSlide, 5000); }
-            function stopAutoPlay() { clearInterval(autoPlayInterval); }
-
-            nextBtn.addEventListener('click', () => { stopAutoPlay(); nextSlide(); startAutoPlay(); });
-            prevBtn.addEventListener('click', () => { stopAutoPlay(); prevSlide(); startAutoPlay(); });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowLeft') { stopAutoPlay(); prevSlide(); startAutoPlay(); }
-                else if (e.key === 'ArrowRight') { stopAutoPlay(); nextSlide(); startAutoPlay(); }
-            });
-
-            const carouselContainer = document.querySelector('.hero-carousel');
-            carouselContainer.addEventListener('mouseenter', stopAutoPlay);
-            carouselContainer.addEventListener('mouseleave', startAutoPlay);
-
-            startAutoPlay();
-        });
-
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            navbar.style.background = window.scrollY > 50 ? 'rgba(10, 10, 10, 0.98)' : 'rgba(10, 10, 10, 0.95)';
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
+<script src="js/main.js"></script>
 </body>
-    </html>
+</html>

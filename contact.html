@@ -1,238 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - LumiArchi</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .contact-page {
-            padding-top: 120px;
-            padding-bottom: 80px;
-        }
-        .page-title-contact {
-            font-size: 32px;
-            color: #ffffff;
-            font-weight: 300;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .contact-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-        .contact-info {
-            padding: 40px;
-        }
-        .contact-info h2 {
-            font-size: 24px;
-            color: #ffa500;
-            margin-bottom: 30px;
-        }
-        .contact-detail {
-            margin-bottom: 30px;
-        }
-        .contact-detail h3 {
-            font-size: 16px;
-            color: #00d4ff;
-            margin-bottom: 10px;
-            font-weight: 400;
-        }
-        .contact-detail p {
-            font-size: 16px;
-            color: #cccccc;
-            line-height: 1.6;
-        }
-        .contact-detail a {
-            color: #cccccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .contact-detail a:hover {
-            color: #ffa500;
-        }
-        .contact-form {
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 8px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            color: #00d4ff;
-            margin-bottom: 8px;
-        }
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            color: #ffffff;
-            font-size: 14px;
-            font-family: inherit;
-        }
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #ffa500;
-        }
-        .btn-submit {
-            background: #ffa500;
-            color: #000000;
-            padding: 14px 40px;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .btn-submit:hover {
-            background: #ff8c00;
-            transform: translateY(-2px);
-        }
-        @media (max-width: 768px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-    </style>
-    <meta name="description" content="Contactez LumiArchi pour votre projet de visualisation 3D architecturale. Studio Paris 75009. Réponse sous 24h.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lumiarchi.com/contact.html">
-    <meta property="og:title" content="Contact | LumiArchi Visualisation 3D Paris">
-    <meta property="og:url" content="https://lumiarchi.com/contact.html">
-    <meta property="og:type" content="website">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — LumiArchi | Visualisation 3D Paris</title>
+<meta name="description" content="Contactez LumiArchi pour votre projet de visualisation 3D architecturale. Studio Paris 75009. Réponse sous 24 heures ouvrées.">
+<link rel="canonical" href="https://lumiarchi.com/contact.html">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">LumiArchi</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">ACCUEIL</a></li>
-                <li><a href="portfolio.html">PORTFOLIO</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="about.html">À PROPOS</a></li>
-                <li><a href="contact.html" class="active">CONTACT</a></li>
-            </ul>
-            <div class="nav-icons">
-                <a href="#" class="lang">FR</a>
-                <a href="#" class="lang">EN</a>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">Lumi<span>Archi</span></a>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-menu">
+      <li><a href="index.html" data-en="Home">Accueil</a></li>
+      <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
+      <li><a href="services.html" data-en="Services">Services</a></li>
+      <li><a href="about.html" data-en="About">À propos</a></li>
+      <li><a href="contact.html" class="active" data-en="Contact">Contact</a></li>
+    </ul>
+    <div class="nav-lang"><button data-lang="fr" class="active">FR</button><button data-lang="en">EN</button></div>
+  </div>
+</nav>
 
-    <!-- Contact Page -->
-    <section class="contact-page">
-        <div class="container">
-            <h1 class="page-title-contact">Contactez-nous</h1>
-            
-            <div class="contact-container">
-                <!-- Informations de contact -->
-                <div class="contact-info">
-                    <h2>Coordonnées</h2>
-                    
-                    <div class="contact-detail">
-                        <h3>Email</h3>
-                        <p><a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></p>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <h3>Téléphone</h3>
-                        <p><a href="tel:+33651824549">06 51 82 45 49</a></p>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <h3>Localisation</h3>
-                        <p>Paris 75009<br>Île-de-France</p>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <h3>Délais de réponse</h3>
-                        <p>Nous répondons généralement sous 24 heures ouvrées.</p>
-                    </div>
-                </div>
+<div class="page-head container"><h1 data-en="Contact"><b>Contact</b></h1></div>
 
-                <!-- Formulaire de contact -->
-                <div class="contact-form">
-                    <form action="https://formspree.io/f/maqpaoyl" method="POST">
-                        <div class="form-group">
-                            <label for="name">Nom *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Sujet *</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn-submit">ENVOYER</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="container" style="padding-bottom:80px">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3 data-en="Email">Email</h3>
+      <p><a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></p>
+      <h3 data-en="Phone">Téléphone</h3>
+      <p><a href="tel:+33651824549">06 51 82 45 49</a></p>
+      <h3 data-en="Location">Localisation</h3>
+      <p>Paris 75009<br>Île-de-France</p>
+      <h3 data-en="Response time">Délais de réponse</h3>
+      <p data-en="We usually reply within 24 business hours.">Nous répondons généralement sous 24 heures ouvrées.</p>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>LumiArchi</h3>
-                    <p>Studio de visualisation 3D</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">À propos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p>Email : contact@lumiarchi.com</p>
-                    <p>Tél : 06 51 82 45 49</p>
-                    <p>Paris 75009</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 LumiArchi. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
+    <form id="contactForm">
+      <div class="form-row">
+        <label data-en="Name *">Nom *</label>
+        <input type="text" name="nom" required>
+      </div>
+      <div class="form-row">
+        <label>Email *</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label data-en="Phone">Téléphone</label>
+        <input type="tel" name="telephone">
+      </div>
+      <div class="form-row">
+        <label data-en="Subject *">Sujet *</label>
+        <input type="text" name="sujet" required>
+      </div>
+      <div class="form-row">
+        <label>Message *</label>
+        <textarea name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" data-en="Send">Envoyer</button>
+      <p style="margin-top:14px;font-size:13px;color:#71717a" data-en="Your email client will open with your message ready to send. You can also write directly to contact@lumiarchi.com">Votre messagerie s'ouvrira avec le message prêt à envoyer. Vous pouvez aussi écrire directement à <a href="mailto:contact@lumiarchi.com" style="color:#ff9500">contact@lumiarchi.com</a></p>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><h3>Lumi<span>Archi</span></h3><p data-en="3D visualization studio">Studio de visualisation 3D</p></div>
+      <div class="footer-links"><h4>Navigation</h4><ul>
+        <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
+        <li><a href="services.html" data-en="Services">Services</a></li>
+        <li><a href="about.html" data-en="About">À propos</a></li>
+        <li><a href="contact.html" data-en="Contact">Contact</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4>
+        <p>Email : <a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></p>
+        <p>Tél : <a href="tel:+33651824549">06 51 82 45 49</a></p><p>Paris 75009</p></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; <span class="year">2026</span> LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+/* Formulaire sans serveur : prépare un email dans la messagerie du visiteur */
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.target;
+  var g = function (n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
+  var sujet = g('sujet') || 'Demande via lumiarchi.com';
+  var corps =
+    'Nom : ' + g('nom') + '\n' +
+    'Email : ' + g('email') + '\n' +
+    'Téléphone : ' + g('telephone') + '\n\n' +
+    g('message');
+  window.location.href = 'mailto:contact@lumiarchi.com'
+    + '?subject=' + encodeURIComponent(sujet)
+    + '&body=' + encodeURIComponent(corps);
+});
+</script>
 </body>
 </html>
