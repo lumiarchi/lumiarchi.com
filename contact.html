@@ -39,7 +39,7 @@
       <p data-en="We usually reply within 24 business hours.">Nous répondons généralement sous 24 heures ouvrées.</p>
     </div>
 
-    <form id="contactForm">
+    <form id="contactForm" action="https://formspree.io/f/maqpaoyl" method="POST">
       <div class="form-row">
         <label data-en="Name *">Nom *</label>
         <input type="text" name="nom" required>
@@ -61,7 +61,7 @@
         <textarea name="message" required></textarea>
       </div>
       <button type="submit" class="btn btn-primary" data-en="Send">Envoyer</button>
-      <p style="margin-top:14px;font-size:13px;color:#71717a" data-en="Your email client will open with your message ready to send. You can also write directly to contact@lumiarchi.com">Votre messagerie s'ouvrira avec le message prêt à envoyer. Vous pouvez aussi écrire directement à <a href="mailto:contact@lumiarchi.com" style="color:#ff9500">contact@lumiarchi.com</a></p>
+      <p style="margin-top:14px;font-size:13px;color:#71717a" data-en="You can also write directly to contact@lumiarchi.com">Vous pouvez aussi écrire directement à <a href="mailto:contact@lumiarchi.com" style="color:#ff9500">contact@lumiarchi.com</a></p>
     </form>
   </div>
 </div>
@@ -83,22 +83,5 @@
   </div>
 </footer>
 <script src="js/main.js"></script>
-<script>
-/* Formulaire sans serveur : prépare un email dans la messagerie du visiteur */
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  var f = e.target;
-  var g = function (n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
-  var sujet = g('sujet') || 'Demande via lumiarchi.com';
-  var corps =
-    'Nom : ' + g('nom') + '\n' +
-    'Email : ' + g('email') + '\n' +
-    'Téléphone : ' + g('telephone') + '\n\n' +
-    g('message');
-  window.location.href = 'mailto:contact@lumiarchi.com'
-    + '?subject=' + encodeURIComponent(sujet)
-    + '&body=' + encodeURIComponent(corps);
-});
-</script>
 </body>
 </html>
