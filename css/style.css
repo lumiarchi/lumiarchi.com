@@ -250,3 +250,19 @@ section{scroll-margin-top:90px}
   .hero-video{display:none}
   .hero{background:#0b0b0d url('../images/venette-entree.jpg') center/cover no-repeat}
 }
+
+/* Film de commercialisation (05/11/2026) */
+.film-feature{display:grid;grid-template-columns:1.55fr 1fr;gap:48px;align-items:center}
+.film-player video{width:100%;aspect-ratio:16/9;display:block;border-radius:var(--radius);background:#000;border:1px solid var(--line)}
+.film-caption{font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.5}
+.film-text .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#0b0b0d;background:var(--accent);padding:5px 12px;border-radius:20px;margin-bottom:18px}
+.film-text h2{font-size:clamp(24px,3vw,34px);font-weight:300;line-height:1.3;margin-bottom:16px}
+.film-text h2 b{font-weight:600;color:var(--accent)}
+.film-text p{color:var(--muted);margin-bottom:16px}
+.film-text ul{list-style:none;margin:0 0 26px;padding:0}
+.film-text li{font-size:14.5px;padding:6px 0 6px 22px;position:relative}
+.film-text li::before{content:'';position:absolute;left:0;top:15px;width:10px;height:2px;background:var(--accent)}
+.svc-embed video{width:100%;height:100%;display:block;background:#000}
+.proj-video{margin-bottom:18px}
+.proj-video video{width:100%;aspect-ratio:16/9;display:block;border-radius:var(--radius);background:#000}
+@media(max-width:1024px){.film-feature{grid-template-columns:1fr;gap:28px}}
