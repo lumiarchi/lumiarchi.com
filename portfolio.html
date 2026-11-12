@@ -2,78 +2,116 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — LumiArchi | Visualisation 3D Architecturale</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Projets — LumiArchi | Visualisation 3D Architecturale</title>
 <meta name="description" content="Portfolio LumiArchi : rendus photoréalistes, animations 3D et visites VR. Projets résidentiels, tertiaires, commerciaux et espaces publics.">
 <link rel="canonical" href="https://lumiarchi.com/portfolio.html">
-<link rel="stylesheet" href="css/style.css">
+<meta property="og:title" content="Projets — LumiArchi | Visualisation 3D Architecturale">
+<meta property="og:description" content="Portfolio LumiArchi : rendus photoréalistes, animations 3D et visites VR. Projets résidentiels, tertiaires, commerciaux et espaces publics.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lumiarchi.com/portfolio.html">
+<meta property="og:image" content="https://lumiarchi.com/images/pub--7.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@300;400&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">Lumi<span>Archi</span></a>
-    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
-    <ul class="nav-menu">
-      <li><a href="index.html" data-en="Home">Accueil</a></li>
-      <li><a href="portfolio.html" class="active" data-en="Portfolio">Portfolio</a></li>
-      <li><a href="services.html" data-en="Services">Services</a></li>
-      <li><a href="about.html" data-en="About">À propos</a></li>
-      <li><a href="contact.html" data-en="Contact">Contact</a></li>
-    </ul>
-    <div class="nav-lang"><button data-lang="fr" class="active">FR</button><button data-lang="en">EN</button></div>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html" aria-label="LumiArchi, accueil">Lumi<span>Archi</span></a>
+    <nav class="nav-links" aria-label="Pages">
+      <a href="about.html" data-en="Studio">Studio</a>
+      <a href="portfolio.html" aria-current="page" data-en="Projects">Projets</a>
+      <a href="services.html" data-en="Services">Services</a>
+      <a href="contact.html" data-en="Contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-lum" href="contact.html" data-en="Request a quote">Demander un devis</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" data-en="Menu">Menu</button>
   </div>
+</header>
+<nav class="menu wrap" id="menu" aria-label="Menu" hidden>
+  <a href="index.html" data-en="Home">Accueil</a>
+  <a href="about.html" data-en="Studio">Studio</a>
+  <a href="portfolio.html" aria-current="page" data-en="Projects">Projets</a>
+  <a href="services.html" data-en="Services">Services</a>
+  <a href="contact.html" data-en="Contact">Contact</a>
 </nav>
 
-<main class="container">
-  <div class="pf-head"><h1 class="pf-title" data-en="VISUALIZATIONS">VISUALISATIONS</h1></div>
-  <div class="pf-filters">
-    <button class="active" data-filter="all" data-en="All">Tous</button>
-    <button data-filter="pub" data-en="Commercial">Commercial & activités</button>
-    <button data-filter="bur" data-en="Offices">Bureaux</button>
-    <button data-filter="ext" data-en="Residential">Résidentiel</button>
-    <button data-filter="int" data-en="Interiors">Intérieurs</button>
-  </div>
-  <div class="pf-grid">
-      <a class="pf-item" data-cat="pub" href="projet.html?id=the-annex"><img loading="lazy" src="images/annex-vue-face.jpg" alt="The Annex — Cincinnati (Ohio)"><div class="cap">The Annex — Cincinnati (Ohio)</div></a>
-      <a class="pf-item" data-cat="pub" href="projet.html?id=venette"><img loading="lazy" src="images/venette-34-carrefour.jpg" alt="Extension Carrefour — Venette"><div class="cap">Extension Carrefour — Venette</div></a>
-      <a class="pf-item" data-cat="int" href="projet.html?id=nomo"><img loading="lazy" src="https://lumiarchi.com/images/int--1.jpg" alt="NOMO Saint-Ouen-sur-Seine"><div class="cap">NOMO Saint-Ouen-sur-Seine</div></a>
-      <a class="pf-item" data-cat="bur" href="projet.html?id=patrimoni-boulogne"><img loading="lazy" src="https://lumiarchi.com/images/ext--2.jpg" alt="PATRIMONI Boulogne"><div class="cap">PATRIMONI Boulogne</div></a>
-      <a class="pf-item" data-cat="pub" href="projet.html?id=nexity-cachan"><img loading="lazy" src="https://lumiarchi.com/images/ext--16.jpg" alt="NEXITY SEERI — Cachan"><div class="cap">NEXITY SEERI — Cachan</div></a>
-      <a class="pf-item" data-cat="pub" href="projet.html?id=meaux"><img loading="lazy" src="https://lumiarchi.com/images/pub--7.jpg" alt="CC La Verrière — Meaux"><div class="cap">CC La Verrière — Meaux</div></a>
-      <a class="pf-item" data-cat="bur" href="projet.html?id=bnp-vaulx"><img loading="lazy" src="https://lumiarchi.com/images/bur--1.jpg" alt="BNP — Vaulx-en-Velin"><div class="cap">BNP — Vaulx-en-Velin</div></a>
-      <a class="pf-item" data-cat="ext" href="projet.html?id=manoir-plouescat"><img loading="lazy" src="https://lumiarchi.com/images/ext--11.jpg" alt="Manoir de Plouescat"><div class="cap">Manoir de Plouescat</div></a>
-      <a class="pf-item" data-cat="ext" href="projet.html?id=dissay"><img loading="lazy" src="https://lumiarchi.com/images/ext--6.jpg" alt="Dissay-sous-Courcillon"><div class="cap">Dissay-sous-Courcillon</div></a>
-      <a class="pf-item" data-cat="bur" href="projet.html?id=patrimoni-fer-a-moulin"><img loading="lazy" src="https://lumiarchi.com/images/ext--3.jpg" alt="PATRIMONI Fer à Moulin — Paris"><div class="cap">PATRIMONI Fer à Moulin — Paris</div></a>
-      <a class="pf-item" data-cat="ext" href="projet.html?id=coreal-villejuif"><img loading="lazy" src="https://lumiarchi.com/images/ext--14.jpg" alt="COREAL — Villejuif"><div class="cap">COREAL — Villejuif</div></a>
-      <a class="pf-item" data-cat="bur" href="projet.html?id=abenex"><img loading="lazy" src="https://lumiarchi.com/images/ext--12.jpg" alt="ABENEX — rue de Salneuve, Paris"><div class="cap">ABENEX — rue de Salneuve, Paris</div></a>
-      <a class="pf-item" data-cat="pub" href="projet.html?id=terra-nobilis"><img loading="lazy" src="https://lumiarchi.com/images/pub--8.jpg" alt="TERRA NOBILIS — Mont-Saint-Martin"><div class="cap">TERRA NOBILIS — Mont-Saint-Martin</div></a>
-      <a class="pf-item" data-cat="pub" href="projet.html?id=bruver-saint-mard"><img loading="lazy" src="https://lumiarchi.com/images/pub--11.jpg" alt="BRUVER IMMO — Saint Mard"><div class="cap">BRUVER IMMO — Saint Mard</div></a>
-      <a class="pf-item" data-cat="bur" href="projet.html?id=lancry"><img loading="lazy" src="https://lumiarchi.com/images/bur--4.jpg" alt="Lancry — Fort-de-France"><div class="cap">Lancry — Fort-de-France</div></a>
-      <a class="pf-item" data-cat="pub" href="projet.html?id=spacia-mours"><img loading="lazy" src="https://lumiarchi.com/images/pub--13.jpg" alt="SPACIA CIE — Mours"><div class="cap">SPACIA CIE — Mours</div></a>
-      <a class="pf-item" data-cat="pub" href="projet.html?id=freneuse"><img loading="lazy" src="https://lumiarchi.com/images/pub--9.jpg" alt="Freneuse"><div class="cap">Freneuse</div></a>
-      <a class="pf-item" data-cat="int" href="projet.html?id=under-the-spot"><img loading="lazy" src="https://lumiarchi.com/images/int--8.jpg" alt="UNDER THE SPOT"><div class="cap">UNDER THE SPOT</div></a>
-      <a class="pf-item" data-cat="ext" href="projet.html?id=antony"><img loading="lazy" src="https://lumiarchi.com/images/ext--17.jpg" alt="Antony"><div class="cap">Antony</div></a>
-      <a class="pf-item" data-cat="ext" href="projet.html?id=montgaroult"><img loading="lazy" src="https://lumiarchi.com/images/ext--18.jpg" alt="Particulier — Montgaroult"><div class="cap">Particulier — Montgaroult</div></a>
-      <a class="pf-item" data-cat="ext" href="projet.html?id=maisons-laffitte"><img loading="lazy" src="https://lumiarchi.com/images/ext--19.jpg" alt="Particulier — Maisons-Laffitte"><div class="cap">Particulier — Maisons-Laffitte</div></a>
-  </div>
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-logo"><h3>Lumi<span>Archi</span></h3><p data-en="3D visualization studio">Studio de visualisation 3D</p></div>
-      <div class="footer-links"><h4>Navigation</h4><ul>
-        <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
-        <li><a href="services.html" data-en="Services">Services</a></li>
-        <li><a href="about.html" data-en="About">À propos</a></li>
-        <li><a href="contact.html" data-en="Contact">Contact</a></li></ul></div>
-      <div class="footer-contact"><h4>Contact</h4>
-        <p>Email : <a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></p>
-        <p>Tél : <a href="tel:+33651824549">06 51 82 45 49</a></p><p>Paris 75009</p></div>
+<main>
+<section class="tete">
+  <div class="wrap">
+    <p class="sur"><a href="index.html">LumiArchi</a><span aria-hidden="true">/</span><span data-en="Projects">Projets</span></p>
+    <div class="tete-bas">
+      <h1><span data-en="Projects">Projets</span><span class="cpt"><span id="pcpt">21</span></span></h1>
+      <div class="filtres" role="group" aria-label="Filtrer les projets">
+        <button type="button" data-f="all" aria-pressed="true" data-en="All">Tous</button>
+        <button type="button" data-f="pub" aria-pressed="false" data-en="Commercial">Commercial et activités</button>
+        <button type="button" data-f="bur" aria-pressed="false" data-en="Offices">Bureaux</button>
+        <button type="button" data-f="ext" aria-pressed="false" data-en="Residential">Résidentiel</button>
+        <button type="button" data-f="int" aria-pressed="false" data-en="Interiors">Intérieurs</button>
+      </div>
     </div>
-    <div class="footer-bottom"><p>&copy; <span class="year">2026</span> LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p></div>
+  </div>
+</section>
+<div class="wrap">
+  <div class="pgrid">
+    <a class="carte" data-c="pub" href="projet.html?id=the-annex"><span class="ph"><img src="a/p-the-annex.webp" width="960" height="644" alt=""></span><span class="t">The Annex — Cincinnati (Ohio)</span><span class="p" data-en="Build-to-suit building: extension and new façade">Bâtiment « build-to-suit » : extension et nouvelle façade</span><span class="s">≈ 10 400 sq ft (968 m²)</span></a>
+    <a class="carte" data-c="pub" href="projet.html?id=venette"><span class="ph"><img src="a/p-venette.webp" width="960" height="536" alt=""></span><span class="t">Extension Carrefour — Venette</span><span class="p" data-en="Shopping centre extension">Extension d'un centre commercial</span><span class="s" data-en="On request">Sur demande</span></a>
+    <a class="carte" data-c="int" href="projet.html?id=nomo"><span class="ph"><img src="a/p-nomo.webp" width="960" height="663" alt=""></span><span class="t">NOMO Saint-Ouen-sur-Seine</span><span class="p" data-en="Coliving building">Immeuble de coliving</span><span class="s">11 520 m²</span></a>
+    <a class="carte" data-c="bur" href="projet.html?id=patrimoni-boulogne"><span class="ph"><img src="a/p-patrimoni-boulogne.webp" width="960" height="763" loading="lazy" alt=""></span><span class="t">PATRIMONI Boulogne</span><span class="p" data-en="Office refurbishment and extension">Réhabilitation et extension de bureaux</span><span class="s">2 122 m²</span></a>
+    <a class="carte" data-c="pub" href="projet.html?id=nexity-cachan"><span class="ph"><img src="a/p-nexity-cachan.webp" width="960" height="657" loading="lazy" alt=""></span><span class="t">NEXITY SEERI — Cachan</span><span class="p" data-en="Office refurbishment and young-professionals residence">Réhabilitation de bureaux + résidence jeunes actifs</span><span class="s">7 371 m²</span></a>
+    <a class="carte" data-c="pub" href="projet.html?id=meaux"><span class="ph"><img src="a/p-meaux.webp" width="960" height="568" loading="lazy" alt=""></span><span class="t">CC La Verrière — Meaux</span><span class="p" data-en="Full restructuring of a shopping centre">Restructuration complète — centre commercial</span><span class="s">5 750 m²</span></a>
+    <a class="carte" data-c="bur" href="projet.html?id=bnp-vaulx"><span class="ph"><img src="a/p-bnp-vaulx.webp" width="960" height="720" loading="lazy" alt=""></span><span class="t">BNP — Vaulx-en-Velin</span><span class="p" data-en="Office building">Immeuble de bureaux</span><span class="s" data-en="On request">Sur demande</span></a>
+    <a class="carte" data-c="ext" href="projet.html?id=manoir-plouescat"><span class="ph"><img src="a/p-manoir-plouescat.webp" width="960" height="606" loading="lazy" alt=""></span><span class="t">Manoir de Plouescat</span><span class="p" data-en="Full renovation and extension">Rénovation totale et extension</span><span class="s">288 m²</span></a>
+    <a class="carte" data-c="ext" href="projet.html?id=dissay"><span class="ph"><img src="a/p-dissay.webp" width="960" height="472" loading="lazy" alt=""></span><span class="t">Dissay-sous-Courcillon</span><span class="p" data-en="Extension">Extension</span><span class="s">60 m²</span></a>
+    <a class="carte" data-c="bur" href="projet.html?id=patrimoni-fer-a-moulin"><span class="ph"><img src="a/p-patrimoni-fer-a-moulin.webp" width="960" height="746" loading="lazy" alt=""></span><span class="t">PATRIMONI Fer à Moulin — Paris</span><span class="p" data-en="Office refurbishment and extension">Réhabilitation et extension de bureaux</span><span class="s">2 000 m²</span></a>
+    <a class="carte" data-c="ext" href="projet.html?id=coreal-villejuif"><span class="ph"><img src="a/p-coreal-villejuif.webp" width="960" height="540" loading="lazy" alt=""></span><span class="t">COREAL — Villejuif</span><span class="p" data-en="Residential building">Immeuble de logements</span><span class="s" data-en="On request">Sur demande</span></a>
+    <a class="carte" data-c="bur" href="projet.html?id=abenex"><span class="ph"><img src="a/p-abenex.webp" width="833" height="1200" loading="lazy" alt=""></span><span class="t">ABENEX — rue de Salneuve, Paris</span><span class="p" data-en="Full restructuring of an office building">Restructuration complète d'un immeuble de bureaux</span><span class="s">1 257 m²</span></a>
+    <a class="carte" data-c="pub" href="projet.html?id=terra-nobilis"><span class="ph"><img src="a/p-terra-nobilis.webp" width="960" height="540" loading="lazy" alt=""></span><span class="t">TERRA NOBILIS — Mont-Saint-Martin</span><span class="p" data-en="Retail complex">Ensemble commercial</span><span class="s" data-en="On request">Sur demande</span></a>
+    <a class="carte" data-c="pub" href="projet.html?id=bruver-saint-mard"><span class="ph"><img src="a/p-bruver-saint-mard.webp" width="960" height="486" loading="lazy" alt=""></span><span class="t">BRUVER IMMO — Saint Mard</span><span class="p" data-en="Light-industrial building">Bâtiment d'activité</span><span class="s">2 857 m²</span></a>
+    <a class="carte" data-c="bur" href="projet.html?id=lancry"><span class="ph"><img src="a/p-lancry.webp" width="800" height="548" loading="lazy" alt=""></span><span class="t">Lancry — Fort-de-France</span><span class="p" data-en="New office building">Création d'un immeuble de bureaux</span><span class="s">3 508 m²</span></a>
+    <a class="carte" data-c="pub" href="projet.html?id=spacia-mours"><span class="ph"><img src="a/p-spacia-mours.webp" width="960" height="540" loading="lazy" alt=""></span><span class="t">SPACIA CIE — Mours</span><span class="p" data-en="Light-industrial building">Bâtiment d'activité</span><span class="s" data-en="On request">Sur demande</span></a>
+    <a class="carte" data-c="pub" href="projet.html?id=freneuse"><span class="ph"><img src="a/p-freneuse.webp" width="960" height="508" loading="lazy" alt=""></span><span class="t">Freneuse</span><span class="p" data-en="Light-industrial building">Bâtiment d'activité</span><span class="s" data-en="On request">Sur demande</span></a>
+    <a class="carte" data-c="int" href="projet.html?id=under-the-spot"><span class="ph"><img src="a/p-under-the-spot.webp" width="960" height="658" loading="lazy" alt=""></span><span class="t">UNDER THE SPOT</span><span class="p" data-en="New gym">Création d'une salle de sport</span><span class="s">60 m²</span></a>
+    <a class="carte" data-c="ext" href="projet.html?id=antony"><span class="ph"><img src="a/p-antony.webp" width="960" height="640" loading="lazy" alt=""></span><span class="t">Antony</span><span class="p" data-en="Full restructuring into housing">Restructuration complète à usage de logements</span><span class="s">2 050 m²</span></a>
+    <a class="carte" data-c="ext" href="projet.html?id=montgaroult"><span class="ph"><img src="a/p-montgaroult.webp" width="800" height="489" loading="lazy" alt=""></span><span class="t">Particulier — Montgaroult</span><span class="p" data-en="Change of use">Changement de destination</span><span class="s">180 m²</span></a>
+    <a class="carte" data-c="ext" href="projet.html?id=maisons-laffitte"><span class="ph"><img src="a/p-maisons-laffitte.webp" width="800" height="450" loading="lazy" alt=""></span><span class="t">Particulier — Maisons-Laffitte</span><span class="p" data-en="Renovation">Rénovation</span><span class="s" data-en="On request">Sur demande</span></a>
+  </div>
+</div>
+</main>
+<section class="appel">
+  <div class="wrap">
+    <h2><span data-en="An architectural visualization project?">Un projet de visualisation architecturale&nbsp;?</span> <span data-en="Let's talk.">Parlons-en.</span></h2>
+    <div class="appel-bas">
+      <a class="btn btn-encre" href="contact.html" data-en="Request a quote">Demander un devis</a>
+      <p data-en="Reply within 24 hours on business days.">Réponse sous 24 h, en jours ouvrés.</p>
+    </div>
+  </div>
+</section>
+<footer class="pied">
+  <div class="wrap">
+    <div class="cartouche">
+      <div><p class="logo">Lumi<span>Archi</span></p><p style="margin-top:8px" data-en="3D visualization studio">Studio de visualisation 3D</p></div>
+      <div><small data-en="Location">Lieu</small><p>Paris 75009</p></div>
+      <div><small>Pages</small>
+        <ul>
+          <li><a href="index.html" data-en="Home">Accueil</a></li>
+          <li><a href="portfolio.html" data-en="Projects">Projets</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">Studio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div><small>Contact</small><p><a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a><br><a href="tel:+33651824549">06 51 82 45 49</a></p></div>
+    </div>
+    <p class="droits">© 2026 LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p>
   </div>
 </footer>
-<script src="js/main.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

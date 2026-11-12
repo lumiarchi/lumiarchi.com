@@ -12,7 +12,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lumiarchi.com/">
 <meta property="og:image" content="https://lumiarchi.com/images/pub--7.jpg">
-<link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"LumiArchi","image":"https://lumiarchi.com/images/pub--7.jpg","@id":"https://lumiarchi.com","url":"https://lumiarchi.com","telephone":"+33651824549","email":"contact@lumiarchi.com","address":{"@type":"PostalAddress","addressLocality":"Paris","postalCode":"75009","addressCountry":"FR"},"areaServed":"FR","serviceType":["Visualisation 3D architecturale","Images de synthèse","Films d'animation 3D","Visites VR","Maquettes physiques"]}
 </script>
@@ -22,175 +21,884 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"VideoObject","name":"Film de commercialisation — extension du centre commercial Carrefour de Venette","description":"Film de commercialisation de 42 secondes réalisé par LumiArchi à partir des images 3D du projet : situation sur la carte et la photo aérienne, emprise des 7 cellules commerciales, chiffres clés, vues du parvis, des terrasses et des ombrières photovoltaïques.","thumbnailUrl":"https://lumiarchi.com/images/venette-film-poster.jpg","uploadDate":"2026-11-05","duration":"PT42S","contentUrl":"https://lumiarchi.com/video/venette-film-commercialisation.mp4","inLanguage":"fr","publisher":{"@type":"Organization","name":"LumiArchi","url":"https://lumiarchi.com"}}
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="a/hero.webp" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@300;400&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* Planche d'architecte : grille de 12 colonnes calée à gauche, traits de cote et repères de coupe.
+   Un seul geste fort, la lumière qui révèle le filaire ; tout le reste répond au geste du visiteur. */
+:root{
+  --nuit:#0d1526;      /* heure bleue : le fond */
+  --nuit-2:#141f37;    /* surface de nuit */
+  --calque:#e7eaec;    /* papier calque, froid */
+  --encre:#0d1526;     /* texte sur calque et sur lumière */
+  --encre-2:#46516a;   /* texte secondaire sur calque */
+  --lumiere:#ff9500;   /* l'orange LumiArchi */
+  --trait:#b9d4f5;     /* trait de plan */
+  --texte:#eef1f4;     /* texte sur nuit */
+  --sourdine:#9aa7bd;  /* texte secondaire sur nuit */
+  --ligne:color-mix(in srgb,var(--trait) 22%,transparent);
+  --ligne-encre:color-mix(in srgb,var(--encre) 24%,transparent);
+  --f-titre:"Bricolage Grotesque","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --f-texte:"Newsreader",Georgia,"Times New Roman",serif;
+  --f-cote:"DM Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --gut:clamp(16px,4vw,56px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0}
+img{max-width:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--nuit);color:var(--texte);font-family:var(--f-texte);font-size:1.0625rem;line-height:1.6;overflow-x:clip}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+h1,h2,h3{text-wrap:balance}
+a{color:inherit}
+button{font:inherit;color:inherit}
+img,video{display:block}
+:focus-visible{outline:2px solid var(--lumiere);outline-offset:3px}
+section[id]{scroll-margin-top:68px}
+.wrap{max-width:1440px;margin-inline:auto;padding-left:max(var(--gut),env(safe-area-inset-left,0px));padding-right:max(var(--gut),env(safe-area-inset-right,0px))}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* ---------- Boutons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;font:600 1rem/1 var(--f-titre);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.btn-lum{background:var(--lumiere);color:var(--encre)}
+.btn-lum:hover{background:var(--texte)}
+.btn-fil{border-color:color-mix(in srgb,var(--texte) 55%,transparent);color:var(--texte)}
+.btn-fil:hover{border-color:var(--lumiere);color:var(--lumiere)}
+.btn-encre{background:var(--encre);color:var(--calque)}
+.btn-encre:hover{background:var(--nuit-2)}
+
+/* ---------- Navigation ---------- */
+.nav{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .4s}
+.nav.scrolled{background:color-mix(in srgb,var(--nuit) 96%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.nav-in{display:flex;align-items:center;gap:clamp(14px,2.2vw,30px);height:68px}
+.logo{font:650 1.4rem/1 var(--f-titre);letter-spacing:-.01em;text-decoration:none;color:var(--texte)}
+.logo span{color:var(--lumiere)}
+.nav-links{display:flex;gap:clamp(16px,2vw,28px);margin-left:auto}
+.nav-links a{position:relative;padding:10px 0;font:500 .95rem/1 var(--f-titre);text-decoration:none;color:var(--texte)}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;background:var(--lumiere);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1)}
+.lang{display:flex}
+.lang button{min-width:40px;min-height:44px;background:none;border:0;cursor:pointer;font:400 .8rem/1 var(--f-cote);color:var(--sourdine)}
+.lang button[aria-pressed="true"]{color:var(--lumiere)}
+.nav .btn{min-height:40px;padding:0 16px;font-size:.92rem}
+.menu-btn{display:none;min-height:44px;padding:0 4px;background:none;border:0;cursor:pointer;font:500 .95rem/1 var(--f-titre)}
+.menu{position:fixed;inset:0;z-index:49;background:var(--nuit);display:flex;flex-direction:column;justify-content:center;gap:6px;padding-top:68px}
+.menu a{font:700 condensed clamp(2.2rem,11vw,3.6rem)/1.05 var(--f-titre);text-decoration:none;padding:6px 0}
+.menu a:active{color:var(--lumiere)}
+@media (max-width:900px){
+  .nav-links,.nav .btn{display:none}
+  .lang{margin-left:auto}
+  .menu-btn{display:inline-flex;align-items:center}
+}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;height:min(92svh,980px);min-height:560px;background:var(--nuit);overflow:hidden;isolation:isolate}
+.hero-img,.hero-fx{position:absolute;inset:0;width:100%;height:100%;max-width:none}
+.hero-img{object-fit:cover;object-position:50% 55%}
+.js .hero:not(.is-on) .hero-img{opacity:0}
+.hero-fx{z-index:1;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--nuit) 66%,transparent) 0,transparent 20%,transparent 40%,color-mix(in srgb,var(--nuit) 86%,transparent) 100%)}
+.hero-in{position:absolute;inset:0;z-index:3;display:grid;grid-template-columns:minmax(0,auto) minmax(0,30rem);justify-content:space-between;align-items:end;column-gap:clamp(24px,4vw,64px);row-gap:20px;align-content:end;padding-bottom:clamp(22px,4.5vh,46px)}
+.hero h1{font:800 condensed clamp(3rem,8.6vw,8.6rem)/.84 var(--f-titre);letter-spacing:0}
+.hero h1 .l{display:block;overflow:hidden;padding:.1em 0 .07em;margin:-.1em 0 -.07em}
+.hero h1 i{display:inline-block;font-style:normal}
+.js .hero h1 i{animation:monte 1s var(--ease) .15s both}
+.js .hero h1 .l + .l i{animation-delay:.27s}
+@keyframes monte{from{transform:translateY(112%)}}
+.hero-foot{display:grid;gap:18px;justify-items:start;min-width:0}
+.js .hero-foot{animation:fondu .9s ease .55s both}
+@keyframes fondu{from{opacity:0}}
+.lead{font-size:clamp(1rem,1.3vw,1.18rem);line-height:1.5}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.hud{display:flex;flex-wrap:wrap;align-items:center;gap:2px 20px;font:300 .8rem/1.4 var(--f-cote);color:var(--texte)}
+.hud-etat{display:none;min-height:1.4em}
+.js .hud-etat{display:block}
+.hud-etat b{font-weight:400;color:var(--lumiere);font-variant-numeric:tabular-nums}
+.bascule{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0;background:none;border:0;cursor:pointer;font:400 .8rem/1 var(--f-cote)}
+.bascule .sw{position:relative;width:38px;height:20px;border:1px solid var(--texte);border-radius:20px}
+.bascule .sw::after{content:"";position:absolute;left:3px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--texte);transition:transform .3s var(--ease),background .3s}
+.bascule[aria-pressed="true"] .sw{border-color:var(--lumiere)}
+.bascule[aria-pressed="true"] .sw::after{transform:translateX(18px);background:var(--lumiere)}
+.credit{font:italic 400 .85rem/1.35 var(--f-texte);color:color-mix(in srgb,var(--texte) 84%,transparent)}
+@media (max-width:1000px){
+  .hero-in{grid-template-columns:minmax(0,1fr)}
+  .hero-foot{max-width:34rem}
+}
+@media (max-width:760px){
+  .si-fin{display:none}
+  .hero::after{background:linear-gradient(180deg,color-mix(in srgb,var(--nuit) 66%,transparent) 0,transparent 18%,transparent 26%,color-mix(in srgb,var(--nuit) 82%,transparent) 52%,color-mix(in srgb,var(--nuit) 94%,transparent) 100%)}
+}
+@media (hover:none){.si-fin{display:none}}
+
+/* ---------- Références ---------- */
+.clients{background:var(--nuit);border-bottom:1px solid var(--ligne)}
+.clients-in{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);gap:12px 44px;align-items:baseline;padding-block:clamp(26px,3.4vw,44px)}
+.clients p{font:300 .8rem/1.5 var(--f-cote);color:var(--sourdine)}
+.clients ul{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 28px;font:700 condensed clamp(1.35rem,2.7vw,2.3rem)/1.1 var(--f-titre);letter-spacing:.01em}
+.clients .note{grid-column:2}
+@media (max-width:760px){.clients-in{grid-template-columns:minmax(0,1fr)}.clients .note{grid-column:1}.clients ul{justify-content:flex-start}}
+
+/* ---------- Studio ---------- */
+.studio{background:var(--calque);color:var(--encre)}
+.studio-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(20px,3vw,48px);row-gap:clamp(40px,6vw,72px);padding-block:clamp(72px,11vw,168px)}
+.studio-main{grid-column:1/span 8;min-width:0}
+.manif{font:500 condensed clamp(1.95rem,4.7vw,4.5rem)/1.03 var(--f-titre);letter-spacing:-.015em;text-wrap:pretty}
+.manif .w{transition:opacity .6s ease}
+.js .manif .w{opacity:.3}
+.js .manif .w.on{opacity:1}
+.studio-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,44px);margin-top:clamp(36px,5vw,64px);max-width:60rem}
+.studio-cols p{color:color-mix(in srgb,var(--encre) 86%,transparent)}
+.lien{display:inline-block;margin-top:clamp(24px,3vw,36px);font:600 1rem/1.2 var(--f-titre);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--lumiere)}
+.lien:hover{text-decoration-color:currentColor}
+.faits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,40px);margin-top:clamp(40px,6vw,76px);max-width:60rem}
+.faits li{position:relative;padding-top:16px;border-top:1px solid var(--encre)}
+.faits li::before,.faits li::after{content:"";position:absolute;top:-5px;width:1px;height:9px;background:var(--encre)}
+.faits li::before{left:0}.faits li::after{right:0}
+.faits b{display:block;font:700 condensed clamp(1.5rem,2.6vw,2.2rem)/1 var(--f-titre)}
+.faits span{display:block;margin-top:6px;font-style:italic;font-size:.95rem;line-height:1.35;color:var(--encre-2)}
+.cadre{grid-column:10/span 3;align-self:end;min-width:0}
+.cadre .im{position:relative}
+.cadre .im::before,.cadre .im::after{content:"";position:absolute;width:22px;height:22px;border:1px solid var(--encre);pointer-events:none}
+.cadre .im::before{left:-11px;top:-11px;border-right:0;border-bottom:0}
+.cadre .im::after{right:-11px;bottom:-11px;border-left:0;border-top:0}
+.cadre img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.cadre figcaption{margin-top:14px;font-style:italic;font-size:.85rem;line-height:1.35;color:var(--encre-2)}
+@media (max-width:1000px){
+  .studio-main{grid-column:1/-1}
+  .cadre{grid-column:1/span 7}
+}
+@media (max-width:640px){
+  .studio-cols,.faits{grid-template-columns:minmax(0,1fr)}
+  .cadre{grid-column:1/-1;padding-inline:11px}
+}
+
+/* ---------- Projets ---------- */
+.projets{background:var(--nuit);padding-block:clamp(72px,10vw,150px)}
+.sec-tete{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px 40px;margin-bottom:clamp(26px,4vw,54px)}
+.titre{font:800 condensed clamp(2.7rem,8vw,7rem)/.86 var(--f-titre);letter-spacing:0}
+.sec-tete .cpt{font:300 .8rem/1 var(--f-cote);color:var(--sourdine);margin-left:14px;letter-spacing:0;vertical-align:.9em;font-variant-numeric:tabular-nums}
+.filtres{display:flex;flex-wrap:wrap;gap:0 24px}
+.filtres button{position:relative;min-height:44px;padding:0;background:none;border:0;cursor:pointer;font:400 1rem/1 var(--f-titre);color:var(--sourdine);transition:color .25s}
+.filtres button::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:2px;background:var(--lumiere);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.filtres button:hover,.filtres button[aria-pressed="true"]{color:var(--texte)}
+.filtres button[aria-pressed="true"]::after{transform:scaleX(1)}
+.plist{border-top:1px solid var(--ligne)}
+.prow{display:grid;grid-template-rows:1fr;overflow:hidden;transition:grid-template-rows .5s var(--ease),opacity .35s ease,visibility 0s}
+.prow.off{grid-template-rows:0fr;opacity:0;visibility:hidden;transition:grid-template-rows .5s var(--ease),opacity .25s ease,visibility 0s .5s}
+.prow a{position:relative;min-height:0;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 10.5rem;gap:8px 28px;align-items:baseline;padding:clamp(13px,1.45vw,21px) 0;border-bottom:1px solid var(--ligne);text-decoration:none;transition:padding-left .45s var(--ease),opacity .3s ease}
+.prow.off a{padding-block:0;border-bottom-width:0}
+.prow a::before{content:"";position:absolute;left:0;top:50%;width:16px;height:2px;background:var(--lumiere);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.prow .t{font:300 condensed clamp(1.4rem,2.9vw,2.6rem)/1.06 var(--f-titre);letter-spacing:-.01em;transition:font-weight .4s var(--ease)}
+.prow .p{font-style:italic;line-height:1.35;color:var(--sourdine)}
+.prow .s{font:300 .85rem/1.35 var(--f-cote);text-align:right;font-variant-numeric:tabular-nums;color:var(--sourdine)}
+.prow .th{display:none}
+.prow a:focus-visible{outline-offset:-2px;padding-left:28px}
+.prow a:focus-visible::before{transform:scaleX(1)}
+.prow a:focus-visible .t{font-weight:700}
+@media (hover:hover) and (pointer:fine){
+  .plist:hover .prow a{opacity:.36}
+  .plist .prow a:hover{opacity:1;padding-left:28px}
+  .prow a:hover::before{transform:scaleX(1)}
+  .prow a:hover .t{font-weight:700}
+}
+.plist-pied{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;margin-top:22px;font-size:.92rem;color:var(--sourdine)}
+.plist-pied .lien{margin-top:0;color:var(--texte)}
+.peek{position:fixed;left:0;top:0;z-index:40;width:clamp(260px,30vw,480px);pointer-events:none;will-change:transform}
+.peek .clip{aspect-ratio:3/2;overflow:hidden;background:var(--nuit-2);clip-path:inset(0 100% 0 0);transition:clip-path .45s var(--ease)}
+.peek.on .clip{clip-path:inset(0)}
+.peek img{width:100%;height:100%;object-fit:cover}
+@media (max-width:820px),(hover:none){
+  .prow a{grid-template-columns:104px minmax(0,1fr);align-items:start;column-gap:16px;row-gap:2px}
+  .prow .th{display:block;grid-row:1/span 3;width:104px;height:70px;object-fit:cover}
+  .prow .t,.prow .p,.prow .s{grid-column:2}
+  .prow .s{text-align:left}
+  .prow .p{font-size:.95rem}
+  .peek{display:none}
+}
+
+/* ---------- Films ---------- */
+.films{background:var(--nuit-2);padding-block:clamp(72px,10vw,150px)}
+.films-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(20px,3vw,48px);row-gap:40px;align-items:start}
+.films-txt{grid-column:1/span 4;position:sticky;top:104px;min-width:0}
+.etiq{display:inline-block;margin-bottom:18px;padding:5px 10px;background:var(--lumiere);color:var(--encre);font:400 .8rem/1 var(--f-cote)}
+.films-txt .titre{font-size:clamp(2.4rem,5.4vw,5rem)}
+.films-txt p{margin-top:22px;max-width:26rem}
+.films-txt ul{margin:20px 0 28px;border-top:1px solid var(--ligne)}
+.films-txt li{padding:11px 0;border-bottom:1px solid var(--ligne);font:400 1rem/1.3 var(--f-titre)}
+.films-liste{grid-column:6/span 7;display:grid;gap:clamp(36px,5vw,76px);min-width:0}
+.film:nth-child(2){width:80%;margin-left:auto}
+.film-fr{position:relative;aspect-ratio:16/9;max-width:100%;background:var(--nuit);overflow:hidden}
+.film-fr img,.film-fr video{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover}
+.film-fr video{opacity:0;transition:opacity .4s ease}
+.film.joue .film-fr video{opacity:1}
+.film-btn{position:absolute;inset:0;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:clamp(12px,1.6vw,20px);background:linear-gradient(180deg,transparent 55%,color-mix(in srgb,var(--nuit) 80%,transparent) 100%);border:0;cursor:pointer;text-align:left}
+.film-btn:focus-visible{outline-offset:-4px}
+.chip{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;background:var(--lumiere);color:var(--encre);font:600 .98rem/1 var(--f-titre);transition:background .25s}
+.film-btn:hover .chip{background:var(--texte)}
+.chip svg{width:11px;height:13px;fill:currentColor}
+.tc{font:300 .8rem/1 var(--f-cote);font-variant-numeric:tabular-nums;color:var(--texte)}
+.film-bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--lumiere);transform:scaleX(0);transform-origin:left;pointer-events:none}
+.film figcaption{margin-top:12px;max-width:44rem;font-style:italic;font-size:.85rem;line-height:1.4;color:var(--sourdine)}
+@media (max-width:1000px){
+  .films-txt{grid-column:1/-1;position:static}
+  .films-liste{grid-column:1/-1}
+  .film:nth-child(2){width:100%}
+}
+.cine{width:min(1180px,94vw);max-width:none;padding:0;border:0;background:var(--nuit);color:var(--texte);overflow:visible}
+.cine::backdrop{background:color-mix(in srgb,var(--nuit) 90%,transparent)}
+.cine video{width:100%;height:auto;max-height:82vh;background:var(--nuit)}
+.cine-x{position:absolute;right:0;top:-48px;min-width:44px;min-height:44px;background:none;border:0;cursor:pointer;font:500 .95rem/1 var(--f-titre)}
+
+/* ---------- Services ---------- */
+.services{background:var(--calque);color:var(--encre);padding-block:clamp(72px,10vw,150px)}
+.services .sec-tete p{max-width:24rem;color:var(--encre-2)}
+.volets{display:flex;gap:6px;height:clamp(440px,62vh,620px)}
+.volet{position:relative;flex:1 1 0;min-width:0;overflow:hidden;background:var(--nuit);color:var(--texte);transition:flex-grow .8s var(--ease)}
+.volet.on{flex-grow:3.6}
+.volet>img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;filter:saturate(.2) brightness(.5);transform:scale(1.07);transition:filter .7s ease,transform 1.3s var(--ease)}
+.volet.on>img{filter:none;transform:none}
+.volet::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,color-mix(in srgb,var(--nuit) 88%,transparent) 100%);pointer-events:none}
+.volet-hit{position:absolute;inset:0;z-index:2;width:100%;background:none;border:0;cursor:pointer}
+.volet-hit:focus-visible{outline-offset:-4px}
+.volet-v{position:absolute;left:16px;bottom:20px;z-index:1;writing-mode:vertical-rl;transform:rotate(180deg);font:600 condensed 1.3rem/1 var(--f-titre);white-space:nowrap;transition:opacity .3s ease}
+.volet.on .volet-v{opacity:0}
+.volet-corps{position:absolute;left:0;bottom:0;z-index:3;width:min(34rem,46vw);padding:clamp(18px,2.2vw,30px);opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .3s ease,transform .5s var(--ease),visibility 0s .3s;pointer-events:none}
+.volet.on .volet-corps{opacity:1;visibility:visible;transform:none;transition:opacity .45s ease .28s,transform .6s var(--ease) .28s,visibility 0s}
+.volet-corps h3{font:700 condensed clamp(1.9rem,3.4vw,3.1rem)/1 var(--f-titre);letter-spacing:-.01em}
+.volet-corps p{margin:10px 0 16px;max-width:26rem}
+.volet-corps a{pointer-events:auto;font:600 1rem/1.2 var(--f-titre);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--lumiere)}
+.volet-corps a:hover{color:var(--lumiere)}
+@media (max-width:900px){
+  .volets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 20px;height:auto}
+  .volet,.volet.on{flex:none;overflow:visible;background:none;color:var(--encre)}
+  .volet>img,.volet.on>img{position:static;height:auto;aspect-ratio:3/2;filter:none;transform:none}
+  .volet::after,.volet-hit,.volet-v{display:none}
+  .volet-corps,.volet.on .volet-corps{position:static;width:auto;padding:14px 0 0;opacity:1;visibility:visible;transform:none;transition:none;pointer-events:auto}
+  .volet-corps p{color:var(--encre-2)}
+  .volet-corps a:hover{color:inherit;text-decoration-color:currentColor}
+}
+@media (max-width:560px){.volets{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--lumiere);color:var(--encre);padding-block:clamp(72px,10vw,150px)}
+.contact :focus-visible{outline-color:var(--encre)}
+.contact h2{font:800 condensed clamp(2.6rem,8.4vw,7.8rem)/.86 var(--f-titre);letter-spacing:0;max-width:21ch;text-wrap:balance}
+.contact h2 span{display:block}
+.contact-bas{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(20px,3vw,48px);row-gap:36px;margin-top:clamp(36px,5vw,72px);align-items:end}
+.contact-cta{grid-column:1/span 5;display:grid;gap:18px;justify-items:start}
+.contact-cta p{font:500 1.2rem/1.3 var(--f-titre)}
+.coord{grid-column:7/span 6;border-top:1px solid var(--encre)}
+.coord div{display:grid;grid-template-columns:7rem minmax(0,1fr) auto;gap:6px 16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--encre)}
+.coord dt{font:400 .8rem/1.4 var(--f-cote)}
+.coord dd{font:600 clamp(1.1rem,1.9vw,1.5rem)/1.2 var(--f-titre);overflow-wrap:anywhere;user-select:all;-webkit-user-select:all}
+.copie{min-height:44px;padding:0 2px;background:none;border:0;cursor:pointer;font:400 .8rem/1 var(--f-cote);text-decoration:underline;text-underline-offset:4px}
+@media (max-width:900px){.contact-cta,.coord{grid-column:1/-1}}
+@media (max-width:480px){.coord div{grid-template-columns:minmax(0,1fr) auto}.coord dt{grid-column:1/-1}}
+
+/* ---------- Cartouche ---------- */
+.pied{background:var(--nuit);padding-block:clamp(36px,5vw,64px) 28px}
+.cartouche{display:grid;grid-template-columns:1.5fr 1fr 1.5fr 1.7fr;border:1px solid var(--ligne)}
+.cartouche>div{padding:18px 20px;border-right:1px solid var(--ligne);min-width:0}
+.cartouche>div:last-child{border-right:0}
+.cartouche small{display:block;margin-bottom:8px;font:300 .75rem/1.3 var(--f-cote);color:var(--sourdine)}
+.cartouche p,.cartouche li{font:400 1rem/1.4 var(--f-titre)}
+.cartouche ul{display:flex;flex-wrap:wrap;gap:2px 18px}
+.cartouche a{text-underline-offset:4px;text-decoration-color:var(--ligne)}
+.cartouche a:hover{text-decoration-color:var(--lumiere)}
+.droits{margin-top:16px;font:300 .75rem/1.4 var(--f-cote);color:var(--sourdine)}
+@media (max-width:900px){.cartouche{grid-template-columns:repeat(2,minmax(0,1fr))}.cartouche>div:nth-child(2){border-right:0}.cartouche>div:nth-child(-n+2){border-bottom:1px solid var(--ligne)}}
+@media (max-width:520px){.cartouche{grid-template-columns:minmax(0,1fr)}.cartouche>div{border-right:0;border-bottom:1px solid var(--ligne)}.cartouche>div:last-child{border-bottom:0}}
+
+/* ---------- Cote de défilement ---------- */
+.rail{display:none;position:fixed;right:max(18px,env(safe-area-inset-right,0px));top:50%;z-index:45;width:1px;height:32vh;margin-top:-16vh;background:currentColor;color:var(--texte);mix-blend-mode:difference;pointer-events:none;--p:0}
+.rail::before,.rail::after{content:"";position:absolute;left:-5px;width:11px;height:1px;background:currentColor}
+.rail::before{top:0}.rail::after{bottom:0}
+.rail i{position:absolute;left:-4px;top:calc(var(--p)*100%);width:9px;height:9px;margin-top:-4px;border-radius:50%;background:currentColor}
+.rail b{position:absolute;right:12px;top:calc(var(--p)*100%);writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);font:300 .72rem/1 var(--f-cote);white-space:nowrap}
+@media (min-width:1240px){.js .rail{display:block}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  .js .manif .w{opacity:1}
+}
+</style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">Lumi<span>Archi</span></a>
-    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
-    <ul class="nav-menu">
-      <li><a href="index.html" class="active" data-en="Home">Accueil</a></li>
-      <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
-      <li><a href="services.html" data-en="Services">Services</a></li>
-      <li><a href="about.html" data-en="About">À propos</a></li>
-      <li><a href="contact.html" data-en="Contact">Contact</a></li>
-    </ul>
-    <div class="nav-lang">
-      <button data-lang="fr" class="active">FR</button>
-      <button data-lang="en">EN</button>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#accueil" aria-label="LumiArchi, accueil">Lumi<span>Archi</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#studio" data-en="Studio">Studio</a>
+      <a href="#projets" data-en="Projects">Projets</a>
+      <a href="#films" data-en="Films">Films</a>
+      <a href="#services" data-en="Services">Services</a>
+      <a href="#contact" data-en="Contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
     </div>
+    <a class="btn btn-lum" href="contact.html" data-en="Request a quote">Demander un devis</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" data-en="Menu">Menu</button>
   </div>
+</header>
+<nav class="menu wrap" id="menu" aria-label="Menu" hidden>
+  <a href="#studio" data-en="Studio">Studio</a>
+  <a href="#projets" data-en="Projects">Projets</a>
+  <a href="#films" data-en="Films">Films</a>
+  <a href="#services" data-en="Services">Services</a>
+  <a href="#contact" data-en="Contact">Contact</a>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-  <video class="hero-video" autoplay muted loop playsinline poster="images/venette-entree.jpg">
-    <source src="video/hero.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1 data-en="Architectural <b>3D visualization</b>">Visualisation <b>3D architecturale</b></h1>
-    <p data-en="Photorealistic renders, animation films and VR tours for architects and property developers. Paris-based studio — available across France and worldwide.">Rendus photoréalistes, films d'animation et visites VR pour architectes et promoteurs. Studio basé à Paris, disponible en France et partout dans le monde.</p>
-    <div class="hero-cta">
-      <a href="portfolio.html" class="btn btn-primary" data-en="View portfolio">Voir le portfolio</a>
-      <a href="contact.html" class="btn btn-ghost" data-en="Request a quote">Demander un devis</a>
+<main>
+<section class="hero" id="accueil" data-rail="Accueil" data-rail-en="Home">
+  <img class="hero-img" src="a/hero.webp" width="1920" height="1288" alt="The Annex à Cincinnati, vue de face au crépuscule : façade vitrée éclairée, bardage brun et parking au premier plan." fetchpriority="high">
+  <canvas class="hero-fx" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <h1><span class="l"><i data-en="Architectural">Visualisation 3D</i></span><span class="l"><i data-en="3D visualization">architecturale</i></span></h1>
+    <div class="hero-foot">
+      <p class="lead" data-en="Photorealistic renders, animation films and VR tours for architects and property developers. Paris-based studio, available across France and worldwide.">Rendus photoréalistes, films d'animation et visites VR pour architectes et promoteurs. Studio basé à Paris, disponible en France et partout dans le monde.</p>
+      <div class="cta">
+        <a class="btn btn-lum" href="#projets" data-en="View the projects">Voir les projets</a>
+        <a class="btn btn-fil" href="contact.html" data-en="Request a quote">Demander un devis</a>
+      </div>
+      <div class="hud">
+        <button class="bascule" id="filT" type="button" aria-pressed="false"><span class="sw" aria-hidden="true"></span><span data-en="Wireframe view">Vue filaire</span></button>
+        <p class="hud-etat"><span id="hudS"><span data-en="Rendering the image">Calcul de l'image</span> <b id="hudP">0 %</b></span><span id="hudH" class="si-fin" hidden data-en="Move the mouse over the image">Passez la souris sur l'image</span></p>
+      </div>
+      <p class="credit" data-en="The Annex, Cincinnati (Ohio). Renders: J.-B. Dubach for Kukla Capital Partners.">The Annex, Cincinnati (Ohio). Images : J.-B. Dubach pour Kukla Capital Partners.</p>
     </div>
   </div>
-  <div class="hero-credit">© LumiArchi</div>
-</header>
+</section>
 
-<!-- CLIENTS -->
-<section class="clients">
-  <div class="container">
-    <p class="label" data-en="They trusted this work">Ils ont fait confiance à ce travail</p>
-    <div class="clients-row">
-      <span>BNP</span><span>NEXITY</span><span>PATRIMONI</span><span>CARREFOUR</span><span>COREAL</span><span>ABENEX</span>
-    </div>
+<section class="clients" aria-label="Références">
+  <div class="wrap clients-in">
+    <p data-en="Clients behind this work">Ils ont fait confiance à ce travail</p>
+    <ul><li>BNP</li><li>NEXITY</li><li>PATRIMONI</li><li>CARREFOUR</li><li>COREAL</li><li>ABENEX</li></ul>
     <p class="note" data-en="Projects produced within the Outsign Architecture studio.">Projets réalisés au sein de l'agence Outsign Architecture.</p>
   </div>
 </section>
 
-<!-- FILM DE COMMERCIALISATION (nouveau, 05/11/2026) -->
-<section class="section" id="film">
-  <div class="container film-feature">
-    <div class="film-player">
-      <video controls playsinline preload="none" poster="images/venette-film-poster.jpg"><source src="video/venette-film-commercialisation.mp4" type="video/mp4"></video>
-      <p class="film-caption" data-en="Example: extension of the Carrefour shopping centre in Venette (Oise, France), 42 s. Renders: J.-B. Dubach for Outsign Architecture. Map: © OpenStreetMap contributors · Aerial photo: IGN.">Exemple : extension du centre commercial Carrefour de Venette (Oise), 42 s. Images : J.-B. Dubach pour Outsign Architecture. Carte : © les contributeurs d’OpenStreetMap · Photo aérienne : IGN.</p>
-      <div class="film-second"><video controls playsinline preload="none" poster="images/annex-film-poster.jpg"><source src="video/annex-film-commercialisation.mp4" type="video/mp4"></video>
-      <p class="film-caption" data-en="Example: The Annex, a build-to-suit project of about 10,400 sq ft in Cincinnati (Ohio, USA), 55 s. Renders: J.-B. Dubach for Kukla Capital Partners. Map: © OpenStreetMap contributors · Aerial photo: USGS · Imagery: Google Earth.">Exemple : The Annex, projet « build-to-suit » d’environ 10 400 sq ft à Cincinnati (Ohio, États-Unis), 55 s. Images : J.-B. Dubach pour Kukla Capital Partners. Carte : © les contributeurs d’OpenStreetMap · Photo aérienne : USGS · Imagerie : Google Earth.</p></div>
+<section class="studio" id="studio" data-rail="Studio" data-rail-en="Studio">
+  <div class="wrap studio-in">
+    <div class="studio-main">
+      <h2 class="manif" id="manif" data-en="Architectural renders with a strong artistic eye, delivered with the speed of an AI-augmented workflow.">Des rendus architecturaux à haute valeur artistique, livrés avec la réactivité d'un workflow augmenté par l'IA.</h2>
+      <div class="studio-cols">
+        <p data-en="A Beaux-Arts education and 10 years within a Paris architecture studio bring a deep understanding of the profession. Each render is conceived as a true architectural image: a deliberate viewpoint, controlled staging, where light and mood tell the space.">Une formation aux Beaux-Arts de Paris et 10 ans d'expérience au sein d'une agence d'architecture parisienne apportent une compréhension approfondie des enjeux du métier. Chaque rendu est conçu comme une véritable image d'architecture : un regard assumé, une mise en scène maîtrisée, où la lumière et l'ambiance racontent l'espace.</p>
+        <p data-en="Generative AI is integrated into the process as a controlled extension of the creative workflow. It makes it possible to explore mood variations, refine textures and deliver high-resolution renders ready for large-format printing, while keeping full control over artistic quality.">L'intégration de l'intelligence artificielle dans le processus créatif permet d'accélérer les variations d'ambiance, d'affiner les textures et de produire des rendus haute résolution prêts pour l'impression grand format, tout en conservant un contrôle total sur la qualité artistique.</p>
+      </div>
+      <ul class="faits">
+        <li><b data-en="10 years">10 ans</b><span data-en="in a Paris architecture studio">en agence d'architecture à Paris</span></li>
+        <li><b>Beaux-Arts</b><span data-en="trained at the Beaux-Arts de Paris">formation aux Beaux-Arts de Paris</span></li>
+        <li><b>24 h</b><span data-en="reply time on business days">délai de réponse, en jours ouvrés</span></li>
+      </ul>
+      <a class="lien" href="about.html" data-en="More about the studio">En savoir plus sur le studio</a>
     </div>
-    <div class="film-text">
-      <span class="tag" data-en="New">Nouveau</span>
-      <h2 data-en="Real-estate <b>marketing films</b>">Films de <b>commercialisation</b></h2>
+    <figure class="cadre">
+      <div class="im"><img src="a/portrait.webp" width="1100" height="1366" loading="lazy" alt="Terrasses de l'extension du centre commercial de Venette en fin de journée, clients attablés sous les parasols."></div>
+      <figcaption data-en="Extension of the Carrefour shopping centre, Venette (Oise). Renders: J.-B. Dubach for Outsign Architecture.">Extension du centre commercial Carrefour, Venette (Oise). Images : J.-B. Dubach pour Outsign Architecture.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="projets" id="projets" data-rail="Projets" data-rail-en="Projects">
+  <div class="wrap">
+    <div class="sec-tete">
+      <h2 class="titre"><span data-en="Projects">Projets</span><span class="cpt"><span id="pcpt">21</span></span></h2>
+      <div class="filtres" role="group" aria-label="Filtrer les projets">
+        <button type="button" data-f="all" aria-pressed="true" data-en="All">Tous</button>
+        <button type="button" data-f="pub" aria-pressed="false" data-en="Commercial">Commercial et activités</button>
+        <button type="button" data-f="bur" aria-pressed="false" data-en="Offices">Bureaux</button>
+        <button type="button" data-f="ext" aria-pressed="false" data-en="Residential">Résidentiel</button>
+        <button type="button" data-f="int" aria-pressed="false" data-en="Interiors">Intérieurs</button>
+      </div>
+    </div>
+    <ul class="plist" id="plist">
+      <li class="prow" data-c="pub"><a href="projet.html?id=the-annex" data-img="a/p-the-annex.webp"><img class="th" src="a/p-the-annex.webp" width="960" height="644" loading="lazy" alt=""><span class="t">The Annex — Cincinnati (Ohio)</span><span class="p" data-en="Build-to-suit building: extension and new façade">Bâtiment « build-to-suit » : extension et nouvelle façade</span><span class="s">≈ 10 400 sq ft (968 m²)</span></a></li>
+      <li class="prow" data-c="pub"><a href="projet.html?id=venette" data-img="a/p-venette.webp"><img class="th" src="a/p-venette.webp" width="960" height="536" loading="lazy" alt=""><span class="t">Extension Carrefour — Venette</span><span class="p" data-en="Shopping centre extension">Extension d'un centre commercial</span><span class="s" data-en="On request">Sur demande</span></a></li>
+      <li class="prow" data-c="int"><a href="projet.html?id=nomo" data-img="a/p-nomo.webp"><img class="th" src="a/p-nomo.webp" width="960" height="663" loading="lazy" alt=""><span class="t">NOMO Saint-Ouen-sur-Seine</span><span class="p" data-en="Coliving building">Immeuble de coliving</span><span class="s">11 520 m²</span></a></li>
+      <li class="prow" data-c="bur"><a href="projet.html?id=patrimoni-boulogne" data-img="a/p-patrimoni-boulogne.webp"><img class="th" src="a/p-patrimoni-boulogne.webp" width="960" height="763" loading="lazy" alt=""><span class="t">PATRIMONI Boulogne</span><span class="p" data-en="Office refurbishment and extension">Réhabilitation et extension de bureaux</span><span class="s">2 122 m²</span></a></li>
+      <li class="prow" data-c="pub"><a href="projet.html?id=nexity-cachan" data-img="a/p-nexity-cachan.webp"><img class="th" src="a/p-nexity-cachan.webp" width="960" height="657" loading="lazy" alt=""><span class="t">NEXITY SEERI — Cachan</span><span class="p" data-en="Office refurbishment and young-professionals residence">Réhabilitation de bureaux + résidence jeunes actifs</span><span class="s">7 371 m²</span></a></li>
+      <li class="prow" data-c="pub"><a href="projet.html?id=meaux" data-img="a/p-meaux.webp"><img class="th" src="a/p-meaux.webp" width="960" height="568" loading="lazy" alt=""><span class="t">CC La Verrière — Meaux</span><span class="p" data-en="Full restructuring of a shopping centre">Restructuration complète — centre commercial</span><span class="s">5 750 m²</span></a></li>
+      <li class="prow" data-c="bur"><a href="projet.html?id=bnp-vaulx" data-img="a/p-bnp-vaulx.webp"><img class="th" src="a/p-bnp-vaulx.webp" width="960" height="720" loading="lazy" alt=""><span class="t">BNP — Vaulx-en-Velin</span><span class="p" data-en="Office building">Immeuble de bureaux</span><span class="s" data-en="On request">Sur demande</span></a></li>
+      <li class="prow" data-c="ext"><a href="projet.html?id=manoir-plouescat" data-img="a/p-manoir-plouescat.webp"><img class="th" src="a/p-manoir-plouescat.webp" width="960" height="606" loading="lazy" alt=""><span class="t">Manoir de Plouescat</span><span class="p" data-en="Full renovation and extension">Rénovation totale et extension</span><span class="s">288 m²</span></a></li>
+      <li class="prow" data-c="ext"><a href="projet.html?id=dissay" data-img="a/p-dissay.webp"><img class="th" src="a/p-dissay.webp" width="960" height="472" loading="lazy" alt=""><span class="t">Dissay-sous-Courcillon</span><span class="p" data-en="Extension">Extension</span><span class="s">60 m²</span></a></li>
+      <li class="prow" data-c="bur"><a href="projet.html?id=patrimoni-fer-a-moulin" data-img="a/p-patrimoni-fer-a-moulin.webp"><img class="th" src="a/p-patrimoni-fer-a-moulin.webp" width="960" height="746" loading="lazy" alt=""><span class="t">PATRIMONI Fer à Moulin — Paris</span><span class="p" data-en="Office refurbishment and extension">Réhabilitation et extension de bureaux</span><span class="s">2 000 m²</span></a></li>
+      <li class="prow" data-c="ext"><a href="projet.html?id=coreal-villejuif" data-img="a/p-coreal-villejuif.webp"><img class="th" src="a/p-coreal-villejuif.webp" width="960" height="540" loading="lazy" alt=""><span class="t">COREAL — Villejuif</span><span class="p" data-en="Residential building">Immeuble de logements</span><span class="s" data-en="On request">Sur demande</span></a></li>
+      <li class="prow" data-c="bur"><a href="projet.html?id=abenex" data-img="a/p-abenex.webp"><img class="th" src="a/p-abenex.webp" width="833" height="1200" loading="lazy" alt=""><span class="t">ABENEX — rue de Salneuve, Paris</span><span class="p" data-en="Full restructuring of an office building">Restructuration complète d'un immeuble de bureaux</span><span class="s">1 257 m²</span></a></li>
+      <li class="prow" data-c="pub"><a href="projet.html?id=terra-nobilis" data-img="a/p-terra-nobilis.webp"><img class="th" src="a/p-terra-nobilis.webp" width="960" height="540" loading="lazy" alt=""><span class="t">TERRA NOBILIS — Mont-Saint-Martin</span><span class="p" data-en="Retail complex">Ensemble commercial</span><span class="s" data-en="On request">Sur demande</span></a></li>
+      <li class="prow" data-c="pub"><a href="projet.html?id=bruver-saint-mard" data-img="a/p-bruver-saint-mard.webp"><img class="th" src="a/p-bruver-saint-mard.webp" width="960" height="486" loading="lazy" alt=""><span class="t">BRUVER IMMO — Saint Mard</span><span class="p" data-en="Light-industrial building">Bâtiment d'activité</span><span class="s">2 857 m²</span></a></li>
+      <li class="prow" data-c="bur"><a href="projet.html?id=lancry" data-img="a/p-lancry.webp"><img class="th" src="a/p-lancry.webp" width="800" height="548" loading="lazy" alt=""><span class="t">Lancry — Fort-de-France</span><span class="p" data-en="New office building">Création d'un immeuble de bureaux</span><span class="s">3 508 m²</span></a></li>
+      <li class="prow" data-c="pub"><a href="projet.html?id=spacia-mours" data-img="a/p-spacia-mours.webp"><img class="th" src="a/p-spacia-mours.webp" width="960" height="540" loading="lazy" alt=""><span class="t">SPACIA CIE — Mours</span><span class="p" data-en="Light-industrial building">Bâtiment d'activité</span><span class="s" data-en="On request">Sur demande</span></a></li>
+      <li class="prow" data-c="pub"><a href="projet.html?id=freneuse" data-img="a/p-freneuse.webp"><img class="th" src="a/p-freneuse.webp" width="960" height="508" loading="lazy" alt=""><span class="t">Freneuse</span><span class="p" data-en="Light-industrial building">Bâtiment d'activité</span><span class="s" data-en="On request">Sur demande</span></a></li>
+      <li class="prow" data-c="int"><a href="projet.html?id=under-the-spot" data-img="a/p-under-the-spot.webp"><img class="th" src="a/p-under-the-spot.webp" width="960" height="658" loading="lazy" alt=""><span class="t">UNDER THE SPOT</span><span class="p" data-en="New gym">Création d'une salle de sport</span><span class="s">60 m²</span></a></li>
+      <li class="prow" data-c="ext"><a href="projet.html?id=antony" data-img="a/p-antony.webp"><img class="th" src="a/p-antony.webp" width="960" height="640" loading="lazy" alt=""><span class="t">Antony</span><span class="p" data-en="Full restructuring into housing">Restructuration complète à usage de logements</span><span class="s">2 050 m²</span></a></li>
+      <li class="prow" data-c="ext"><a href="projet.html?id=montgaroult" data-img="a/p-montgaroult.webp"><img class="th" src="a/p-montgaroult.webp" width="800" height="489" loading="lazy" alt=""><span class="t">Particulier — Montgaroult</span><span class="p" data-en="Change of use">Changement de destination</span><span class="s">180 m²</span></a></li>
+      <li class="prow" data-c="ext"><a href="projet.html?id=maisons-laffitte" data-img="a/p-maisons-laffitte.webp"><img class="th" src="a/p-maisons-laffitte.webp" width="800" height="450" loading="lazy" alt=""><span class="t">Particulier — Maisons-Laffitte</span><span class="p" data-en="Renovation">Rénovation</span><span class="s" data-en="On request">Sur demande</span></a></li>
+    </ul>
+    <div class="plist-pied">
+      <p data-en="Each line opens the project page.">Chaque ligne ouvre la fiche du projet.</p>
+      <a class="lien" href="portfolio.html" data-en="See the portfolio as a grid">Voir le portfolio en grille</a>
+    </div>
+  </div>
+</section>
+
+<section class="films" id="films" data-rail="Films" data-rail-en="Films">
+  <div class="wrap films-in">
+    <div class="films-txt">
+      <span class="etiq" data-en="New">Nouveau</span>
+      <h2 class="titre" data-en="Real-estate marketing films">Films de commercialisation</h2>
       <p data-en="From your 3D renders to a 30 to 60-second film that sells the project.">De vos images 3D à un film de 30 à 60 secondes qui vend le projet.</p>
       <ul>
         <li data-en="Animated site plan and key figures">Plan animé et chiffres clés</li>
         <li data-en="Title cards, camera moves and music">Cartons titres, mouvements de caméra et musique</li>
         <li data-en="Landscape for presentations, vertical for social media">Format horizontal pour les présentations, vertical pour les réseaux sociaux</li>
       </ul>
-      <a href="contact.html" class="btn btn-primary" data-en="Request a quote">Demander un devis</a>
+      <a class="btn btn-lum" href="contact.html" data-en="Request a quote">Demander un devis</a>
+    </div>
+    <div class="films-liste">
+      <figure class="film" data-src="a/film-venette.mp4" data-d="42">
+        <div class="film-fr">
+          <img src="a/poster-venette.webp" width="1400" height="788" loading="lazy" alt="Affiche du film : l'extension du centre commercial Carrefour de Venette.">
+          <video muted playsinline preload="none" src="a/film-venette.mp4" tabindex="-1" aria-hidden="true"></video>
+          <button class="film-btn" type="button" aria-label="Lire le film Venette avec le son, 42 secondes" data-en-label="Play the Venette film with sound, 42 seconds">
+            <span class="chip"><svg viewBox="0 0 11 13" aria-hidden="true"><path d="M0 0l11 6.5L0 13z"/></svg><span data-en="Play the film">Lire le film</span></span>
+            <span class="tc">00:00 / 00:42</span>
+          </button>
+          <span class="film-bar"></span>
+        </div>
+        <figcaption data-en="Extension of the Carrefour shopping centre in Venette (Oise, France), 42 s. Renders: J.-B. Dubach for Outsign Architecture. Map: © OpenStreetMap contributors. Aerial photo: IGN.">Extension du centre commercial Carrefour de Venette (Oise), 42 s. Images : J.-B. Dubach pour Outsign Architecture. Carte : © les contributeurs d'OpenStreetMap. Photo aérienne : IGN.</figcaption>
+      </figure>
+      <figure class="film" data-src="a/film-annex.mp4" data-d="55">
+        <div class="film-fr">
+          <img src="a/poster-annex.webp" width="1400" height="788" loading="lazy" alt="Affiche du film : The Annex, Cincinnati, façade au crépuscule.">
+          <video muted playsinline preload="none" src="a/film-annex.mp4" tabindex="-1" aria-hidden="true"></video>
+          <button class="film-btn" type="button" aria-label="Lire le film The Annex avec le son, 55 secondes" data-en-label="Play The Annex film with sound, 55 seconds">
+            <span class="chip"><svg viewBox="0 0 11 13" aria-hidden="true"><path d="M0 0l11 6.5L0 13z"/></svg><span data-en="Play the film">Lire le film</span></span>
+            <span class="tc">00:00 / 00:55</span>
+          </button>
+          <span class="film-bar"></span>
+        </div>
+        <figcaption data-en="The Annex, a build-to-suit project of about 10,400 sq ft in Cincinnati (Ohio, USA), 55 s. Renders: J.-B. Dubach for Kukla Capital Partners. Map: © OpenStreetMap contributors. Aerial photo: USGS. Imagery: Google Earth.">The Annex, projet « build-to-suit » d'environ 10 400 sq ft à Cincinnati (Ohio, États-Unis), 55 s. Images : J.-B. Dubach pour Kukla Capital Partners. Carte : © les contributeurs d'OpenStreetMap. Photo aérienne : USGS. Imagerie : Google Earth.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="section">
-  <div class="container">
-    <p class="intro-text" data-en="LumiArchi combines 10 years of experience in a Paris architecture studio with a Beaux-Arts education to produce outstanding architectural 3D visualizations.">LumiArchi allie 10 ans d'expérience en agence d'architecture parisienne et une formation aux Beaux-Arts de Paris pour produire des visualisations 3D architecturales d'exception.</p>
-    <h2 class="section-title" data-en="High artistic value architectural renders, delivered with the <b>speed of an AI-augmented workflow.</b>">Des rendus architecturaux à haute valeur artistique, livrés avec la <b>réactivité d'un workflow augmenté par l'IA.</b></h2>
-    <div class="about-grid">
-      <div>
-        <p data-en="A Beaux-Arts education and 10 years within a Paris architecture studio bring a deep understanding of the profession. Each render is conceived as a true architectural image: a deliberate viewpoint, controlled staging, where light and mood tell the space.">Une formation aux Beaux-Arts de Paris et 10 ans d'expérience au sein d'une agence d'architecture parisienne apportent une compréhension approfondie des enjeux du métier. Chaque rendu est conçu comme une véritable image d'architecture : un regard assumé, une mise en scène maîtrisée, où la lumière et l'ambiance racontent l'espace.</p>
-      </div>
-      <div>
-        <p data-en="Generative AI is integrated into the process — not superficially, but as a controlled extension of the creative workflow. This makes it possible to explore mood variations, refine textures and deliver high-resolution renders ready for large-format printing, while keeping full control over artistic quality.">L'intégration de l'intelligence artificielle dans le processus créatif permet d'accélérer les variations d'ambiance, d'affiner les textures et de produire des rendus haute résolution prêts pour l'impression grand format, tout en conservant un contrôle total sur la qualité artistique.</p>
-      </div>
+<section class="services" id="services" data-rail="Services" data-rail-en="Services">
+  <div class="wrap">
+    <div class="sec-tete">
+      <h2 class="titre" data-en="Services">Services</h2>
+      <p data-en="Complete 3D visualization solutions for your architectural projects.">Des solutions complètes de visualisation 3D pour vos projets architecturaux.</p>
     </div>
-    <div class="center-cta"><a href="about.html" class="btn btn-ghost" data-en="Learn more">En savoir plus</a></div>
-  </div>
-</section>
-
-<!-- SERVICES PREVIEW -->
-<section class="section alt">
-  <div class="container">
-    <h2 class="section-subtitle" data-en="Services">Nos services</h2>
-    <p class="section-lead" data-en="Complete 3D visualization solutions for your architectural projects.">Des solutions complètes de visualisation 3D pour vos projets architecturaux.</p>
-    <div class="services-grid">
-      <a href="services.html#synthese" class="service-card">
-        <div class="thumb"><img src="images/venette-entree.jpg" alt="Images de synthèse"></div>
-        <div class="body">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+    <div class="volets" id="volets">
+      <article class="volet on">
+        <img src="a/svc-1.webp" width="1200" height="670" loading="lazy" alt="">
+        <button class="volet-hit" type="button" aria-expanded="true" aria-label="Images de synthèse" data-en-label="Still renders"></button>
+        <span class="volet-v" aria-hidden="true" data-en="Still renders">Images de synthèse</span>
+        <div class="volet-corps">
           <h3 data-en="Still renders">Images de synthèse</h3>
           <p data-en="High-quality photorealistic renders for your architectural projects.">Rendus photoréalistes haute qualité pour vos projets architecturaux.</p>
+          <a href="services.html#synthese" data-en="View the service">Voir le service</a>
         </div>
-      </a>
-      <a href="services.html#animation" class="service-card">
-        <div class="thumb"><img src="https://lumiarchi.com/images/pub--10.jpg" alt="Films d'animation"></div>
-        <div class="body">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg></div>
+      </article>
+      <article class="volet">
+        <img src="a/svc-2.webp" width="1200" height="675" loading="lazy" alt="">
+        <button class="volet-hit" type="button" aria-expanded="false" aria-label="Films d'animation" data-en-label="Animation films"></button>
+        <span class="volet-v" aria-hidden="true" data-en="Animation films">Films d'animation</span>
+        <div class="volet-corps">
           <h3 data-en="Animation films">Films d'animation</h3>
           <p data-en="Immersive 3D animations to present your spaces in motion.">Animations 3D immersives pour présenter vos espaces en mouvement.</p>
+          <a href="services.html#animation" data-en="View the service">Voir le service</a>
         </div>
-      </a>
-      <a href="services.html#vr" class="service-card">
-        <div class="thumb"><img src="https://lumiarchi.com/images/int--1.jpg" alt="Visites VR"></div>
-        <div class="body">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="3"/><path d="M8 17l2-3h4l2 3"/></svg></div>
+      </article>
+      <article class="volet">
+        <img src="a/svc-3.webp" width="1200" height="829" loading="lazy" alt="">
+        <button class="volet-hit" type="button" aria-expanded="false" aria-label="Visites VR" data-en-label="VR tours"></button>
+        <span class="volet-v" aria-hidden="true" data-en="VR tours">Visites VR</span>
+        <div class="volet-corps">
           <h3 data-en="VR tours">Visites VR</h3>
           <p data-en="Virtual reality experiences to explore your projects.">Expériences de réalité virtuelle pour explorer vos projets.</p>
+          <a href="services.html#vr" data-en="View the service">Voir le service</a>
         </div>
-      </a>
-      <a href="services.html#maquettes" class="service-card">
-        <div class="thumb"><img src="https://lumiarchi.com/images/service-maquette-physique.jpg" alt="Maquettes physiques"></div>
-        <div class="body">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 12l9-5M12 12v10M12 12L3 7"/></svg></div>
+      </article>
+      <article class="volet">
+        <img src="a/svc-4.webp" width="589" height="800" loading="lazy" alt="">
+        <button class="volet-hit" type="button" aria-expanded="false" aria-label="Maquettes physiques" data-en-label="Physical models"></button>
+        <span class="volet-v" aria-hidden="true" data-en="Physical models">Maquettes physiques</span>
+        <div class="volet-corps">
           <h3 data-en="Physical models">Maquettes physiques</h3>
           <p data-en="PLA 3D printing for tangible presentations.">Impression 3D PLA pour des présentations tangibles.</p>
+          <a href="services.html#maquettes" data-en="View the service">Voir le service</a>
         </div>
-      </a>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- CTA BAND -->
-<section class="cta-band">
-  <div class="container">
-    <h2 data-en="An architectural visualization project? <b>Let's talk.</b>">Un projet de visualisation architecturale ? <b>Parlons-en.</b></h2>
-    <p data-en="Reply within 24 business hours.">Réponse sous 24 heures ouvrées.</p>
-    <a href="contact.html" class="btn btn-primary" data-en="Request a quote">Demander un devis</a>
+<section class="contact" id="contact" data-rail="Contact" data-rail-en="Contact">
+  <div class="wrap">
+    <h2><span data-en="An architectural visualization project?">Un projet de visualisation architecturale&nbsp;?</span> <span data-en="Let's talk.">Parlons-en.</span></h2>
+    <div class="contact-bas">
+      <div class="contact-cta">
+        <p data-en="Reply within 24 hours on business days.">Réponse sous 24 h, en jours ouvrés.</p>
+        <a class="btn btn-encre" href="contact.html" data-en="Request a quote">Demander un devis</a>
+      </div>
+      <dl class="coord">
+        <div><dt data-en="Email">E-mail</dt><dd id="cMail">contact@lumiarchi.com</dd><button class="copie" type="button" data-copy="contact@lumiarchi.com" data-for="cMail"><span data-en="Copy">Copier</span><span class="vh" data-en=" the email address"> l'adresse e-mail</span></button></div>
+        <div><dt data-en="Phone">Téléphone</dt><dd id="cTel">06 51 82 45 49</dd><button class="copie" type="button" data-copy="+33651824549" data-for="cTel"><span data-en="Copy">Copier</span><span class="vh" data-en=" the phone number"> le numéro de téléphone</span></button></div>
+        <div><dt data-en="Studio">Studio</dt><dd>Paris 75009</dd><span></span></div>
+      </dl>
+    </div>
   </div>
 </section>
+</main>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <h3>Lumi<span>Archi</span></h3>
-        <p data-en="3D visualization studio">Studio de visualisation 3D</p>
-      </div>
-      <div class="footer-links">
-        <h4>Navigation</h4>
+<footer class="pied">
+  <div class="wrap">
+    <div class="cartouche">
+      <div><p class="logo">Lumi<span>Archi</span></p><p style="margin-top:8px" data-en="3D visualization studio">Studio de visualisation 3D</p></div>
+      <div><small data-en="Location">Lieu</small><p>Paris 75009</p></div>
+      <div><small data-en="Pages">Pages</small>
         <ul>
-          <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
-          <li><a href="services.html" data-en="Services">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="about.html" data-en="About">À propos</a></li>
-          <li><a href="contact.html" data-en="Contact">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <p>Email : <a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></p>
-        <p>Tél : <a href="tel:+33651824549">06 51 82 45 49</a></p>
-        <p>Paris 75009</p>
-      </div>
+      <div><small data-en="Document">Document</small><p data-en="Home page, revision B, November 2026">Page d'accueil, indice B, novembre 2026</p></div>
     </div>
-    <div class="footer-bottom"><p>&copy; <span class="year">2026</span> LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p></div>
+    <p class="droits">© 2026 LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<div class="peek" id="peek" aria-hidden="true"><div class="clip"><img alt="" width="960" height="640"></div></div>
+<div class="rail" id="rail" aria-hidden="true"><i></i><b></b></div>
+<dialog class="cine" id="cine" aria-label="Lecteur de film">
+  <button class="cine-x" id="cineX" type="button" data-en="Close">Fermer</button>
+  <video id="cineV" controls playsinline></video>
+</dialog>
+
+<script>
+(function(){
+'use strict';
+const d=document, root=d.documentElement;
+const $=(s,r)=>(r||d).querySelector(s);
+const $$=(s,r)=>Array.from((r||d).querySelectorAll(s));
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
+const LUM=getComputedStyle(root).getPropertyValue('--lumiere').trim()||'#ff9500';
+let lang='fr';
+
+/* ---------- Langue ---------- */
+const manif=$('#manif'); let words=[], lit=-1;
+function splitManif(){
+  const txt=manif.textContent.trim().split(/\s+/);
+  manif.innerHTML=txt.map(w=>'<span class="w">'+w+'</span>').join(' ');
+  words=$$('.w',manif); lit=-1;
+}
+function setLang(l){
+  lang=l; root.lang=l;
+  $$('[data-en]').forEach(el=>{
+    if(el.dataset.fr===undefined) el.dataset.fr=el.innerHTML;
+    el.innerHTML=(l==='en')?el.dataset.en:el.dataset.fr;
+  });
+  $$('[data-en-label]').forEach(el=>{
+    if(el.dataset.frLabel===undefined) el.dataset.frLabel=el.getAttribute('aria-label');
+    el.setAttribute('aria-label',(l==='en')?el.dataset.enLabel:el.dataset.frLabel);
+  });
+  $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===l)));
+  splitManif(); railLabel(); update();
+  try{localStorage.setItem('la_lang',l);}catch(e){}
+}
+$$('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+/* ---------- Menu mobile ---------- */
+const menu=$('#menu'), menuBtn=$('#menuBtn');
+function setMenu(open){ menu.hidden=!open; menuBtn.setAttribute('aria-expanded',String(open)); }
+menuBtn.addEventListener('click',()=>setMenu(menu.hidden));
+$$('a',menu).forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+d.addEventListener('keydown',e=>{ if(e.key==='Escape'&&!menu.hidden) setMenu(false); });
+
+/* ---------- Défilement : navigation, manifeste, cote ---------- */
+const nav=$('#nav'), rail=$('#rail'), railB=$('b',rail), secs=$$('[data-rail]');
+let curSec=secs[0], ticking=false;
+function railLabel(){ railB.textContent=(lang==='en')?curSec.dataset.railEn:curSec.dataset.rail; }
+function update(){
+  const y=window.scrollY||0, vh=window.innerHeight;
+  nav.classList.toggle('scrolled',y>24);
+  if(words.length){
+    const r=manif.getBoundingClientRect();
+    const p=reduce?1:clamp((vh*.9-r.top)/(r.height+vh*.4),0,1);
+    const n=Math.round(p*words.length);
+    if(n!==lit){ words.forEach((w,i)=>w.classList.toggle('on',i<n)); lit=n; }
+  }
+  const max=root.scrollHeight-vh;
+  rail.style.setProperty('--p',max>0?clamp(y/max,0,1).toFixed(4):'0');
+  let cur=secs[0];
+  secs.forEach(s=>{ if(s.getBoundingClientRect().top<vh*.5) cur=s; });
+  if(cur!==curSec){ curSec=cur; railLabel(); }
+}
+function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(()=>{ ticking=false; update(); }); } }
+addEventListener('scroll',onScroll,{passive:true});
+if('IntersectionObserver' in window){
+  /* si c'est l'hôte qui défile et non la page, on allume le manifeste dès qu'il est visible */
+  new IntersectionObserver(es=>{ if(es[0].isIntersecting&&root.scrollHeight<=window.innerHeight+2){ words.forEach(w=>w.classList.add('on')); lit=words.length; } },{threshold:.5}).observe(manif);
+}
+
+/* ---------- Hero : rendu par buckets puis loupe filaire ---------- */
+const hero=$('.hero'), cv=$('.hero-fx'), himg=$('.hero-img'), ctx=cv.getContext('2d');
+const hudS=$('#hudS'), hudP=$('#hudP'), hudH=$('#hudH'), filT=$('#filT');
+const fil=new Image(); let filOK=false;
+const POS=[.5,.55];                     /* doit suivre object-position de .hero-img */
+let W=0,H=0, cov={x:0,y:0,w:0,h:0}, cells=[], frange=80;
+let phase='attente', t0=0, tiles=[], total=1500, raf=0, visible=true, veille=0, tenu=0;
+const lens={x:0,y:0,tx:0,ty:0,p:0,tp:0}; let full=0, fullT=0, hover=false, seeded=false;
+
+function measure(){
+  const r=hero.getBoundingClientRect(), dpr=Math.min(window.devicePixelRatio||1,2);
+  W=Math.round(r.width); H=Math.round(r.height);
+  cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  const iw=fil.naturalWidth||1920, ih=fil.naturalHeight||1288, s=Math.max(W/iw,H/ih);
+  cov.w=iw*s; cov.h=ih*s; cov.x=(W-cov.w)*POS[0]; cov.y=(H-cov.h)*POS[1];
+  if(!seeded){ lens.x=lens.tx=W*.66; lens.y=lens.ty=H*.34; seeded=true; }
+  /* trame de croisillons : losanges en quinconce, qui pavent tout le hero */
+  const cs=clamp(W/30,22,52), bas=H*(W<760?.5:.68); cells=[]; frange=cs*2;
+  for(let j=-1;j*cs/2<H+cs;j++) for(let i=-1;i*cs<W+cs;i++){
+    const y=j*cs/2;   /* z : la trame s'efface sous le menu et avant le titre */
+    cells.push({x:i*cs+(j&1?cs/2:0),y:y,a:cs/2,o:0,z:clamp((y-64)/48,0,1)*clamp((bas-y)/(H*.1),0,1)});
+  }
+}
+function drawFil(){ ctx.drawImage(fil,cov.x,cov.y,cov.w,cov.h); }
+function plan(){
+  const cols=Math.max(5,Math.round(W/clamp(W/14,62,112))), bw=W/cols, rows=Math.ceil(H/bw);
+  const cx=(cols-1)/2, cy=(rows-1)*.4, list=[];
+  for(let r=0;r<rows;r++) for(let c=0;c<cols;c++){
+    const x=Math.round(c*bw), y=Math.round(r*bw);
+    list.push({x:x,y:y,w:Math.round((c+1)*bw)-x,h:Math.round((r+1)*bw)-y,
+      k:Math.round(Math.max(Math.abs(c-cx),Math.abs(r-cy)))*10+Math.atan2(r-cy,c-cx)});
+  }
+  list.sort((a,b)=>a.k-b.k);
+  const th=[0,0,0,0,0,0,0,0];
+  list.forEach(t=>{ let i=0; for(let j=1;j<th.length;j++) if(th[j]<th[i]) i=j; t.s=th[i]; t.e=t.s+90+Math.random()*130; th[i]=t.e; });
+  const k=total/Math.max.apply(null,th);
+  list.forEach(t=>{ t.s*=k; t.e*=k; });
+  tiles=list;
+}
+function bracket(b){
+  const m=4, l=Math.min(12,b.w*.22), x0=b.x+m, y0=b.y+m, x1=b.x+b.w-m, y1=b.y+b.h-m;
+  ctx.beginPath();
+  ctx.moveTo(x0,y0+l);ctx.lineTo(x0,y0);ctx.lineTo(x0+l,y0);
+  ctx.moveTo(x1-l,y0);ctx.lineTo(x1,y0);ctx.lineTo(x1,y0+l);
+  ctx.moveTo(x1,y1-l);ctx.lineTo(x1,y1);ctx.lineTo(x1-l,y1);
+  ctx.moveTo(x0+l,y1);ctx.lineTo(x0,y1);ctx.lineTo(x0,y1-l);
+  ctx.stroke();
+}
+function rendered(){
+  phase='repos'; hudS.hidden=true; hudH.hidden=false;
+  veille=performance.now()+7000;   /* sans souris : la trame passe une fois, puis se repose */
+}
+function loop(){ if(!raf&&visible) raf=requestAnimationFrame(frame); }
+function frame(now){
+  raf=0;
+  if(!filOK) return;
+  if(phase==='rendu'){
+    const t=now-t0; let done=0;
+    ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=1;
+    ctx.clearRect(0,0,W,H); drawFil();
+    ctx.globalCompositeOperation='destination-out';
+    for(const b of tiles){ if(t>=b.e){ ctx.globalAlpha=Math.min(1,(t-b.e)/170); ctx.fillRect(b.x,b.y,b.w,b.h); done++; } }
+    ctx.globalCompositeOperation='source-over';
+    ctx.strokeStyle=LUM; ctx.fillStyle=LUM; ctx.lineWidth=1.5;
+    for(const b of tiles){ if(t>=b.s&&t<b.e){ ctx.globalAlpha=.1; ctx.fillRect(b.x,b.y,b.w,b.h); ctx.globalAlpha=1; bracket(b); } }
+    ctx.globalAlpha=1;
+    hudP.textContent=Math.round(done/tiles.length*100)+' %';
+    if(t>total+220){ ctx.clearRect(0,0,W,H); rendered(); }
+    loop(); return;
+  }
+  /* repos : la loupe suit la souris, ou se promène seule */
+  full+=(fullT-full)*.12; if(Math.abs(fullT-full)<.0015) full=fullT;
+  const guided=hover&&fine;
+  const pose=now<tenu, auto=!guided&&!reduce&&!pose&&(fine||now<veille);
+  if(auto){ const a=now/1000, n=W<760;
+    lens.tx=W*((n?.6:.64)+.2*Math.sin(a*.31)); lens.ty=H*((n?.2:.3)+(n?.05:.1)*Math.sin(a*.43+1)); }
+  lens.tp=(fullT>.5||(reduce&&!guided)||(!guided&&!auto&&!pose))?0:1;
+  const k=(guided||pose)?.2:.045;
+  lens.x+=(lens.tx-lens.x)*k; lens.y+=(lens.ty-lens.y)*k; lens.p+=(lens.tp-lens.p)*.09;
+  ctx.clearRect(0,0,W,H);
+  if(full>.002){
+    ctx.save(); ctx.beginPath(); ctx.rect(0,0,W*full,H); ctx.clip(); drawFil(); ctx.restore();
+    if(full<.998){ ctx.fillStyle=LUM; ctx.fillRect(W*full-1,0,2,H); }
+  }
+  /* croisillons : le filaire arrive en fines diagonales qui s'épaississent vers le curseur, et se referment derrière lui */
+  let vivant=false;
+  if(full<.998){
+    /* cœur ouvert en plein sur le filaire, croisillons seulement sur une frange de deux mailles */
+    const R=clamp(Math.min(W,H)*.3,110,250);
+    ctx.save(); ctx.beginPath();
+    for(const c of cells){
+      const t=lens.p*c.z*clamp((R+frange-Math.hypot(c.x-lens.x,c.y-lens.y))/frange,0,1);
+      c.o=t>c.o?c.o+(t-c.o)*.22:Math.max(t,c.o-.022);
+      if(c.o>.02){
+        vivant=true; const a=c.a+.4, q=c.a*(1-Math.min(1,c.o));
+        ctx.moveTo(c.x,c.y-a);ctx.lineTo(c.x+a,c.y);ctx.lineTo(c.x,c.y+a);ctx.lineTo(c.x-a,c.y);ctx.closePath();
+        if(q>.5){ ctx.moveTo(c.x,c.y-q);ctx.lineTo(c.x-q,c.y);ctx.lineTo(c.x,c.y+q);ctx.lineTo(c.x+q,c.y);ctx.closePath(); }
+      }
+    }
+    ctx.clip(); drawFil(); ctx.restore();
+  }
+  /* au repos (mouvement réduit, ou écran tactile une fois la trame refermée), on arrête de dessiner */
+  const still=(reduce||(!auto&&!pose))&&!guided&&Math.abs(fullT-full)<.002&&lens.p<.012&&!vivant;
+  if(!still) loop();
+}
+function start(){
+  measure();
+  hero.classList.add('is-on');
+  if(!filOK){ hudS.hidden=true; filT.hidden=true; return; }
+  /* le calcul par blocs ne se joue qu'une fois par visite */
+  let vu=false; try{ vu=sessionStorage.getItem('la_vu')==='1'; sessionStorage.setItem('la_vu','1'); }catch(e){}
+  if(reduce||vu){ rendered(); loop(); return; }
+  plan(); drawFil(); phase='rendu'; t0=performance.now()+420; loop();
+}
+(function boot(){
+  let n=0, fired=false;
+  const go=()=>{ if(fired) return; fired=true; start(); };
+  const one=()=>{ if(++n===2) go(); };
+  fil.onload=()=>{ filOK=true; one(); }; fil.onerror=one;
+  fil.src='a/hero-filaire.webp';
+  if(himg.complete) one(); else { himg.addEventListener('load',one); himg.addEventListener('error',one); }
+  setTimeout(go,5000);
+})();
+hero.addEventListener('pointermove',e=>{
+  if(e.pointerType==='touch') return;
+  const r=hero.getBoundingClientRect(); lens.tx=e.clientX-r.left; lens.ty=e.clientY-r.top; hover=true; loop();
+});
+hero.addEventListener('pointerleave',()=>{ hover=false; loop(); });
+/* au doigt : la trame s'ouvre là où l'on touche l'image, quatre secondes, sans gêner le défilement */
+hero.addEventListener('pointerdown',e=>{
+  if(e.pointerType!=='touch'||phase!=='repos'||e.target.closest('a,button')) return;
+  const r=hero.getBoundingClientRect(); lens.tx=e.clientX-r.left; lens.ty=e.clientY-r.top;
+  tenu=performance.now()+4000; veille=0; loop();
+},{passive:true});
+filT.addEventListener('click',()=>{
+  const on=filT.getAttribute('aria-pressed')!=='true';
+  filT.setAttribute('aria-pressed',String(on)); fullT=on?1:0;
+  if(phase==='rendu'){ ctx.clearRect(0,0,W,H); rendered(); }
+  if(reduce) full=fullT;
+  loop();
+});
+if('IntersectionObserver' in window){
+  new IntersectionObserver(es=>{ visible=es[0].isIntersecting; if(visible) loop(); }).observe(hero);
+}
+let rz=0;
+addEventListener('resize',()=>{ clearTimeout(rz); rz=setTimeout(()=>{
+  measure(); if(phase==='rendu'){ ctx.clearRect(0,0,W,H); rendered(); } loop(); update();
+},120); });
+
+/* ---------- Projets : filtres et aperçu au survol ---------- */
+const plist=$('#plist'), rows=$$('.prow',plist), peek=$('#peek'), pimg=$('img',peek), pcpt=$('#pcpt');
+$$('.filtres button').forEach(b=>b.addEventListener('click',()=>{
+  const f=b.dataset.f; let n=0;
+  $$('.filtres button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  rows.forEach(li=>{ const off=(f!=='all'&&li.dataset.c!==f); li.classList.toggle('off',off); if(!off) n++; });
+  pcpt.textContent=n;
+}));
+let px=0,py=0,ptx=0,pty=0,pOn=false,pRaf=0;
+function place(cx,cy){
+  const w=peek.offsetWidth, h=w*2/3, vw=window.innerWidth, vh=window.innerHeight;
+  ptx=(cx+36+w>vw-12)?cx-36-w:cx+36;
+  ptx=clamp(ptx,12,vw-w-12); pty=clamp(cy-h*.5,76,vh-h-12);
+}
+function peekLoop(){
+  px+=(ptx-px)*.17; py+=(pty-py)*.17;
+  const rot=reduce?0:clamp((ptx-px)*.035,-5,5);
+  peek.style.transform='translate3d('+px.toFixed(1)+'px,'+py.toFixed(1)+'px,0) rotate('+rot.toFixed(2)+'deg)';
+  pRaf=(pOn||Math.abs(ptx-px)>.4||Math.abs(pty-py)>.4)?requestAnimationFrame(peekLoop):0;
+}
+function show(a){
+  const src=a.dataset.img;
+  if(pimg.getAttribute('src')!==src){
+    pimg.src=src;
+    if(!reduce&&pimg.animate) pimg.animate([{transform:'scale(1.16)',filter:'brightness(1.5)'},{transform:'scale(1)',filter:'brightness(1)'}],{duration:700,easing:'cubic-bezier(.2,.7,.1,1)'});
+  }
+  if(!pOn){ px=ptx; py=pty; }
+  pOn=true; peek.classList.add('on');
+  if(!pRaf) pRaf=requestAnimationFrame(peekLoop);
+}
+function hide(){ pOn=false; peek.classList.remove('on'); }
+if(fine){
+  plist.addEventListener('pointermove',e=>place(e.clientX,e.clientY));
+  plist.addEventListener('pointerleave',hide);
+  rows.forEach(li=>{ const a=$('a',li); a.addEventListener('pointerenter',e=>{ place(e.clientX,e.clientY); show(a); }); });
+}
+rows.forEach(li=>{ const a=$('a',li);
+  a.addEventListener('focus',()=>{ if(!a.matches(':focus-visible')||peek.offsetWidth===0) return;
+    const r=a.getBoundingClientRect(); place(r.right-peek.offsetWidth-120,r.top+r.height/2); show(a); });
+  a.addEventListener('blur',hide);
+});
+addEventListener('scroll',()=>{ if(pOn&&!fine) hide(); },{passive:true});
+if('IntersectionObserver' in window&&fine){
+  const pre=new IntersectionObserver(es=>{ if(es[0].isIntersecting){ pre.disconnect(); rows.forEach(li=>{ new Image().src=$('a',li).dataset.img; }); } },{rootMargin:'700px 0px'});
+  pre.observe(plist);
+}
+
+/* ---------- Films : aperçu au survol, lecture avec le son au clic ---------- */
+const cine=$('#cine'), cineV=$('#cineV');
+const fmt=s=>'00:'+String(Math.floor(s)).padStart(2,'0');
+$$('.film').forEach(f=>{
+  const v=$('video',f), bar=$('.film-bar',f), tc=$('.tc',f), dur=+f.dataset.d;
+  const stop=()=>{ v.pause(); f.classList.remove('joue'); try{ v.currentTime=0; }catch(e){} bar.style.transform='scaleX(0)'; tc.textContent=fmt(0)+' / '+fmt(dur); };
+  if(fine&&!reduce){
+    f.addEventListener('pointerenter',()=>{ if(cine.open) return; v.muted=true; const p=v.play(); if(p&&p.then) p.then(()=>f.classList.add('joue')).catch(()=>{}); });
+    f.addEventListener('pointerleave',stop);
+    v.addEventListener('timeupdate',()=>{ bar.style.transform='scaleX('+clamp(v.currentTime/dur,0,1).toFixed(4)+')'; tc.textContent=fmt(v.currentTime)+' / '+fmt(dur); });
+  }
+  $('.film-btn',f).addEventListener('click',()=>{
+    stop(); cineV.src=f.dataset.src;
+    if(cine.showModal) cine.showModal(); else cine.setAttribute('open','');
+    const p=cineV.play(); if(p&&p.catch) p.catch(()=>{});
+  });
+});
+function closeCine(){ cineV.pause(); cineV.removeAttribute('src'); cineV.load(); }
+cine.addEventListener('close',closeCine);
+$('#cineX').addEventListener('click',()=>{ if(cine.close) cine.close(); else { cine.removeAttribute('open'); closeCine(); } });
+cine.addEventListener('click',e=>{ if(e.target===cine&&cine.close) cine.close(); });
+
+/* ---------- Services : volets ---------- */
+const volets=$$('.volet');
+const ouvre=v=>volets.forEach(x=>{ const on=(x===v); x.classList.toggle('on',on); $('.volet-hit',x).setAttribute('aria-expanded',String(on)); });
+volets.forEach(v=>{
+  const hit=$('.volet-hit',v);
+  v.addEventListener('pointerenter',e=>{ if(e.pointerType==='mouse') ouvre(v); });
+  hit.addEventListener('click',()=>ouvre(v));
+  hit.addEventListener('focus',()=>ouvre(v));
+});
+
+/* ---------- Copier les coordonnées ---------- */
+$$('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
+  const s=$('span',b);
+  const ok=()=>{ s.textContent=(lang==='en')?'Copied':'Copié'; setTimeout(()=>{ s.textContent=(lang==='en')?'Copy':'Copier'; },1600); };
+  const select=()=>{ const el=d.getElementById(b.dataset.for), r=d.createRange(); r.selectNodeContents(el); const sel=getSelection(); sel.removeAllRanges(); sel.addRange(r); };
+  try{ navigator.clipboard.writeText(b.dataset.copy).then(ok,select); }catch(e){ select(); }
+}));
+
+/* ---------- Départ ---------- */
+let saved='fr';
+try{ saved=localStorage.getItem('la_lang')||'fr'; }catch(e){}
+setLang(saved==='en'?'en':'fr');
+})();
+</script>
 </body>
 </html>

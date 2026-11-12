@@ -2,140 +2,165 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Services — LumiArchi | Visualisation 3D Architecturale</title>
 <meta name="description" content="Rendus photoréalistes jusqu'à 8K, films d'animation 3D, visites VR et maquettes physiques. Studio LumiArchi, Paris 75009. Devis gratuit.">
 <link rel="canonical" href="https://lumiarchi.com/services.html">
-<link rel="stylesheet" href="css/style.css">
+<meta property="og:title" content="Services — LumiArchi | Visualisation 3D Architecturale">
+<meta property="og:description" content="Rendus photoréalistes jusqu'à 8K, films d'animation 3D, visites VR et maquettes physiques. Studio LumiArchi, Paris 75009. Devis gratuit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lumiarchi.com/services.html">
+<meta property="og:image" content="https://lumiarchi.com/images/pub--7.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@300;400&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">Lumi<span>Archi</span></a>
-    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
-    <ul class="nav-menu">
-      <li><a href="index.html" data-en="Home">Accueil</a></li>
-      <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
-      <li><a href="services.html" class="active" data-en="Services">Services</a></li>
-      <li><a href="about.html" data-en="About">À propos</a></li>
-      <li><a href="contact.html" data-en="Contact">Contact</a></li>
-    </ul>
-    <div class="nav-lang"><button data-lang="fr" class="active">FR</button><button data-lang="en">EN</button></div>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html" aria-label="LumiArchi, accueil">Lumi<span>Archi</span></a>
+    <nav class="nav-links" aria-label="Pages">
+      <a href="about.html" data-en="Studio">Studio</a>
+      <a href="portfolio.html" data-en="Projects">Projets</a>
+      <a href="services.html" aria-current="page" data-en="Services">Services</a>
+      <a href="contact.html" data-en="Contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-lum" href="contact.html" data-en="Request a quote">Demander un devis</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" data-en="Menu">Menu</button>
   </div>
+</header>
+<nav class="menu wrap" id="menu" aria-label="Menu" hidden>
+  <a href="index.html" data-en="Home">Accueil</a>
+  <a href="about.html" data-en="Studio">Studio</a>
+  <a href="portfolio.html" data-en="Projects">Projets</a>
+  <a href="services.html" aria-current="page" data-en="Services">Services</a>
+  <a href="contact.html" data-en="Contact">Contact</a>
 </nav>
 
-<div class="page-head container">
-  <h1 data-en="Complete 3D visualization solutions <b>for your architectural projects</b>">Des solutions complètes de visualisation 3D <b>pour vos projets architecturaux</b></h1>
-</div>
-
-<div class="container">
-
-  <!-- Images de synthèse -->
-  <section class="svc" id="synthese">
-    <div class="svc-media"><img src="https://lumiarchi.com/images/ext--2.jpg" alt="Image de synthèse architecturale"></div>
-    <div class="svc-text">
-      <div class="kicker" data-en="Still renders">Images de synthèse</div>
-      <h2 data-en="Bringing projects to life before they are built">Donner vie aux projets avant leur construction</h2>
-      <h4 data-en="Approach">Notre approche</h4>
-      <p data-en="Each image is composed with an architect's eye and a photographer's sensibility: controlled natural light, refined moods, materials true to the project — in high resolution, ready for large-format print and optimized for the web.">Chaque image est composée avec un œil d'architecte et une sensibilité de photographe : lumière naturelle maîtrisée, ambiances soignées, matériaux fidèles au projet. En haute résolution, prêts pour l'impression grand format et optimisés pour le web.</p>
-      <h4 data-en="Deliverables">Ce que nous livrons</h4>
-      <ul>
-        <li data-en="Exterior & interior renders">Rendus extérieurs et intérieurs</li>
-        <li data-en="Aerial views & urban perspectives">Vues aériennes et perspectives urbaines</li>
-        <li data-en="High-definition images up to 8K">Images haute définition jusqu'à 8K</li>
-        <li data-en="Controlled deadlines via an optimized workflow">Délais maîtrisés grâce à un workflow optimisé</li>
-      </ul>
-      <a href="contact.html" class="btn btn-primary" data-en="Request a quote">Demander un devis</a>
-    </div>
-  </section>
-
-  <!-- Films d'animation -->
-  <section class="svc" id="animation">
-    <div class="svc-media"><img src="https://lumiarchi.com/images/pub--10.jpg" alt="Film d'animation 3D"></div>
-    <div class="svc-text">
-      <div class="kicker" data-en="Animation films">Films d'animation</div>
-      <h2 data-en="Experiencing projects in motion">Faire vivre les projets en mouvement</h2>
-      <h4 data-en="Approach">Notre approche</h4>
-      <p data-en="Animation films reveal space immersively: fluid camera paths, controlled transitions, temporal moods (day, night, seasons). Ideal for investor presentations, marketing and competitions.">Les films d'animation permettent de découvrir l'espace de manière immersive : parcours fluide, transitions maîtrisées, ambiances temporelles (jour, nuit, saisons). Idéal pour les présentations investisseurs, la commercialisation et les concours.</p>
-      <h4 data-en="Deliverables">Ce que nous livrons</h4>
-      <ul>
-        <li data-en="Immersive interior & exterior walkthroughs">Parcours immersifs intérieurs et extérieurs</li>
-        <li data-en="Natural light & time-of-day animation">Animations de lumière naturelle et temporalité</li>
-        <li data-en="Formats adapted to web, presentation, social">Formats adaptés (web, présentation, réseaux sociaux)</li>
-        <li data-en="New: 30 to 60-second marketing films (animated plan, key figures, music)">Nouveau : films de commercialisation de 30 à 60 s (plan animé, chiffres clés, musique)</li>
-      </ul>
-      <div class="svc-embed"><video controls playsinline preload="none" poster="images/venette-film-poster.jpg"><source src="video/venette-film-commercialisation.mp4" type="video/mp4"></video></div>
-      <p class="film-caption" data-en="Example: extension of the Carrefour shopping centre in Venette (Oise, France), 42 s. Renders: J.-B. Dubach for Outsign Architecture. Map: © OpenStreetMap contributors · Aerial photo: IGN.">Exemple : extension du centre commercial Carrefour de Venette (Oise), 42 s. Images : J.-B. Dubach pour Outsign Architecture. Carte : © les contributeurs d’OpenStreetMap · Photo aérienne : IGN.</p>
-      <div class="svc-embed"><video controls playsinline preload="none" poster="images/annex-film-poster.jpg"><source src="video/annex-film-commercialisation.mp4" type="video/mp4"></video></div>
-      <p class="film-caption" data-en="Example: The Annex, a build-to-suit project of about 10,400 sq ft in Cincinnati (Ohio, USA), 55 s. Renders: J.-B. Dubach for Kukla Capital Partners. Map: © OpenStreetMap contributors · Aerial photo: USGS · Imagery: Google Earth.">Exemple : The Annex, projet « build-to-suit » d’environ 10 400 sq ft à Cincinnati (Ohio, États-Unis), 55 s. Images : J.-B. Dubach pour Kukla Capital Partners. Carte : © les contributeurs d’OpenStreetMap · Photo aérienne : USGS · Imagerie : Google Earth.</p>
-      <div class="svc-embed"><iframe src="https://www.youtube.com/embed/f5tdY_WUPqM?rel=0&modestbranding=1" title="Film d'animation LumiArchi" allowfullscreen></iframe></div>
-      <a href="contact.html" class="btn btn-primary" data-en="Request a quote">Demander un devis</a>
-    </div>
-  </section>
-
-  <!-- Visites VR -->
-  <section class="svc" id="vr">
-    <div class="svc-media"><img src="https://lumiarchi.com/images/int--1.jpg" alt="Visite VR architecturale"></div>
-    <div class="svc-text">
-      <div class="kicker" data-en="VR tours">Visites VR</div>
-      <h2 data-en="Immersing clients in the experience">Plonger les clients dans une expérience immersive</h2>
-      <h4 data-en="Approach">Notre approche</h4>
-      <p data-en="Virtual reality tours let clients freely explore spaces and validate choices before construction — a powerful tool to convince investors and end clients, especially for property development.">Les visites en réalité virtuelle permettent d'explorer librement les espaces et de valider des choix avant construction. Un outil puissant pour convaincre investisseurs et clients finaux, particulièrement en promotion immobilière.</p>
-      <h4 data-en="Deliverables">Ce que nous livrons</h4>
-      <ul>
-        <li data-en="Free real-time navigation">Navigation libre en temps réel</li>
-        <li data-en="Compatible with VR headsets & screen">Compatible casques VR et navigation écran</li>
-        <li data-en="Mood variations on demand">Variations d'ambiances à la demande</li>
-      </ul>
-      <div class="svc-embed"><iframe src="https://www.youtube.com/embed/IwPqOGBFFkI?rel=0&modestbranding=1" title="Visite VR LumiArchi" allowfullscreen></iframe></div>
-      <a href="contact.html" class="btn btn-primary" data-en="Request a quote">Demander un devis</a>
-    </div>
-  </section>
-
-  <!-- Maquettes physiques -->
-  <section class="svc" id="maquettes">
-    <div class="svc-media"><img src="https://lumiarchi.com/images/maquette-1.jpg" alt="Maquette physique imprimée en 3D"></div>
-    <div class="svc-text">
-      <div class="kicker" data-en="Physical models">Maquettes physiques</div>
-      <h2 data-en="From digital to tangible">Du numérique au tangible</h2>
-      <h4 data-en="Approach">Notre approche</h4>
-      <p data-en="3D-printed physical models offer a concrete, memorable presentation — ideal for competitions, town-hall meetings and client meetings where the physical dimension makes the difference. High-precision PLA printing, careful finishing.">Les maquettes imprimées en 3D offrent une présentation concrète et mémorable — idéales pour les concours, les présentations en mairie et les rendez-vous clients où la dimension physique fait la différence. Impression PLA haute précision, finitions soignées.</p>
-      <h4 data-en="Deliverables">Ce que nous livrons</h4>
-      <ul>
-        <li data-en="High-precision 3D printing">Impression 3D haute précision</li>
-        <li data-en="Volume & urban insertion models">Maquettes de volume et d'insertion urbaine</li>
-        <li data-en="Fast delivery in the Paris region">Livraison rapide Île-de-France</li>
-      </ul>
-      <a href="contact.html" class="btn btn-primary" data-en="Request a quote">Demander un devis</a>
-    </div>
-  </section>
-
-</div>
-
-<section class="cta-band">
-  <div class="container">
-    <h2 data-en="A project in mind? <b>Let's talk.</b>">Un projet en tête ? <b>Parlons-en.</b></h2>
-    <p data-en="Reply within 24 business hours.">Réponse sous 24 heures ouvrées.</p>
-    <a href="contact.html" class="btn btn-primary" data-en="Contact us">Nous contacter</a>
+<main>
+<section class="tete">
+  <div class="wrap">
+    <p class="sur"><a href="index.html">LumiArchi</a><span aria-hidden="true">/</span><span data-en="Services">Services</span></p>
+    <h1>Services</h1>
+    <p class="chapo" data-en="Complete 3D visualization solutions for your architectural projects: still renders, animation films, VR tours and physical models.">Des solutions complètes de visualisation 3D pour vos projets architecturaux : images de synthèse, films d'animation, visites VR et maquettes physiques.</p>
   </div>
 </section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-logo"><h3>Lumi<span>Archi</span></h3><p data-en="3D visualization studio">Studio de visualisation 3D</p></div>
-      <div class="footer-links"><h4>Navigation</h4><ul>
-        <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
-        <li><a href="services.html" data-en="Services">Services</a></li>
-        <li><a href="about.html" data-en="About">À propos</a></li>
-        <li><a href="contact.html" data-en="Contact">Contact</a></li></ul></div>
-      <div class="footer-contact"><h4>Contact</h4>
-        <p>Email : <a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></p>
-        <p>Tél : <a href="tel:+33651824549">06 51 82 45 49</a></p><p>Paris 75009</p></div>
+<section class="svc" id="synthese">
+  <div class="wrap g12 svc-in">
+    <div class="svc-media"><div class="im"><img src="images/ext--2.jpg" width="1200" height="900" loading="lazy" alt="Image de synthèse architecturale"></div></div>
+    <div class="svc-txt">
+      <p class="num">01 — <span data-en="Still renders">Images de synthèse</span></p>
+      <h2 data-en="Bringing projects to life before they are built">Donner vie aux projets avant leur construction</h2>
+      <p data-en="Each image is composed with an architect's eye and a photographer's sensibility: controlled natural light, refined moods, materials true to the project — in high resolution, ready for large-format print and optimized for the web.">Chaque image est composée avec un œil d'architecte et une sensibilité de photographe : lumière naturelle maîtrisée, ambiances soignées, matériaux fidèles au projet. En haute résolution, prêts pour l'impression grand format et optimisés pour le web.</p>
+      <h3 data-en="Deliverables">Ce que nous livrons</h3>
+      <ul>
+          <li data-en="Exterior &amp; interior renders">Rendus extérieurs et intérieurs</li>
+          <li data-en="Aerial views &amp; urban perspectives">Vues aériennes et perspectives urbaines</li>
+          <li data-en="High-definition images up to 8K">Images haute définition jusqu'à 8K</li>
+          <li data-en="Controlled deadlines via an optimized workflow">Délais maîtrisés grâce à un workflow optimisé</li>
+      </ul>
+      <a class="btn btn-lum" href="contact.html" data-en="Request a quote">Demander un devis</a>
     </div>
-    <div class="footer-bottom"><p>&copy; <span class="year">2026</span> LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p></div>
+  </div>
+</section>
+<section class="svc" id="animation">
+  <div class="wrap g12 svc-in">
+    <div class="svc-media"><div class="im"><img src="images/pub--10.jpg" width="1200" height="900" loading="lazy" alt="Film d'animation 3D"></div></div>
+    <div class="svc-txt">
+      <p class="num">02 — <span data-en="Animation films">Films d'animation</span></p>
+      <h2 data-en="Experiencing projects in motion">Faire vivre les projets en mouvement</h2>
+      <p data-en="Animation films reveal space immersively: fluid camera paths, controlled transitions, temporal moods (day, night, seasons). Ideal for investor presentations, marketing and competitions.">Les films d'animation permettent de découvrir l'espace de manière immersive : parcours fluide, transitions maîtrisées, ambiances temporelles (jour, nuit, saisons). Idéal pour les présentations investisseurs, la commercialisation et les concours.</p>
+      <h3 data-en="Deliverables">Ce que nous livrons</h3>
+      <ul>
+          <li data-en="Immersive interior &amp; exterior walkthroughs">Parcours immersifs intérieurs et extérieurs</li>
+          <li data-en="Natural light &amp; time-of-day animation">Animations de lumière naturelle et temporalité</li>
+          <li data-en="Formats adapted to web, presentation, social">Formats adaptés (web, présentation, réseaux sociaux)</li>
+          <li data-en="New: 30 to 60-second marketing films (animated plan, key figures, music)">Nouveau : films de commercialisation de 30 à 60 s (plan animé, chiffres clés, musique)</li>
+      </ul>
+      <a class="btn btn-lum" href="contact.html" data-en="Request a quote">Demander un devis</a>
+    </div>
+    <div class="svc-films">
+      <figure><div class="embed"><video controls playsinline preload="none" poster="images/venette-film-poster.jpg"><source src="video/venette-film-commercialisation.mp4" type="video/mp4"></video></div>
+        <figcaption class="leg" data-en="Extension of the Carrefour shopping centre in Venette (Oise, France), 42 s. Renders: J.-B. Dubach for Outsign Architecture. Map: © OpenStreetMap contributors. Aerial photo: IGN.">Extension du centre commercial Carrefour de Venette (Oise), 42 s. Images : J.-B. Dubach pour Outsign Architecture. Carte : © les contributeurs d'OpenStreetMap. Photo aérienne : IGN.</figcaption></figure>
+      <figure><div class="embed"><video controls playsinline preload="none" poster="images/annex-film-poster.jpg"><source src="video/annex-film-commercialisation.mp4" type="video/mp4"></video></div>
+        <figcaption class="leg" data-en="The Annex, a build-to-suit project of about 10,400 sq ft in Cincinnati (Ohio, USA), 55 s. Renders: J.-B. Dubach for Kukla Capital Partners. Map: © OpenStreetMap contributors. Aerial photo: USGS. Imagery: Google Earth.">The Annex, projet « build-to-suit » d'environ 10 400 sq ft à Cincinnati (Ohio, États-Unis), 55 s. Images : J.-B. Dubach pour Kukla Capital Partners. Carte : © les contributeurs d'OpenStreetMap. Photo aérienne : USGS. Imagerie : Google Earth.</figcaption></figure>
+      <figure><div class="embed"><iframe src="https://www.youtube.com/embed/f5tdY_WUPqM?rel=0&modestbranding=1" title="Film d'animation LumiArchi" loading="lazy" allowfullscreen></iframe></div>
+        <figcaption class="leg" data-en="Animation film, walkthrough.">Film d'animation, parcours.</figcaption></figure>
+    </div>
+  </div>
+</section>
+<section class="svc" id="vr">
+  <div class="wrap g12 svc-in">
+    <div class="svc-media"><div class="im"><img src="images/int--1.jpg" width="1200" height="900" loading="lazy" alt="Visite VR architecturale"></div></div>
+    <div class="svc-txt">
+      <p class="num">03 — <span data-en="VR tours">Visites VR</span></p>
+      <h2 data-en="Immersing clients in the experience">Plonger les clients dans une expérience immersive</h2>
+      <p data-en="Virtual reality tours let clients freely explore spaces and validate choices before construction — a powerful tool to convince investors and end clients, especially for property development.">Les visites en réalité virtuelle permettent d'explorer librement les espaces et de valider des choix avant construction. Un outil puissant pour convaincre investisseurs et clients finaux, particulièrement en promotion immobilière.</p>
+      <h3 data-en="Deliverables">Ce que nous livrons</h3>
+      <ul>
+          <li data-en="Free real-time navigation">Navigation libre en temps réel</li>
+          <li data-en="Compatible with VR headsets &amp; screen">Compatible casques VR et navigation écran</li>
+          <li data-en="Mood variations on demand">Variations d'ambiances à la demande</li>
+      </ul>
+      <a class="btn btn-lum" href="contact.html" data-en="Request a quote">Demander un devis</a>
+    </div>
+    <div class="svc-films un">
+      <figure><div class="embed"><iframe src="https://www.youtube.com/embed/IwPqOGBFFkI?rel=0&modestbranding=1" title="Visite VR LumiArchi" loading="lazy" allowfullscreen></iframe></div>
+        <figcaption class="leg" data-en="VR tour, screen capture.">Visite VR, capture d'écran.</figcaption></figure>
+    </div>
+  </div>
+</section>
+<section class="svc" id="maquettes">
+  <div class="wrap g12 svc-in">
+    <div class="svc-media"><div class="im"><img src="images/maquette-1.jpg" width="1200" height="900" loading="lazy" alt="Maquette physique imprimée en 3D"></div></div>
+    <div class="svc-txt">
+      <p class="num">04 — <span data-en="Physical models">Maquettes physiques</span></p>
+      <h2 data-en="From digital to tangible">Du numérique au tangible</h2>
+      <p data-en="3D-printed physical models offer a concrete, memorable presentation — ideal for competitions, town-hall meetings and client meetings where the physical dimension makes the difference. High-precision PLA printing, careful finishing.">Les maquettes imprimées en 3D offrent une présentation concrète et mémorable — idéales pour les concours, les présentations en mairie et les rendez-vous clients où la dimension physique fait la différence. Impression PLA haute précision, finitions soignées.</p>
+      <h3 data-en="Deliverables">Ce que nous livrons</h3>
+      <ul>
+          <li data-en="High-precision 3D printing">Impression 3D haute précision</li>
+          <li data-en="Volume &amp; urban insertion models">Maquettes de volume et d'insertion urbaine</li>
+          <li data-en="Fast delivery in the Paris region">Livraison rapide Île-de-France</li>
+      </ul>
+      <a class="btn btn-lum" href="contact.html" data-en="Request a quote">Demander un devis</a>
+    </div>
+  </div>
+</section>
+</main>
+<section class="appel">
+  <div class="wrap">
+    <h2><span data-en="An architectural visualization project?">Un projet de visualisation architecturale&nbsp;?</span> <span data-en="Let's talk.">Parlons-en.</span></h2>
+    <div class="appel-bas">
+      <a class="btn btn-encre" href="contact.html" data-en="Request a quote">Demander un devis</a>
+      <p data-en="Reply within 24 hours on business days.">Réponse sous 24 h, en jours ouvrés.</p>
+    </div>
+  </div>
+</section>
+<footer class="pied">
+  <div class="wrap">
+    <div class="cartouche">
+      <div><p class="logo">Lumi<span>Archi</span></p><p style="margin-top:8px" data-en="3D visualization studio">Studio de visualisation 3D</p></div>
+      <div><small data-en="Location">Lieu</small><p>Paris 75009</p></div>
+      <div><small>Pages</small>
+        <ul>
+          <li><a href="index.html" data-en="Home">Accueil</a></li>
+          <li><a href="portfolio.html" data-en="Projects">Projets</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">Studio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div><small>Contact</small><p><a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a><br><a href="tel:+33651824549">06 51 82 45 49</a></p></div>
+    </div>
+    <p class="droits">© 2026 LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p>
   </div>
 </footer>
-<script src="js/main.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

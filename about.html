@@ -2,63 +2,119 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>À propos — LumiArchi | Studio 3D Paris</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Studio — LumiArchi | Visualisation 3D à Paris</title>
 <meta name="description" content="LumiArchi, studio de visualisation 3D à Paris. Formation Beaux-Arts, 10 ans d'agence, workflow IA maîtrisé. Pour architectes, promoteurs et bureaux d'études.">
 <link rel="canonical" href="https://lumiarchi.com/about.html">
-<link rel="stylesheet" href="css/style.css">
+<meta property="og:title" content="Studio — LumiArchi | Visualisation 3D à Paris">
+<meta property="og:description" content="LumiArchi, studio de visualisation 3D à Paris. Formation Beaux-Arts, 10 ans d'agence, workflow IA maîtrisé. Pour architectes, promoteurs et bureaux d'études.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lumiarchi.com/about.html">
+<meta property="og:image" content="https://lumiarchi.com/images/pub--7.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@300;400&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">Lumi<span>Archi</span></a>
-    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
-    <ul class="nav-menu">
-      <li><a href="index.html" data-en="Home">Accueil</a></li>
-      <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
-      <li><a href="services.html" data-en="Services">Services</a></li>
-      <li><a href="about.html" class="active" data-en="About">À propos</a></li>
-      <li><a href="contact.html" data-en="Contact">Contact</a></li>
-    </ul>
-    <div class="nav-lang"><button data-lang="fr" class="active">FR</button><button data-lang="en">EN</button></div>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html" aria-label="LumiArchi, accueil">Lumi<span>Archi</span></a>
+    <nav class="nav-links" aria-label="Pages">
+      <a href="about.html" aria-current="page" data-en="Studio">Studio</a>
+      <a href="portfolio.html" data-en="Projects">Projets</a>
+      <a href="services.html" data-en="Services">Services</a>
+      <a href="contact.html" data-en="Contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-lum" href="contact.html" data-en="Request a quote">Demander un devis</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" data-en="Menu">Menu</button>
   </div>
+</header>
+<nav class="menu wrap" id="menu" aria-label="Menu" hidden>
+  <a href="index.html" data-en="Home">Accueil</a>
+  <a href="about.html" aria-current="page" data-en="Studio">Studio</a>
+  <a href="portfolio.html" data-en="Projects">Projets</a>
+  <a href="services.html" data-en="Services">Services</a>
+  <a href="contact.html" data-en="Contact">Contact</a>
 </nav>
 
-<div class="page-head container">
-  <h1 data-en="Architectural visualization: <b>artistic training meets professional experience</b>">Visualisation architecturale : <b>l'alliance de la formation artistique et de l'expérience professionnelle</b></h1>
-</div>
+<main>
+<section class="tete">
+  <div class="wrap">
+    <p class="sur"><a href="index.html">LumiArchi</a><span aria-hidden="true">/</span><span data-en="Studio">Studio</span></p>
+    <h1 class="long" data-en="Architectural visualization: artistic training meets professional experience.">Visualisation architecturale&nbsp;: l'alliance de la formation artistique et de l'expérience professionnelle.</h1>
+  </div>
+</section>
 
-<div class="container block" style="padding-bottom:80px">
-  <h2 data-en="Background">Parcours</h2>
-  <p data-en="Trained at the Beaux-Arts de Paris and with 10 years of experience within a Paris architecture studio, LumiArchi produces images that are not only technically accurate but also visually powerful.">Diplômé des Beaux-Arts de Paris et fort d'une expérience de 10 ans au sein d'une agence d'architecture parisienne, LumiArchi produit des images qui ne sont pas seulement techniquement justes, mais aussi visuellement puissantes.</p>
-  <p data-en="This dual training — artistic and professional — brings a deep understanding of what a project involves: technical constraints, tight deadlines, client trade-offs, evolving programs. This experience makes the difference in each assignment: identifying what needs to be shown, and knowing how to picture it.">Cette double formation — artistique et professionnelle — apporte une compréhension approfondie des enjeux d'un projet architectural : contraintes techniques, délais serrés, arbitrages client, évolutions de programme. Cette expérience fait la différence : identifier ce qu'il faut montrer, et savoir comment le mettre en image.</p>
+<section class="bande calque">
+  <div class="wrap">
+    <ul class="faits">
+      <li><b data-en="10 years">10 ans</b><span data-en="in a Paris architecture studio">en agence d'architecture à Paris</span></li>
+      <li><b>Beaux-Arts</b><span data-en="trained at the Beaux-Arts de Paris">formation aux Beaux-Arts de Paris</span></li>
+      <li><b>24 h</b><span data-en="reply time on business days">délai de réponse, en jours ouvrés</span></li>
+    </ul>
 
-  <h2 data-en="Approach">Approche</h2>
-  <p data-en="An architectural image is never a mere technical process. It is a matter of viewpoint, framing and staging — at the crossroads of photography, graphic design and visual storytelling. Every render is thought of as an image in its own right, where light, mood and detail tell the space.">Une image d'architecture n'est jamais un simple processus technique. C'est un travail de regard, de cadrage, de mise en scène — à la croisée de la photographie, du graphisme et de la narration visuelle. Chaque rendu est pensé comme une image à part entière, où la lumière, l'ambiance et les détails racontent l'espace.</p>
-  <p data-en="The workflow integrates the most advanced AI tools — not superficially, but as a controlled extension of the creative process. This delivers high-resolution photorealistic renders with a responsiveness traditional methods cannot match.">Le workflow intègre les outils d'intelligence artificielle les plus avancés, non pas de manière superficielle, mais comme une extension maîtrisée du processus créatif. Cette approche permet de livrer des rendus photoréalistes haute résolution avec une réactivité que les méthodes traditionnelles ne permettent pas d'atteindre.</p>
-
-  <h2 data-en="Who for">Pour qui</h2>
-  <p data-en="Architecture firms, property developers and engineering offices: LumiArchi supports clients who need precise, convincing visuals delivered on time — for competitions, marketing, building permits or client presentations.">Agences d'architecture, promoteurs immobiliers, bureaux d'études : LumiArchi accompagne des clients qui ont besoin de visuels précis, convaincants et livrés dans les délais — pour un concours, une commercialisation, un permis de construire ou une présentation client.</p>
-
-  <div class="center-cta"><a href="contact.html" class="btn btn-primary" data-en="Contact us">Nous contacter</a></div>
-</div>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-logo"><h3>Lumi<span>Archi</span></h3><p data-en="3D visualization studio">Studio de visualisation 3D</p></div>
-      <div class="footer-links"><h4>Navigation</h4><ul>
-        <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
-        <li><a href="services.html" data-en="Services">Services</a></li>
-        <li><a href="about.html" data-en="About">À propos</a></li>
-        <li><a href="contact.html" data-en="Contact">Contact</a></li></ul></div>
-      <div class="footer-contact"><h4>Contact</h4>
-        <p>Email : <a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></p>
-        <p>Tél : <a href="tel:+33651824549">06 51 82 45 49</a></p><p>Paris 75009</p></div>
+    <div class="g12 rang">
+      <h2><small>01</small><span data-en="Background">Parcours</span></h2>
+      <div class="tx">
+        <p data-en="Trained at the Beaux-Arts de Paris and with 10 years of experience within a Paris architecture studio, LumiArchi produces images that are not only technically accurate but also visually powerful.">Diplômé des Beaux-Arts de Paris et fort d'une expérience de 10 ans au sein d'une agence d'architecture parisienne, LumiArchi produit des images qui ne sont pas seulement techniquement justes, mais aussi visuellement puissantes.</p>
+        <p data-en="This dual training — artistic and professional — brings a deep understanding of what a project involves: technical constraints, tight deadlines, client trade-offs, evolving programs. This experience makes the difference in each assignment: identifying what needs to be shown, and knowing how to picture it.">Cette double formation — artistique et professionnelle — apporte une compréhension approfondie des enjeux d'un projet architectural : contraintes techniques, délais serrés, arbitrages client, évolutions de programme. Cette expérience fait la différence : identifier ce qu'il faut montrer, et savoir comment le mettre en image.</p>
+      </div>
     </div>
-    <div class="footer-bottom"><p>&copy; <span class="year">2026</span> LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p></div>
+    <div class="g12 rang">
+      <h2><small>02</small><span data-en="Approach">Approche</span></h2>
+      <div class="tx">
+        <p data-en="An architectural image is never a mere technical process. It is a matter of viewpoint, framing and staging — at the crossroads of photography, graphic design and visual storytelling. Every render is thought of as an image in its own right, where light, mood and detail tell the space.">Une image d'architecture n'est jamais un simple processus technique. C'est un travail de regard, de cadrage, de mise en scène — à la croisée de la photographie, du graphisme et de la narration visuelle. Chaque rendu est pensé comme une image à part entière, où la lumière, l'ambiance et les détails racontent l'espace.</p>
+        <p data-en="The workflow integrates the most advanced AI tools — not superficially, but as a controlled extension of the creative process. This delivers high-resolution photorealistic renders with a responsiveness traditional methods cannot match.">Le workflow intègre les outils d'intelligence artificielle les plus avancés, non pas de manière superficielle, mais comme une extension maîtrisée du processus créatif. Cette approche permet de livrer des rendus photoréalistes haute résolution avec une réactivité que les méthodes traditionnelles ne permettent pas d'atteindre.</p>
+      </div>
+    </div>
+    <div class="g12 rang">
+      <h2><small>03</small><span data-en="Who for">Pour qui</span></h2>
+      <div class="tx">
+        <p data-en="Architecture firms, property developers and engineering offices: LumiArchi supports clients who need precise, convincing visuals delivered on time — for competitions, marketing, building permits or client presentations.">Agences d'architecture, promoteurs immobiliers, bureaux d'études : LumiArchi accompagne des clients qui ont besoin de visuels précis, convaincants et livrés dans les délais — pour un concours, une commercialisation, un permis de construire ou une présentation client.</p>
+        <p><a class="lien" href="portfolio.html" data-en="View the projects">Voir les projets</a></p>
+      </div>
+    </div>
+
+    <figure class="cadre">
+      <div class="im"><img src="images/venette-terrasse-1.jpg" width="1920" height="1080" loading="lazy" alt="Terrasses de l'extension du centre commercial de Venette en fin de journée."></div>
+      <figcaption data-en="Extension of the Carrefour shopping centre, Venette (Oise). Renders: J.-B. Dubach for Outsign Architecture.">Extension du centre commercial Carrefour, Venette (Oise). Images : J.-B. Dubach pour Outsign Architecture.</figcaption>
+    </figure>
+  </div>
+</section>
+</main>
+<section class="appel">
+  <div class="wrap">
+    <h2><span data-en="An architectural visualization project?">Un projet de visualisation architecturale&nbsp;?</span> <span data-en="Let's talk.">Parlons-en.</span></h2>
+    <div class="appel-bas">
+      <a class="btn btn-encre" href="contact.html" data-en="Request a quote">Demander un devis</a>
+      <p data-en="Reply within 24 hours on business days.">Réponse sous 24 h, en jours ouvrés.</p>
+    </div>
+  </div>
+</section>
+<footer class="pied">
+  <div class="wrap">
+    <div class="cartouche">
+      <div><p class="logo">Lumi<span>Archi</span></p><p style="margin-top:8px" data-en="3D visualization studio">Studio de visualisation 3D</p></div>
+      <div><small data-en="Location">Lieu</small><p>Paris 75009</p></div>
+      <div><small>Pages</small>
+        <ul>
+          <li><a href="index.html" data-en="Home">Accueil</a></li>
+          <li><a href="portfolio.html" data-en="Projects">Projets</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">Studio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div><small>Contact</small><p><a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a><br><a href="tel:+33651824549">06 51 82 45 49</a></p></div>
+    </div>
+    <p class="droits">© 2026 LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p>
   </div>
 </footer>
-<script src="js/main.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

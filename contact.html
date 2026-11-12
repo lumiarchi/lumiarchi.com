@@ -2,86 +2,101 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Contact — LumiArchi | Visualisation 3D Paris</title>
-<meta name="description" content="Contactez LumiArchi pour votre projet de visualisation 3D architecturale. Studio Paris 75009. Réponse sous 24 heures ouvrées.">
+<meta name="description" content="Contactez LumiArchi pour votre projet de visualisation 3D architecturale. Studio Paris 75009. Réponse sous 24 h, en jours ouvrés.">
 <link rel="canonical" href="https://lumiarchi.com/contact.html">
-<link rel="stylesheet" href="css/style.css">
+<meta property="og:title" content="Contact — LumiArchi | Visualisation 3D Paris">
+<meta property="og:description" content="Contactez LumiArchi pour votre projet de visualisation 3D architecturale. Studio Paris 75009. Réponse sous 24 h, en jours ouvrés.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lumiarchi.com/contact.html">
+<meta property="og:image" content="https://lumiarchi.com/images/pub--7.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@300;400&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">Lumi<span>Archi</span></a>
-    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
-    <ul class="nav-menu">
-      <li><a href="index.html" data-en="Home">Accueil</a></li>
-      <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
-      <li><a href="services.html" data-en="Services">Services</a></li>
-      <li><a href="about.html" data-en="About">À propos</a></li>
-      <li><a href="contact.html" class="active" data-en="Contact">Contact</a></li>
-    </ul>
-    <div class="nav-lang"><button data-lang="fr" class="active">FR</button><button data-lang="en">EN</button></div>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html" aria-label="LumiArchi, accueil">Lumi<span>Archi</span></a>
+    <nav class="nav-links" aria-label="Pages">
+      <a href="about.html" data-en="Studio">Studio</a>
+      <a href="portfolio.html" data-en="Projects">Projets</a>
+      <a href="services.html" data-en="Services">Services</a>
+      <a href="contact.html" aria-current="page" data-en="Contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-lum" href="contact.html" data-en="Request a quote">Demander un devis</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" data-en="Menu">Menu</button>
   </div>
+</header>
+<nav class="menu wrap" id="menu" aria-label="Menu" hidden>
+  <a href="index.html" data-en="Home">Accueil</a>
+  <a href="about.html" data-en="Studio">Studio</a>
+  <a href="portfolio.html" data-en="Projects">Projets</a>
+  <a href="services.html" data-en="Services">Services</a>
+  <a href="contact.html" aria-current="page" data-en="Contact">Contact</a>
 </nav>
 
-<div class="page-head container"><h1 data-en="Contact"><b>Contact</b></h1></div>
+<main>
+<section class="tete">
+  <div class="wrap">
+    <p class="sur"><a href="index.html">LumiArchi</a><span aria-hidden="true">/</span><span data-en="Contact">Contact</span></p>
+    <h1 data-en="Let's talk about your project.">Parlons de votre projet.</h1>
+    <p class="chapo" data-en="Describe the building, the images you need and your deadline. You get a reply and a quote within 24 hours, on business days.">Décrivez le bâtiment, les images attendues et votre échéance. Vous recevez une réponse et un devis sous 24 h, en jours ouvrés.</p>
+  </div>
+</section>
 
-<div class="container" style="padding-bottom:80px">
-  <div class="contact-grid">
-    <div class="contact-info">
-      <h3 data-en="Email">Email</h3>
-      <p><a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></p>
-      <h3 data-en="Phone">Téléphone</h3>
-      <p><a href="tel:+33651824549">06 51 82 45 49</a></p>
-      <h3 data-en="Location">Localisation</h3>
-      <p>Paris 75009<br>Île-de-France</p>
-      <h3 data-en="Response time">Délais de réponse</h3>
-      <p data-en="We usually reply within 24 business hours.">Nous répondons généralement sous 24 heures ouvrées.</p>
-    </div>
+<section class="bande calque">
+  <div class="wrap g12 contact-g">
+    <dl class="coord">
+      <div><dt data-en="Email">E-mail</dt><dd id="cMail"><a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></dd><button class="copie" type="button" data-copy="contact@lumiarchi.com" data-for="cMail"><span data-en="Copy">Copier</span><span class="vh" data-en=" the email address"> l'adresse e-mail</span></button></div>
+      <div><dt data-en="Phone">Téléphone</dt><dd id="cTel"><a href="tel:+33651824549">06 51 82 45 49</a></dd><button class="copie" type="button" data-copy="+33651824549" data-for="cTel"><span data-en="Copy">Copier</span><span class="vh" data-en=" the phone number"> le numéro de téléphone</span></button></div>
+      <div><dt data-en="Studio">Studio</dt><dd>Paris 75009, Île-de-France</dd><span></span></div>
+      <div><dt data-en="Reply time">Délai de réponse</dt><dd data-en="24 hours, on business days">24 h, en jours ouvrés</dd><span></span></div>
+    </dl>
 
-    <form id="contactForm" action="https://formspree.io/f/maqpaoyl" method="POST">
-      <div class="form-row">
-        <label data-en="Name *">Nom *</label>
-        <input type="text" name="nom" required>
+    <form class="form" id="contactForm" action="https://formspree.io/f/maqpaoyl" method="POST">
+      <div class="deux">
+        <div class="champ"><label for="fNom" data-en="Name *">Nom *</label><input id="fNom" type="text" name="nom" autocomplete="name" required></div>
+        <div class="champ"><label for="fMail" data-en="Email *">E-mail *</label><input id="fMail" type="email" name="email" autocomplete="email" required></div>
       </div>
-      <div class="form-row">
-        <label>Email *</label>
-        <input type="email" name="email" required>
+      <div class="deux">
+        <div class="champ"><label for="fTel" data-en="Phone">Téléphone</label><input id="fTel" type="tel" name="telephone" autocomplete="tel"></div>
+        <div class="champ"><label for="fSujet" data-en="Subject *">Sujet *</label><input id="fSujet" type="text" name="sujet" required></div>
       </div>
-      <div class="form-row">
-        <label data-en="Phone">Téléphone</label>
-        <input type="tel" name="telephone">
+      <div class="champ"><label for="fMsg" data-en="Message *">Message *</label><textarea id="fMsg" name="message" required></textarea></div>
+      <div class="form-pied">
+        <button type="submit" class="btn btn-encre" data-en="Send">Envoyer</button>
+        <p data-en="You can also write directly to contact@lumiarchi.com.">Vous pouvez aussi écrire directement à contact@lumiarchi.com.</p>
       </div>
-      <div class="form-row">
-        <label data-en="Subject *">Sujet *</label>
-        <input type="text" name="sujet" required>
-      </div>
-      <div class="form-row">
-        <label>Message *</label>
-        <textarea name="message" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" data-en="Send">Envoyer</button>
-      <p style="margin-top:14px;font-size:13px;color:#71717a" data-en="You can also write directly to contact@lumiarchi.com">Vous pouvez aussi écrire directement à <a href="mailto:contact@lumiarchi.com" style="color:#ff9500">contact@lumiarchi.com</a></p>
     </form>
   </div>
-</div>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-logo"><h3>Lumi<span>Archi</span></h3><p data-en="3D visualization studio">Studio de visualisation 3D</p></div>
-      <div class="footer-links"><h4>Navigation</h4><ul>
-        <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li>
-        <li><a href="services.html" data-en="Services">Services</a></li>
-        <li><a href="about.html" data-en="About">À propos</a></li>
-        <li><a href="contact.html" data-en="Contact">Contact</a></li></ul></div>
-      <div class="footer-contact"><h4>Contact</h4>
-        <p>Email : <a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></p>
-        <p>Tél : <a href="tel:+33651824549">06 51 82 45 49</a></p><p>Paris 75009</p></div>
+</section>
+</main>
+<footer class="pied">
+  <div class="wrap">
+    <div class="cartouche">
+      <div><p class="logo">Lumi<span>Archi</span></p><p style="margin-top:8px" data-en="3D visualization studio">Studio de visualisation 3D</p></div>
+      <div><small data-en="Location">Lieu</small><p>Paris 75009</p></div>
+      <div><small>Pages</small>
+        <ul>
+          <li><a href="index.html" data-en="Home">Accueil</a></li>
+          <li><a href="portfolio.html" data-en="Projects">Projets</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">Studio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div><small>Contact</small><p><a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a><br><a href="tel:+33651824549">06 51 82 45 49</a></p></div>
     </div>
-    <div class="footer-bottom"><p>&copy; <span class="year">2026</span> LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p></div>
+    <p class="droits">© 2026 LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p>
   </div>
 </footer>
-<script src="js/main.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

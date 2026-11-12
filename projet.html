@@ -1,72 +1,146 @@
 <!DOCTYPE html>
-<html lang="fr"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Projet — LumiArchi</title>
-<link rel="stylesheet" href="css/style.css"></head><body>
-<nav class="navbar"><div class="nav-container">
-    <a href="index.html" class="logo">Lumi<span>Archi</span></a>
-    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
-    <ul class="nav-menu">
-      <li><a href="index.html" data-en="Home">Accueil</a></li>
-      <li><a href="portfolio.html" class="active" data-en="Portfolio">Portfolio</a></li>
-      <li><a href="services.html" data-en="Services">Services</a></li>
-      <li><a href="about.html" data-en="About">À propos</a></li>
-      <li><a href="contact.html" data-en="Contact">Contact</a></li>
-    </ul>
-    <div class="nav-lang"><button data-lang="fr" class="active">FR</button><button data-lang="en">EN</button></div>
-  </div></nav>
-<div class="container proj-back"><a href="portfolio.html" data-en="&larr; Back to portfolio">&larr; Retour au portfolio</a></div>
-<main class="container"><div class="proj" id="proj"></div></main>
-<div class="lb" id="lb"><button class="lb-close" onclick="closeLB()" aria-label="Fermer">&times;</button><button class="lb-nav lb-prev" onclick="navLB(-1)" aria-label="Précédent">&#8249;</button><img id="lbImg" src="" alt=""><button class="lb-nav lb-next" onclick="navLB(1)" aria-label="Suivant">&#8250;</button><div class="lb-cap" id="lbCap"></div></div>
-<footer class="footer"><div class="container">
-    <div class="footer-content">
-      <div class="footer-logo"><h3>Lumi<span>Archi</span></h3><p data-en="3D visualization studio">Studio de visualisation 3D</p></div>
-      <div class="footer-links"><h4>Navigation</h4><ul>
-        <li><a href="portfolio.html" data-en="Portfolio">Portfolio</a></li><li><a href="services.html" data-en="Services">Services</a></li>
-        <li><a href="about.html" data-en="About">À propos</a></li><li><a href="contact.html" data-en="Contact">Contact</a></li></ul></div>
-      <div class="footer-contact"><h4>Contact</h4>
-        <p>Email : <a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a></p>
-        <p>Tél : <a href="tel:+33651824549">06 51 82 45 49</a></p><p>Paris 75009</p></div>
+<meta name="description" content="Fiche projet LumiArchi : images de synthèse, programme, surface et client.">
+<meta property="og:title" content="Projet — LumiArchi">
+<meta property="og:description" content="Fiche projet LumiArchi : images de synthèse, programme, surface et client.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lumiarchi.com/projet.html">
+<meta property="og:image" content="https://lumiarchi.com/images/pub--7.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@300;400&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html" aria-label="LumiArchi, accueil">Lumi<span>Archi</span></a>
+    <nav class="nav-links" aria-label="Pages">
+      <a href="about.html" data-en="Studio">Studio</a>
+      <a href="portfolio.html" aria-current="page" data-en="Projects">Projets</a>
+      <a href="services.html" data-en="Services">Services</a>
+      <a href="contact.html" data-en="Contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
     </div>
-    <div class="footer-bottom"><p>&copy; <span class="year">2026</span> LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p></div>
-  </div></footer>
+    <a class="btn btn-lum" href="contact.html" data-en="Request a quote">Demander un devis</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" data-en="Menu">Menu</button>
+  </div>
+</header>
+<nav class="menu wrap" id="menu" aria-label="Menu" hidden>
+  <a href="index.html" data-en="Home">Accueil</a>
+  <a href="about.html" data-en="Studio">Studio</a>
+  <a href="portfolio.html" aria-current="page" data-en="Projects">Projets</a>
+  <a href="services.html" data-en="Services">Services</a>
+  <a href="contact.html" data-en="Contact">Contact</a>
+</nav>
+
+<main>
+<div class="tete" style="padding-bottom:26px">
+  <div class="wrap"><p class="sur" style="margin:0"><a href="portfolio.html" data-en="← All projects">← Tous les projets</a></p></div>
+</div>
+<div class="wrap">
+  <div class="g12 proj" id="proj"></div>
+  <nav class="suite" id="suite" aria-label="Autres projets" hidden></nav>
+</div>
+</main>
+<dialog class="lb" id="lb" aria-label="Image agrandie">
+  <button type="button" class="lb-x" id="lbX" data-en="Close">Fermer</button>
+  <button type="button" class="lb-p" id="lbP" aria-label="Image précédente" data-en-label="Previous image">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button type="button" class="lb-n" id="lbN" aria-label="Image suivante" data-en-label="Next image">›</button>
+  <p class="lb-c" id="lbC"></p>
+</dialog>
+<footer class="pied">
+  <div class="wrap">
+    <div class="cartouche">
+      <div><p class="logo">Lumi<span>Archi</span></p><p style="margin-top:8px" data-en="3D visualization studio">Studio de visualisation 3D</p></div>
+      <div><small data-en="Location">Lieu</small><p>Paris 75009</p></div>
+      <div><small>Pages</small>
+        <ul>
+          <li><a href="index.html" data-en="Home">Accueil</a></li>
+          <li><a href="portfolio.html" data-en="Projects">Projets</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">Studio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div><small>Contact</small><p><a href="mailto:contact@lumiarchi.com">contact@lumiarchi.com</a><br><a href="tel:+33651824549">06 51 82 45 49</a></p></div>
+    </div>
+    <p class="droits">© 2026 LumiArchi. <span data-en="All rights reserved.">Tous droits réservés.</span></p>
+  </div>
+</footer>
+<script src="js/site.js"></script>
 <script>
-const projets = {"venette": {"titre": "Extension Carrefour — Venette", "type": "Commerce", "client": "Carrefour (Outsign Architecture)", "surface": "Sur demande", "programme": "Extension d'un centre commercial", "description": "Extension du centre commercial Carrefour à Venette — nouvelles enseignes, terrasses et ombrières photovoltaïques. Images 3D et film de commercialisation de 42 secondes.", "video": "video/venette-film-commercialisation.mp4", "poster": "images/venette-film-poster.jpg", "cat": "pub", "images": ["images/venette-34-carrefour.jpg", "images/venette-entree.jpg", "images/venette-entree-34.jpg", "images/venette-ombrieres.jpg", "images/venette-terrasse-1.jpg", "images/venette-terrasse-2.jpg"]}, "the-annex": {"titre": "The Annex — Cincinnati (Ohio)", "type": "Activités", "client": "Kukla Capital Partners", "surface": "≈ 10 400 sq ft (968 m²)", "programme": "Bâtiment « build-to-suit » : extension et nouvelle façade", "description": "Projet « build-to-suit » d'environ 10 400 sq ft au 125 South Cooper Avenue, à Cincinnati (Ohio) : trois propositions de façade, vues 3D au crépuscule et film de commercialisation de 55 secondes.", "video": "video/annex-film-commercialisation.mp4", "poster": "images/annex-film-poster.jpg", "cat": "pub", "images": ["images/annex-vue-face.jpg", "images/annex-entree.jpg"]}, "nomo": {"titre": "NOMO Saint-Ouen-sur-Seine", "type": "Coliving", "client": "Outsign Architecture", "surface": "11 520 m²", "programme": "Immeuble de coliving", "description": "Création d'un immeuble de coliving à Saint-Ouen-sur-Seine — espaces de vie privatifs, coworking, salle de sport et roofbar, répartis sur 8 niveaux.", "cat": "int", "images": ["https://lumiarchi.com/images/int--1.jpg", "https://lumiarchi.com/images/int--2.jpg", "https://lumiarchi.com/images/int--3.jpg", "https://lumiarchi.com/images/int--4.jpg", "https://lumiarchi.com/images/bur--5.jpg"]}, "patrimoni-boulogne": {"titre": "PATRIMONI Boulogne", "type": "Bureaux", "client": "PATRIMONI", "surface": "2 122 m²", "programme": "Réhabilitation et extension de bureaux", "description": "", "cat": "bur", "images": ["https://lumiarchi.com/images/ext--2.jpg", "https://lumiarchi.com/images/ext--4.jpg", "https://lumiarchi.com/images/bur--2.jpg", "https://lumiarchi.com/images/bur--3.jpg"]}, "nexity-cachan": {"titre": "NEXITY SEERI — Cachan", "type": "Mixte", "client": "NEXITY", "surface": "7 371 m²", "programme": "Réhabilitation de bureaux + résidence jeunes actifs", "description": "", "cat": "pub", "images": ["https://lumiarchi.com/images/ext--16.jpg", "https://lumiarchi.com/images/pub--18.jpg", "https://lumiarchi.com/images/bur--6.jpg"]}, "meaux": {"titre": "CC La Verrière — Meaux", "type": "Commercial", "client": "Outsign Architecture", "surface": "5 750 m²", "programme": "Restructuration complète — centre commercial", "description": "Restructuration complète du centre commercial La Verrière à Meaux — création d'un parking silo de 888 places et 5 750 m² de surfaces commerciales.", "cat": "pub", "images": ["https://lumiarchi.com/images/pub--7.jpg", "https://lumiarchi.com/images/pub--19.jpg"]}, "bnp-vaulx": {"titre": "BNP — Vaulx-en-Velin", "type": "Bureaux", "client": "BNP", "surface": "Sur demande", "programme": "Immeuble de bureaux", "description": "", "cat": "bur", "images": ["https://lumiarchi.com/images/bur--1.jpg"]}, "manoir-plouescat": {"titre": "Manoir de Plouescat", "type": "Rénovation", "client": "Particulier", "surface": "288 m²", "programme": "Rénovation totale et extension", "description": "", "cat": "ext", "images": ["https://lumiarchi.com/images/ext--11.jpg", "https://lumiarchi.com/images/int--5.jpg", "https://lumiarchi.com/images/int--6.jpg", "https://lumiarchi.com/images/int--7.jpg"]}, "dissay": {"titre": "Dissay-sous-Courcillon", "type": "Extension", "client": "Particulier", "surface": "60 m²", "programme": "Extension", "description": "", "cat": "ext", "images": ["https://lumiarchi.com/images/ext--6.jpg", "https://lumiarchi.com/images/ext--8.jpg", "https://lumiarchi.com/images/ext--9.jpg"]}, "patrimoni-fer-a-moulin": {"titre": "PATRIMONI Fer à Moulin — Paris", "type": "Bureaux + Logements", "client": "PATRIMONI", "surface": "2 000 m²", "programme": "Réhabilitation et extension de bureaux", "description": "", "cat": "bur", "images": ["https://lumiarchi.com/images/ext--3.jpg", "https://lumiarchi.com/images/ext--10.jpg", "https://lumiarchi.com/images/ext--20.jpg"]}, "coreal-villejuif": {"titre": "COREAL — Villejuif", "type": "Logements", "client": "COREAL", "surface": "Sur demande", "programme": "Immeuble de logements", "description": "", "cat": "ext", "images": ["https://lumiarchi.com/images/ext--14.jpg", "https://lumiarchi.com/images/ext--15.jpg"]}, "abenex": {"titre": "ABENEX — rue de Salneuve, Paris", "type": "Bureaux", "client": "ABENEX", "surface": "1 257 m²", "programme": "Restructuration complète d'un immeuble de bureaux", "description": "", "cat": "bur", "images": ["https://lumiarchi.com/images/ext--12.jpg", "https://lumiarchi.com/images/ext--13.jpg"]}, "terra-nobilis": {"titre": "TERRA NOBILIS — Mont-Saint-Martin", "type": "Commercial", "client": "Outsign Architecture", "surface": "Sur demande", "programme": "Ensemble commercial", "description": "", "cat": "pub", "images": ["https://lumiarchi.com/images/pub--8.jpg"]}, "bruver-saint-mard": {"titre": "BRUVER IMMO — Saint Mard", "type": "Activités", "client": "BRUVER IMMO", "surface": "2 857 m²", "programme": "Bâtiment d'activité", "description": "", "cat": "pub", "images": ["https://lumiarchi.com/images/pub--11.jpg", "https://lumiarchi.com/images/pub--12.jpg"]}, "lancry": {"titre": "Lancry — Fort-de-France", "type": "Bureaux", "client": "Outsign Architecture", "surface": "3 508 m²", "programme": "Création d'un immeuble de bureaux", "description": "Création d'un immeuble de bureaux à Fort-de-France — 3 508 m².", "cat": "bur", "images": ["https://lumiarchi.com/images/bur--4.jpg", "https://lumiarchi.com/images/int--12.jpg"]}, "spacia-mours": {"titre": "SPACIA CIE — Mours", "type": "Activités", "client": "SPACIA CIE", "surface": "Sur demande", "programme": "Bâtiment d'activité", "description": "", "cat": "pub", "images": ["https://lumiarchi.com/images/pub--13.jpg"]}, "freneuse": {"titre": "Freneuse", "type": "Activités", "client": "Outsign Architecture", "surface": "Sur demande", "programme": "Bâtiment d'activité", "description": "", "cat": "pub", "images": ["https://lumiarchi.com/images/pub--9.jpg", "https://lumiarchi.com/images/pub--10.jpg"]}, "under-the-spot": {"titre": "UNDER THE SPOT", "type": "Sport", "client": "Outsign Architecture", "surface": "60 m²", "programme": "Création d'une salle de sport", "description": "", "cat": "int", "images": ["https://lumiarchi.com/images/int--8.jpg", "https://lumiarchi.com/images/int--9.jpg"]}, "antony": {"titre": "Antony", "type": "Logements", "client": "Outsign Architecture", "surface": "2 050 m²", "programme": "Restructuration complète à usage de logements", "description": "", "cat": "ext", "images": ["https://lumiarchi.com/images/ext--17.jpg"]}, "montgaroult": {"titre": "Particulier — Montgaroult", "type": "Rénovation", "client": "Particulier", "surface": "180 m²", "programme": "Changement de destination", "description": "", "cat": "ext", "images": ["https://lumiarchi.com/images/ext--18.jpg"]}, "maisons-laffitte": {"titre": "Particulier — Maisons-Laffitte", "type": "Rénovation", "client": "Particulier", "surface": "Sur demande", "programme": "Rénovation", "description": "", "cat": "ext", "images": ["https://lumiarchi.com/images/ext--19.jpg", "https://lumiarchi.com/images/int--12.jpg"]}};
-function q(n){return new URLSearchParams(location.search).get(n);}
-let curImgs=[],curIdx=0;
+const projets={"venette": {"titre": "Extension Carrefour — Venette", "type": "Commerce", "client": "Carrefour (Outsign Architecture)", "surface": "Sur demande", "programme": "Extension d'un centre commercial", "description": "Extension du centre commercial Carrefour à Venette — nouvelles enseignes, terrasses et ombrières photovoltaïques. Images 3D et film de commercialisation de 42 secondes.", "video": "video/venette-film-commercialisation.mp4", "poster": "images/venette-film-poster.jpg", "cat": "pub", "images": ["images/venette-34-carrefour.jpg", "images/venette-entree.jpg", "images/venette-entree-34.jpg", "images/venette-ombrieres.jpg", "images/venette-terrasse-1.jpg", "images/venette-terrasse-2.jpg"]}, "the-annex": {"titre": "The Annex — Cincinnati (Ohio)", "type": "Activités", "client": "Kukla Capital Partners", "surface": "≈ 10 400 sq ft (968 m²)", "programme": "Bâtiment « build-to-suit » : extension et nouvelle façade", "description": "Projet « build-to-suit » d'environ 10 400 sq ft au 125 South Cooper Avenue, à Cincinnati (Ohio) : trois propositions de façade, vues 3D au crépuscule et film de commercialisation de 55 secondes.", "video": "video/annex-film-commercialisation.mp4", "poster": "images/annex-film-poster.jpg", "cat": "pub", "images": ["images/annex-vue-face.jpg", "images/annex-entree.jpg"]}, "nomo": {"titre": "NOMO Saint-Ouen-sur-Seine", "type": "Coliving", "client": "Outsign Architecture", "surface": "11 520 m²", "programme": "Immeuble de coliving", "description": "Création d'un immeuble de coliving à Saint-Ouen-sur-Seine — espaces de vie privatifs, coworking, salle de sport et roofbar, répartis sur 8 niveaux.", "cat": "int", "images": ["images/int--1.jpg", "images/int--2.jpg", "images/int--3.jpg", "images/int--4.jpg", "images/bur--5.jpg"]}, "patrimoni-boulogne": {"titre": "PATRIMONI Boulogne", "type": "Bureaux", "client": "PATRIMONI", "surface": "2 122 m²", "programme": "Réhabilitation et extension de bureaux", "description": "", "cat": "bur", "images": ["images/ext--2.jpg", "images/ext--4.jpg", "images/bur--2.jpg", "images/bur--3.jpg"]}, "nexity-cachan": {"titre": "NEXITY SEERI — Cachan", "type": "Mixte", "client": "NEXITY", "surface": "7 371 m²", "programme": "Réhabilitation de bureaux + résidence jeunes actifs", "description": "", "cat": "pub", "images": ["images/ext--16.jpg", "images/pub--18.jpg", "images/bur--6.jpg"]}, "meaux": {"titre": "CC La Verrière — Meaux", "type": "Commercial", "client": "Outsign Architecture", "surface": "5 750 m²", "programme": "Restructuration complète — centre commercial", "description": "Restructuration complète du centre commercial La Verrière à Meaux — création d'un parking silo de 888 places et 5 750 m² de surfaces commerciales.", "cat": "pub", "images": ["images/pub--7.jpg", "images/pub--19.jpg"]}, "bnp-vaulx": {"titre": "BNP — Vaulx-en-Velin", "type": "Bureaux", "client": "BNP", "surface": "Sur demande", "programme": "Immeuble de bureaux", "description": "", "cat": "bur", "images": ["images/bur--1.jpg"]}, "manoir-plouescat": {"titre": "Manoir de Plouescat", "type": "Rénovation", "client": "Particulier", "surface": "288 m²", "programme": "Rénovation totale et extension", "description": "", "cat": "ext", "images": ["images/ext--11.jpg", "images/int--5.jpg", "images/int--6.jpg", "images/int--7.jpg"]}, "dissay": {"titre": "Dissay-sous-Courcillon", "type": "Extension", "client": "Particulier", "surface": "60 m²", "programme": "Extension", "description": "", "cat": "ext", "images": ["images/ext--6.jpg", "images/ext--8.jpg", "images/ext--9.jpg"]}, "patrimoni-fer-a-moulin": {"titre": "PATRIMONI Fer à Moulin — Paris", "type": "Bureaux + Logements", "client": "PATRIMONI", "surface": "2 000 m²", "programme": "Réhabilitation et extension de bureaux", "description": "", "cat": "bur", "images": ["images/ext--3.jpg", "images/ext--10.jpg", "images/ext--20.jpg"]}, "coreal-villejuif": {"titre": "COREAL — Villejuif", "type": "Logements", "client": "COREAL", "surface": "Sur demande", "programme": "Immeuble de logements", "description": "", "cat": "ext", "images": ["images/ext--14.jpg", "images/ext--15.jpg"]}, "abenex": {"titre": "ABENEX — rue de Salneuve, Paris", "type": "Bureaux", "client": "ABENEX", "surface": "1 257 m²", "programme": "Restructuration complète d'un immeuble de bureaux", "description": "", "cat": "bur", "images": ["images/ext--12.jpg", "images/ext--13.jpg"]}, "terra-nobilis": {"titre": "TERRA NOBILIS — Mont-Saint-Martin", "type": "Commercial", "client": "Outsign Architecture", "surface": "Sur demande", "programme": "Ensemble commercial", "description": "", "cat": "pub", "images": ["images/pub--8.jpg"]}, "bruver-saint-mard": {"titre": "BRUVER IMMO — Saint Mard", "type": "Activités", "client": "BRUVER IMMO", "surface": "2 857 m²", "programme": "Bâtiment d'activité", "description": "", "cat": "pub", "images": ["images/pub--11.jpg", "images/pub--12.jpg"]}, "lancry": {"titre": "Lancry — Fort-de-France", "type": "Bureaux", "client": "Outsign Architecture", "surface": "3 508 m²", "programme": "Création d'un immeuble de bureaux", "description": "Création d'un immeuble de bureaux à Fort-de-France — 3 508 m².", "cat": "bur", "images": ["images/bur--4.jpg", "images/int--12.jpg"]}, "spacia-mours": {"titre": "SPACIA CIE — Mours", "type": "Activités", "client": "SPACIA CIE", "surface": "Sur demande", "programme": "Bâtiment d'activité", "description": "", "cat": "pub", "images": ["images/pub--13.jpg"]}, "freneuse": {"titre": "Freneuse", "type": "Activités", "client": "Outsign Architecture", "surface": "Sur demande", "programme": "Bâtiment d'activité", "description": "", "cat": "pub", "images": ["images/pub--9.jpg", "images/pub--10.jpg"]}, "under-the-spot": {"titre": "UNDER THE SPOT", "type": "Sport", "client": "Outsign Architecture", "surface": "60 m²", "programme": "Création d'une salle de sport", "description": "", "cat": "int", "images": ["images/int--8.jpg", "images/int--9.jpg"]}, "antony": {"titre": "Antony", "type": "Logements", "client": "Outsign Architecture", "surface": "2 050 m²", "programme": "Restructuration complète à usage de logements", "description": "", "cat": "ext", "images": ["images/ext--17.jpg"]}, "montgaroult": {"titre": "Particulier — Montgaroult", "type": "Rénovation", "client": "Particulier", "surface": "180 m²", "programme": "Changement de destination", "description": "", "cat": "ext", "images": ["images/ext--18.jpg"]}, "maisons-laffitte": {"titre": "Particulier — Maisons-Laffitte", "type": "Rénovation", "client": "Particulier", "surface": "Sur demande", "programme": "Rénovation", "description": "", "cat": "ext", "images": ["images/ext--19.jpg", "images/int--12.jpg"]}};
+const ordre=["the-annex", "venette", "nomo", "patrimoni-boulogne", "nexity-cachan", "meaux", "bnp-vaulx", "manoir-plouescat", "dissay", "patrimoni-fer-a-moulin", "coreal-villejuif", "abenex", "terra-nobilis", "bruver-saint-mard", "lancry", "spacia-mours", "freneuse", "under-the-spot", "antony", "montgaroult", "maisons-laffitte"];
+const progEn={"the-annex": "Build-to-suit building: extension and new façade", "venette": "Shopping centre extension", "nomo": "Coliving building", "patrimoni-boulogne": "Office refurbishment and extension", "nexity-cachan": "Office refurbishment and young-professionals residence", "meaux": "Full restructuring of a shopping centre", "bnp-vaulx": "Office building", "manoir-plouescat": "Full renovation and extension", "dissay": "Extension", "patrimoni-fer-a-moulin": "Office refurbishment and extension", "coreal-villejuif": "Residential building", "abenex": "Full restructuring of an office building", "terra-nobilis": "Retail complex", "bruver-saint-mard": "Light-industrial building", "lancry": "New office building", "spacia-mours": "Light-industrial building", "freneuse": "Light-industrial building", "under-the-spot": "New gym", "antony": "Full restructuring into housing", "montgaroult": "Change of use", "maisons-laffitte": "Renovation"};
+const T={
+  fr:{client:'Client',prog:'Programme',surf:'Surface',devis:'Demander un devis',zoom:"Cliquez sur l'image pour l'agrandir",agr:"Agrandir l'image",back:'Tous les projets',nf:'Projet introuvable.',prev:'Projet précédent',next:'Projet suivant',film:'Film de commercialisation',vue:'Vue',sd:'Sur demande'},
+  en:{client:'Client',prog:'Programme',surf:'Area',devis:'Request a quote',zoom:'Click the image to enlarge',agr:'Enlarge the image',back:'All projects',nf:'Project not found.',prev:'Previous project',next:'Next project',film:'Marketing film',vue:'View',sd:'On request'}
+};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const id=new URLSearchParams(location.search).get('id');
+const el=document.getElementById('proj'), suite=document.getElementById('suite');
+const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbC=document.getElementById('lbC');
+let imgs=[], cur=0;
 function render(){
-  const id=q('id'); const p=projets[id];
-  const el=document.getElementById('proj');
-  if(!p){el.innerHTML='<p style="padding:40px 0;color:#a1a1aa">Projet introuvable. <a href="portfolio.html" style="color:#ff9500">Retour au portfolio</a></p>';return;}
-  curImgs=p.images;
-  const thumbs=p.images.map((im,i)=>`<img src="${im}" class="${i===0?'active':''}" onclick="setMain(${i})" alt="">`).join('');
-  const desc=p.description?`<p class="proj-desc">${p.description}</p>`:'';
-  const vid=p.video?`<div class="proj-video"><video controls playsinline preload="none" poster="${p.poster||''}"><source src="${p.video}" type="video/mp4"></video></div>`:'';
-  el.innerHTML=`
-   <div class="proj-gallery">
-     ${vid}
-     <div class="main"><img id="mainImg" src="${p.images[0]}" alt="${p.titre}" style="cursor:zoom-in" onclick="openLB(curIdx)"></div>
-     ${p.images.length>1?`<div class="proj-thumbs">${thumbs}</div>`:''}
-     <p class="proj-zoom-hint" data-en="Click the image to enlarge">Cliquez sur l'image pour l'agrandir</p>
-   </div>
-   <aside class="proj-info">
-     <div class="kicker">${p.type}</div>
-     <h1>${p.titre}</h1>
-     <div class="proj-meta"><span class="k">Client</span><span class="v">${p.client}</span></div>
-     <div class="proj-meta"><span class="k">Programme</span><span class="v">${p.programme}</span></div>
-     <div class="proj-meta"><span class="k">Surface</span><span class="v">${p.surface}</span></div>
-     ${desc}
-     <a href="contact.html" class="btn btn-primary" data-en="Request a quote">Demander un devis</a>
-   </aside>`;
+  const l=LA.lang, t=T[l], p=Object.prototype.hasOwnProperty.call(projets,id)?projets[id]:null;
+  if(!p){
+    el.innerHTML='<p class="chapo" style="grid-column:1/-1">'+t.nf+' <a class="lien" href="portfolio.html">'+t.back+'</a></p>';
+    suite.hidden=true; return;
+  }
+  imgs=p.images; if(cur>=imgs.length) cur=0;
+  const prog=(l==='en'&&progEn[id])?progEn[id]:p.programme;
+  const surf=(p.surface==='Sur demande')?t.sd:p.surface;
+  const vign=imgs.length>1?'<div class="vignettes">'+imgs.map((im,i)=>'<button type="button" data-i="'+i+'" aria-current="'+(i===cur)+'" aria-label="'+t.vue+' '+(i+1)+'"><img src="'+esc(im)+'" alt="" loading="lazy"></button>').join('')+'</div>':'';
+  const film=p.video?'<div class="proj-film"><h2>'+t.film+'</h2><div class="embed"><video controls playsinline preload="none" poster="'+esc(p.poster||'')+'"><source src="'+esc(p.video)+'" type="video/mp4"></video></div></div>':'';
+  el.innerHTML=
+    '<div class="proj-gal">'+
+      '<div class="proj-main"><button type="button" id="mainBtn" aria-label="'+t.agr+'"><img id="mainImg" src="'+esc(imgs[cur])+'" alt="'+esc(p.titre)+'"></button></div>'+
+      vign+'<p class="indice">'+t.zoom+'</p>'+film+
+    '</div>'+
+    '<aside class="proj-info">'+
+      '<span class="etiq">'+esc(p.type)+'</span>'+
+      '<h1>'+esc(p.titre)+'</h1>'+
+      '<dl class="fiche">'+
+        '<div><dt>'+t.client+'</dt><dd>'+esc(p.client)+'</dd></div>'+
+        '<div><dt>'+t.prog+'</dt><dd>'+esc(prog)+'</dd></div>'+
+        '<div><dt>'+t.surf+'</dt><dd>'+esc(surf)+'</dd></div>'+
+      '</dl>'+
+      (p.description?'<p class="proj-desc">'+esc(p.description)+'</p>':'')+
+      '<a class="btn btn-lum" href="contact.html">'+t.devis+'</a>'+
+    '</aside>';
+  const k=ordre.indexOf(id), a=ordre[(k-1+ordre.length)%ordre.length], b=ordre[(k+1)%ordre.length];
+  suite.hidden=false;
+  suite.innerHTML='<a href="projet.html?id='+a+'"><small>← '+t.prev+'</small><b>'+esc(projets[a].titre)+'</b></a>'+
+                  '<a href="projet.html?id='+b+'"><small>'+t.next+' →</small><b>'+esc(projets[b].titre)+'</b></a>';
   document.title=p.titre+' — LumiArchi';
 }
-function setMain(i){curIdx=i;document.getElementById('mainImg').src=curImgs[i];document.querySelectorAll('.proj-thumbs img').forEach((im,k)=>im.classList.toggle('active',k===i));}
-function openLB(i){curIdx=i;document.getElementById('lbImg').src=curImgs[i];document.getElementById('lb').classList.add('open');}
-function closeLB(){document.getElementById('lb').classList.remove('open');}
-function navLB(d){curIdx=(curIdx+d+curImgs.length)%curImgs.length;document.getElementById('lbImg').src=curImgs[curIdx];setMain(curIdx);}
-document.getElementById('lb').addEventListener('click',e=>{if(e.target.id==='lb')closeLB();});
-document.addEventListener('keydown',e=>{const lb=document.getElementById('lb');if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowRight')navLB(1);if(e.key==='ArrowLeft')navLB(-1);});
+function setMain(i){
+  cur=(i+imgs.length)%imgs.length;
+  const m=document.getElementById('mainImg'); if(m) m.src=imgs[cur];
+  el.querySelectorAll('.vignettes button').forEach((b,k)=>b.setAttribute('aria-current',String(k===cur)));
+  lbImg.src=imgs[cur]; lbC.textContent=(cur+1)+' / '+imgs.length;
+}
+el.addEventListener('click',e=>{
+  const v=e.target.closest('[data-i]');
+  if(v){ setMain(+v.dataset.i); return; }
+  if(e.target.closest('#mainBtn')){ setMain(cur); if(lb.showModal) lb.showModal(); else lb.setAttribute('open',''); }
+});
+document.getElementById('lbX').addEventListener('click',()=>lb.close());
+document.getElementById('lbP').addEventListener('click',()=>setMain(cur-1));
+document.getElementById('lbN').addEventListener('click',()=>setMain(cur+1));
+lb.addEventListener('click',e=>{ if(e.target===lb) lb.close(); });
+lb.addEventListener('keydown',e=>{ if(e.key==='ArrowRight') setMain(cur+1); if(e.key==='ArrowLeft') setMain(cur-1); });
+LA.onLang(render);
 render();
 </script>
-<script src="js/main.js"></script>
-</body></html>
+</body>
+</html>
